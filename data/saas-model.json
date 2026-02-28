@@ -1,4 +1,151 @@
 {
+  "introduction": {
+    "definition": "SaaS（Software as a Service）とは、ソフトウェアをインターネット経由で提供し、ユーザーが月額・年額の料金を支払って利用するビジネスモデル。ソフトウェアを「購入する」のではなく「利用する」形態。",
+    "subtitle": "ソフトウェアを所有せず、月額料金で利用するモデル",
+    "everydayExamples": [
+      { "name": "Netflix", "description": "月額990円〜で映画・ドラマが見放題。DVDを買う必要がない。", "icon": "🎬" },
+      { "name": "Google Workspace", "description": "メール・ドキュメント・スプレッドシートがブラウザで使える。Officeを買う必要がない。", "icon": "📧" },
+      { "name": "Slack", "description": "チームのチャットツール。インストール不要で、どこからでもアクセス可能。", "icon": "💬" }
+    ],
+    "comparison": {
+      "dimensions": [
+        { "label": "導入方法", "packaged": "CD/DLでインストール", "saas": "ブラウザでアクセス", "saasAdvantage": true },
+        { "label": "費用モデル", "packaged": "一括購入（数十万〜数百万円）", "saas": "月額課金（数千円〜数万円）", "saasAdvantage": true },
+        { "label": "アップデート", "packaged": "手動/追加費用が必要", "saas": "自動/無料で常に最新", "saasAdvantage": true },
+        { "label": "データ保存", "packaged": "ローカル（PC内）", "saas": "クラウド（どこからでもアクセス）", "saasAdvantage": true },
+        { "label": "初期投資", "packaged": "大（ライセンス+サーバー+保守）", "saas": "小（初期費用0円もあり）", "saasAdvantage": true },
+        { "label": "カスタマイズ", "packaged": "高（自由に改変可能）", "saas": "設定ベース（制限あり）", "saasAdvantage": false },
+        { "label": "インターネット", "packaged": "不要（オフライン利用可）", "saas": "必要（常時接続前提）", "saasAdvantage": false }
+      ]
+    },
+    "risks": [
+      { "title": "ベンダーロックイン", "description": "データの移行が困難。一度使い始めると乗り換えコストが高い。" },
+      { "title": "インターネット依存", "description": "ネット環境がないと使えない。通信障害時は業務が止まるリスク。" },
+      { "title": "カスタマイズ制限", "description": "パッケージソフトほど自由な改変ができない。ベンダーの機能追加を待つ必要がある。" },
+      { "title": "長期コスト", "description": "月額課金が積み上がり、長期的にはパッケージより高くなる可能性がある。" },
+      { "title": "データセキュリティ", "description": "自社サーバーではなくクラウドにデータを預ける不安。特に個人情報を扱う福祉業界では懸念材料。" }
+    ],
+    "whyChosen": [
+      { "title": "初期コストの低さ", "description": "数百万円の初期投資が不要。月数千円から始められるため、中小の福祉事業所でも導入しやすい。", "relevance": "定員20名の就労B型事業所でも、月額9,800円〜で導入可能（かべなしクラウド）" },
+      { "title": "常に最新バージョン", "description": "法改正があっても自動でアップデート。手動でのバージョンアップ作業が不要。", "relevance": "2024年の報酬改定で加算体系が大幅変更。SaaSなら自動対応、パッケージなら手動更新が必要だった" },
+      { "title": "どこからでもアクセス", "description": "PCだけでなくタブレット・スマホからも利用可能。多拠点展開やリモート管理が容易。", "relevance": "管理者が複数事業所を巡回する福祉業界では、クラウドアクセスが特に有効" }
+    ]
+  },
+  "flowVsStock": {
+    "title": "フロー型 vs ストック型 ― なぜSaaSは強いのか",
+    "flowType": {
+      "label": "フロー型（売り切り）",
+      "description": "毎月ゼロからスタート。先月の売上は今月に持ち越せない。",
+      "examples": ["受託開発", "コンサルティング", "広告代理店"]
+    },
+    "stockType": {
+      "label": "ストック型（SaaS）",
+      "description": "既存顧客が使い続ける限り、毎月の売上が「床」になる。新規顧客は上に積み上がる。",
+      "examples": ["SaaS", "サブスクリプション", "保険"]
+    },
+    "insight": "ストック型の本質: 既存顧客が使い続ける限り、毎月の売上が「床」になる。新規顧客は「上に積み上がる」だけ。解約が少なければ、売上は加速度的に成長する。これがSaaSが高いバリュエーションを得る理由。",
+    "simulation": [
+      { "month": 1, "flow": 50, "stock": 50 },
+      { "month": 2, "flow": 50, "stock": 100 },
+      { "month": 3, "flow": 50, "stock": 150 },
+      { "month": 4, "flow": 50, "stock": 200 },
+      { "month": 5, "flow": 50, "stock": 250 },
+      { "month": 6, "flow": 50, "stock": 300 },
+      { "month": 7, "flow": 50, "stock": 350 },
+      { "month": 8, "flow": 50, "stock": 400 },
+      { "month": 9, "flow": 50, "stock": 450 },
+      { "month": 10, "flow": 50, "stock": 500 },
+      { "month": 11, "flow": 50, "stock": 550 },
+      { "month": 12, "flow": 50, "stock": 600 }
+    ],
+    "kaipokeInsight": "介護・障害福祉SaaS「カイポケ」は月額課金のストック型。事業所が増えるほど、そして使い続けるほど、ARRは積み上がる。カイポケの推定ARRは約120億円規模。一度導入した事業所は請求・記録業務のインフラとして使い続けるため、解約率が非常に低い。"
+  },
+  "churnSimulation": {
+    "title": "解約率の怖さ ― 小さな穴が船を沈める",
+    "description": "月たった数%の解約が、1年後にはどれだけの顧客を失うことになるか。解約率こそSaaSの最重要指標。",
+    "welfareInsight": "福祉業界の解約は「制度改定による廃業」「M&A」「経営者交代」が主な理由。プロダクトの品質よりも外部環境で解約が発生しやすい。だからこそ、NRR（既存顧客からの収益成長）が重要 — アップセル・クロスセルで解約分を上回る成長を実現する必要がある。カイポケは請求+記録+BPO+ファクタリングとサービスを拡充し、1事業所あたりの売上（ARPA）を上げることでNRR向上を図っている。"
+  },
+  "metricsRelation": {
+    "title": "指標の繋がり ― SaaS指標は孤立しない",
+    "description": "SaaSの主要指標は互いに影響し合う。一つの指標だけを見ても全体像は掴めない。指標間の関係性を理解することが、SaaS経営の第一歩。",
+    "metrics": [
+      {
+        "id": "mrr",
+        "name": "MRR（月次経常収益）",
+        "nameEn": "Monthly Recurring Revenue",
+        "formula": "MRR = ARPA × 顧客数",
+        "whyImportant": "SaaSの健康状態を示す最も基本的な指標。毎月の「定期収入」がいくらかを示す。",
+        "benchmark": "成長率: Seed期 月15-20%, Series A 年100-200%",
+        "kaipokeEstimate": "推定MRR: 約10億円/月（ARR120億円 ÷ 12）",
+        "color": "#3B82F6"
+      },
+      {
+        "id": "arr",
+        "name": "ARR（年次経常収益）",
+        "nameEn": "Annual Recurring Revenue",
+        "formula": "ARR = MRR × 12",
+        "whyImportant": "SaaSの「規模」を示す。投資家が最も注目する指標の一つ。バリュエーションの基準になる。",
+        "benchmark": "ARR100億円: 上場水準, ARR10億円: Series B〜C",
+        "kaipokeEstimate": "推定ARR: 約120億円（介護・障害福祉SaaS事業）",
+        "color": "#3B82F6"
+      },
+      {
+        "id": "nrr",
+        "name": "NRR（売上維持率）",
+        "nameEn": "Net Revenue Retention",
+        "formula": "NRR = (期首MRR + Expansion - Contraction - Churn) / 期首MRR",
+        "whyImportant": "「新規顧客ゼロでも成長できるか」を示す。100%超なら既存顧客だけで売上が伸びている。SaaSの真の強さを測る指標。",
+        "benchmark": "優良SaaS: >120%, 良好: >110%, 最低ライン: >100%",
+        "kaipokeEstimate": "推定NRR: 100-110%（BPO・ファクタリング等のクロスセルで補填）",
+        "color": "#10B981"
+      },
+      {
+        "id": "churn",
+        "name": "Churn Rate（解約率）",
+        "nameEn": "Monthly Churn Rate",
+        "formula": "月次解約率 = 解約顧客数 / 月初顧客数",
+        "whyImportant": "SaaSの「穴」の大きさ。バケツに穴が開いていては、いくら水を注いでも溜まらない。低いほど良い。",
+        "benchmark": "優良: <1%/月, 良好: <2%/月, 危険: >3%/月",
+        "kaipokeEstimate": "推定月次解約率: 1-1.5%（福祉事業所の廃業・M&Aによる自然解約を含む）",
+        "color": "#EF4444"
+      },
+      {
+        "id": "ltv",
+        "name": "LTV（顧客生涯価値）",
+        "nameEn": "Lifetime Value",
+        "formula": "LTV = ARPA / 月次解約率",
+        "whyImportant": "1顧客から生涯で得られる収益の総額。これがCACより大きくなければ、事業は成り立たない。",
+        "benchmark": "LTV/CAC > 3x が健全な目安",
+        "kaipokeEstimate": "推定LTV: 約200-300万円（ARPA3万円 × 平均利用期間80-100ヶ月）",
+        "color": "#8B5CF6"
+      },
+      {
+        "id": "cac",
+        "name": "CAC（顧客獲得コスト）",
+        "nameEn": "Customer Acquisition Cost",
+        "formula": "CAC = S&M費用合計 / 新規獲得顧客数",
+        "whyImportant": "1顧客を獲得するのにいくらかかるか。マーケティング効率を測る。CACが高すぎると成長が持続できない。",
+        "benchmark": "CAC Payback: <18ヶ月が目安",
+        "kaipokeEstimate": "推定CAC: 30-50万円（セミナー・WP・IS・FS・展示会等の複合チャネル）",
+        "color": "#8B5CF6"
+      },
+      {
+        "id": "rule40",
+        "name": "Rule of 40",
+        "nameEn": "Rule of 40",
+        "formula": "Rule of 40 = 売上成長率(%) + 営業利益率(%)",
+        "whyImportant": "「成長と利益のバランス」を一つの数字で表す。40%以上なら健全。成長期は成長率で、成熟期は利益率で稼ぐ。",
+        "benchmark": ">40% が合格ライン。上場SaaSの中央値は約30%",
+        "color": "#F59E0B"
+      }
+    ],
+    "relationships": [
+      "MRRが成長しても Churn Rate が高いと、バケツの穴から水が漏れるのと同じ。穴を塞がずに水を注いでも溜まらない。",
+      "NRR > 100% は「新規獲得ゼロでも売上が伸びる」状態。既存顧客からのExpansion（アップセル/クロスセル）がChurnを上回っている証拠。",
+      "LTV/CAC > 3x は投資効率の目安。1顧客の生涯価値が獲得コストの3倍以上あれば、顧客を取れば取るほど利益が出る。",
+      "Rule of 40 は成長率と利益率のトレードオフを示す。急成長期は赤字でもOK（成長率で40を超える）、安定期は利益率で補う。"
+    ]
+  },
   "revenueFormula": {
     "title": "SaaS売上の公式",
     "formula": "MRR = ARPA × 顧客数",
