@@ -1,0 +1,522 @@
+{
+  "overview": {
+    "title": "R&D（Research & Development）",
+    "subtitle": "プロダクト開発組織の全体像",
+    "description": "SaaS企業のR&D組織は、プロダクトの企画・設計・開発・品質保証・運用までを一貫して担う。アジャイル開発を基盤に、スプリント単位で価値を継続的にデリバリーする。",
+    "headcountRatio": "SaaS企業全体の40-50%がR&D人員",
+    "costStructure": {
+      "label": "R&Dコスト構成",
+      "items": [
+        { "category": "人件費", "ratio": "70-80%", "detail": "エンジニア・デザイナー・PdM給与" },
+        { "category": "インフラ費", "ratio": "10-15%", "detail": "AWS/GCP、CI/CD、監視ツール" },
+        { "category": "ツール・ライセンス", "ratio": "5-10%", "detail": "GitHub, Jira, Figma, Datadog等" },
+        { "category": "外注・業務委託", "ratio": "5-10%", "detail": "専門領域の外部パートナー" }
+      ]
+    },
+    "keyMetrics": [
+      { "name": "デプロイ頻度", "target": "週5回以上", "elite": "オンデマンド（1日複数回）" },
+      { "name": "リードタイム", "target": "1日〜1週間", "elite": "1時間以内" },
+      { "name": "変更失敗率", "target": "15%以下", "elite": "5%以下" },
+      { "name": "復旧時間（MTTR）", "target": "1日以内", "elite": "1時間以内" }
+    ]
+  },
+  "agile": {
+    "title": "アジャイル開発プロセス",
+    "description": "スクラムフレームワークを採用し、2週間スプリントで反復的にプロダクトを改善する。",
+    "sprintCycle": {
+      "duration": "2週間（10営業日）",
+      "ceremonies": [
+        {
+          "name": "スプリントプランニング",
+          "timing": "スプリント初日（月曜AM）",
+          "duration": "2-4時間",
+          "participants": ["PO", "SM", "Dev Team"],
+          "purpose": "スプリントゴール設定、バックログからアイテム選択、タスク分解",
+          "outputs": ["スプリントゴール", "スプリントバックログ", "見積もり（SP）"],
+          "tips": [
+            "ベロシティ実績に基づいてキャパシティを決定",
+            "不確実性の高いアイテムはスパイク（技術調査）チケットに",
+            "バッファとして10-20%の余裕を持たせる"
+          ]
+        },
+        {
+          "name": "デイリースクラム",
+          "timing": "毎朝（10:00-10:15）",
+          "duration": "15分厳守",
+          "participants": ["Dev Team", "SM"],
+          "purpose": "進捗共有、障害の早期発見、チーム同期",
+          "format": [
+            "昨日やったこと",
+            "今日やること",
+            "困っていること（ブロッカー）"
+          ],
+          "tips": [
+            "報告会ではなくチーム内同期の場",
+            "詳細な議論はパーキングロットへ",
+            "立って行う（Stand-up）ことで時間意識を高める"
+          ]
+        },
+        {
+          "name": "スプリントレビュー",
+          "timing": "スプリント最終日（金曜PM）",
+          "duration": "1-2時間",
+          "participants": ["PO", "SM", "Dev Team", "ステークホルダー"],
+          "purpose": "成果物デモ、フィードバック取得、バックログ調整",
+          "outputs": ["デモ結果", "フィードバック一覧", "バックログ更新"],
+          "tips": [
+            "動くソフトウェアをデモすること（スライド禁止）",
+            "ステークホルダーからのフィードバックを必ず収集",
+            "次スプリントの方向性を合意"
+          ]
+        },
+        {
+          "name": "レトロスペクティブ",
+          "timing": "スプリント最終日（レビュー後）",
+          "duration": "1-1.5時間",
+          "participants": ["SM", "Dev Team"],
+          "purpose": "プロセス改善、チーム健全性の維持",
+          "format": "KPT（Keep / Problem / Try）",
+          "outputs": ["改善アクション（次スプリントで実行）"],
+          "tips": [
+            "心理的安全性を確保（blame-freeの原則）",
+            "前回のTryの振り返りから始める",
+            "アクションは具体的・担当者明確・次スプリントで実行可能なもの"
+          ]
+        },
+        {
+          "name": "バックログリファインメント",
+          "timing": "スプリント中盤（水曜PM）",
+          "duration": "1-2時間",
+          "participants": ["PO", "Dev Team"],
+          "purpose": "次スプリント以降のアイテム準備、見積もり、受入条件明確化",
+          "outputs": ["リファインされたバックログ", "見積もり済みアイテム"],
+          "tips": [
+            "スプリント工数の10%をリファインメントに充てる",
+            "Definition of Ready を満たすまで磨く",
+            "プランニングポーカーで見積もり合意"
+          ]
+        }
+      ]
+    },
+    "roles": [
+      {
+        "name": "プロダクトオーナー（PO）",
+        "responsibility": "プロダクトの価値最大化",
+        "tasks": ["バックログ優先順位付け", "ステークホルダー調整", "受入条件定義", "ROI判断"],
+        "ratio": "チームに1名"
+      },
+      {
+        "name": "スクラムマスター（SM）",
+        "responsibility": "プロセス改善・障害除去",
+        "tasks": ["セレモニーのファシリテーション", "チーム外との調整", "プロセス改善提案", "メトリクス計測"],
+        "ratio": "1-2チームに1名"
+      },
+      {
+        "name": "開発チーム（Dev Team）",
+        "responsibility": "インクリメントのデリバリー",
+        "tasks": ["設計・実装・テスト", "コードレビュー", "技術的意思決定", "見積もり"],
+        "ratio": "5-9名/チーム"
+      }
+    ],
+    "artifacts": [
+      { "name": "プロダクトバックログ", "owner": "PO", "description": "全要求事項の優先順位付きリスト" },
+      { "name": "スプリントバックログ", "owner": "Dev Team", "description": "今スプリントで実行するアイテム＋タスク" },
+      { "name": "インクリメント", "owner": "Dev Team", "description": "動くソフトウェア（Definition of Done達成済み）" }
+    ]
+  },
+  "developmentFlow": {
+    "title": "開発フロー（企画〜リリース）",
+    "description": "アイデアから本番デプロイまでの一連のプロセス。各フェーズで適切なアウトプットを生成する。",
+    "phases": [
+      {
+        "id": 1,
+        "name": "調査・ディスカバリー",
+        "englishName": "Discovery",
+        "duration": "1-2週間",
+        "owner": "PdM / UXリサーチャー",
+        "description": "課題の発見と検証。定量・定性データから機会を特定する。",
+        "activities": [
+          "ユーザーインタビュー（5-8名）",
+          "定量データ分析（GA4, Mixpanel等）",
+          "競合調査・ベンチマーク",
+          "ペインポイント整理",
+          "仮説構築（HMW: How Might We）"
+        ],
+        "outputs": ["ディスカバリーレポート", "ユーザーペルソナ", "ジャーニーマップ"],
+        "tools": ["Miro", "Notion", "Google Analytics", "Hotjar"]
+      },
+      {
+        "id": 2,
+        "name": "要件定義",
+        "englishName": "Requirements Definition",
+        "duration": "1-2週間",
+        "owner": "PdM",
+        "description": "ビジネス要件と機能要件を明確化し、スコープを決定する。",
+        "activities": [
+          "ビジネス要件の文書化",
+          "機能要件・非機能要件の整理",
+          "スコープ定義（MVP vs Full）",
+          "優先順位付け（RICE / MoSCoW）",
+          "ステークホルダーレビュー"
+        ],
+        "outputs": ["要件定義書", "スコープドキュメント", "優先順位マトリクス"],
+        "tools": ["Notion", "Confluence", "Google Docs"]
+      },
+      {
+        "id": 3,
+        "name": "ユーザーストーリーマッピング（USM）",
+        "englishName": "User Story Mapping",
+        "duration": "2-3日",
+        "owner": "PdM / Dev Team",
+        "description": "ユーザーの行動フローを横軸に、ストーリーの詳細度を縦軸にマッピングする。リリース単位の切り方を視覚的に合意する。",
+        "structure": {
+          "backbone": "ユーザーアクティビティ（大きな行動単位）",
+          "walkingSkeleton": "必須ストーリー（MVP）",
+          "releases": ["Release 1（MVP）", "Release 2（追加機能）", "Release 3（最適化）"]
+        },
+        "activities": [
+          "ペルソナのゴール確認",
+          "バックボーン（主要アクティビティ）の洗い出し",
+          "各アクティビティのユーザーストーリー分解",
+          "リリース単位の水平線引き",
+          "MVP（Walking Skeleton）の合意"
+        ],
+        "outputs": ["ユーザーストーリーマップ", "リリースプラン", "MVP定義"],
+        "tools": ["Miro", "StoriesOnBoard", "付箋（オフライン）"]
+      },
+      {
+        "id": 4,
+        "name": "BPMN図（業務プロセスモデリング）",
+        "englishName": "Business Process Modeling",
+        "duration": "2-3日",
+        "owner": "PdM / 業務コンサルタント",
+        "description": "現行業務プロセス（As-Is）と改善後プロセス（To-Be）をBPMN 2.0で可視化する。システム化範囲を明確にする。",
+        "elements": [
+          { "symbol": "○", "name": "開始/終了イベント", "description": "プロセスの始点と終点" },
+          { "symbol": "□", "name": "タスク", "description": "具体的な作業単位" },
+          { "symbol": "◇", "name": "ゲートウェイ", "description": "分岐・合流（排他/並列/包含）" },
+          { "symbol": "→", "name": "シーケンスフロー", "description": "処理の流れ" },
+          { "symbol": "⊞", "name": "レーン/プール", "description": "担当者・部門の区分" }
+        ],
+        "activities": [
+          "As-Is（現行プロセス）のヒアリング・図示",
+          "ボトルネック・ムダの特定",
+          "To-Be（改善プロセス）の設計",
+          "システム化範囲の明確化（人手 vs 自動化）",
+          "ステークホルダーレビュー・合意"
+        ],
+        "outputs": ["As-Is BPMN図", "To-Be BPMN図", "システム化範囲定義書"],
+        "tools": ["Lucidchart", "draw.io", "Camunda Modeler"]
+      },
+      {
+        "id": 5,
+        "name": "PRD（プロダクト要求仕様書）",
+        "englishName": "Product Requirements Document",
+        "duration": "3-5日",
+        "owner": "PdM",
+        "description": "開発チームが実装に着手できるレベルまで要求を具体化した文書。Why / What / Howを網羅する。",
+        "sections": [
+          { "name": "概要・背景", "content": "なぜこの機能が必要か、ビジネスインパクト" },
+          { "name": "ゴール・KPI", "content": "成功指標（DAU, CVR, NPS等）の定量目標" },
+          { "name": "ユーザーストーリー", "content": "As a [who], I want [what], So that [why]" },
+          { "name": "機能要件", "content": "画面仕様、入出力、バリデーションルール" },
+          { "name": "非機能要件", "content": "性能, セキュリティ, アクセシビリティ" },
+          { "name": "画面モックアップ", "content": "Figmaリンク、ワイヤーフレーム" },
+          { "name": "技術的考慮事項", "content": "API設計方針、データモデル、依存関係" },
+          { "name": "リリース計画", "content": "フェーズ分割、スケジュール、ロールアウト戦略" },
+          { "name": "リスク・制約", "content": "技術的リスク、法規制、依存タスク" }
+        ],
+        "outputs": ["PRD文書", "Figmaモック", "API設計書（Draft）"],
+        "tools": ["Notion", "Figma", "Google Docs"]
+      },
+      {
+        "id": 6,
+        "name": "設計",
+        "englishName": "Design & Architecture",
+        "duration": "3-5日",
+        "owner": "テックリード / シニアエンジニア",
+        "description": "システムアーキテクチャ、API設計、DB設計を行い、実装の指針を定める。",
+        "activities": [
+          "システム構成図（アーキテクチャ図）作成",
+          "API設計（OpenAPI / GraphQLスキーマ）",
+          "DB設計（ERD、マイグレーション計画）",
+          "技術選定・PoC（必要に応じて）",
+          "設計レビュー（ADR: Architecture Decision Record）"
+        ],
+        "outputs": ["アーキテクチャ図", "API仕様書", "ER図", "ADR"],
+        "tools": ["draw.io", "dbdiagram.io", "Swagger", "GitHub"]
+      },
+      {
+        "id": 7,
+        "name": "実装",
+        "englishName": "Implementation",
+        "duration": "スプリント単位（2週間×n）",
+        "owner": "Dev Team",
+        "description": "設計に基づきコーディング・ユニットテストを実施。CI/CDパイプラインで継続的にインテグレーション。",
+        "activities": [
+          "フィーチャーブランチでの開発",
+          "ユニットテスト・インテグレーションテスト作成",
+          "プルリクエスト・コードレビュー",
+          "CI（自動テスト・Lint・型チェック）通過",
+          "ステージング環境へのデプロイ"
+        ],
+        "practices": [
+          { "name": "ブランチ戦略", "detail": "GitHub Flow（main + feature branches）" },
+          { "name": "コードレビュー", "detail": "PR必須、Approve 2名以上、自動チェック通過" },
+          { "name": "テスト", "detail": "ユニット80%+ / インテグレーション / E2E" },
+          { "name": "CI/CD", "detail": "GitHub Actions → ステージング自動デプロイ" }
+        ],
+        "outputs": ["動くコード", "テストスイート", "CI/CDパイプライン"],
+        "tools": ["VS Code", "GitHub", "GitHub Actions", "Docker"]
+      },
+      {
+        "id": 8,
+        "name": "QA・テスト",
+        "englishName": "Quality Assurance",
+        "duration": "3-5日",
+        "owner": "QAエンジニア",
+        "description": "品質ゲートを通過させるための総合テスト。自動テストと手動テストを組み合わせる。",
+        "activities": [
+          "テスト計画書作成",
+          "テストケース作成・実行",
+          "探索的テスト（Exploratory Testing）",
+          "パフォーマンステスト（k6, Lighthouse）",
+          "セキュリティテスト（OWASP Top 10）",
+          "バグ報告・修正・再テスト"
+        ],
+        "outputs": ["テスト結果レポート", "バグチケット", "品質メトリクス"],
+        "tools": ["Playwright", "Jest", "k6", "Lighthouse", "OWASP ZAP"]
+      },
+      {
+        "id": 9,
+        "name": "リリース・デプロイ",
+        "englishName": "Release & Deploy",
+        "duration": "1日",
+        "owner": "SRE / DevOps",
+        "description": "本番環境へのデプロイ。段階的ロールアウトとモニタリングで安全にリリースする。",
+        "activities": [
+          "リリースノート作成",
+          "本番デプロイ（Blue-Green or カナリア）",
+          "フィーチャーフラグ管理",
+          "ロールバック手順の確認",
+          "モニタリング・アラート監視"
+        ],
+        "strategies": [
+          { "name": "Blue-Green", "description": "2環境切り替えによるゼロダウンタイムデプロイ", "risk": "低" },
+          { "name": "カナリアリリース", "description": "全体の5-10%にまずリリースし、問題なければ拡大", "risk": "最低" },
+          { "name": "フィーチャーフラグ", "description": "コードはデプロイ済み、フラグで機能のON/OFFを制御", "risk": "低" }
+        ],
+        "outputs": ["リリースノート", "デプロイ完了報告", "モニタリングダッシュボード"],
+        "tools": ["AWS CodeDeploy", "LaunchDarkly", "Datadog", "PagerDuty"]
+      }
+    ]
+  },
+  "engineeringRoles": {
+    "title": "エンジニアリング職種",
+    "description": "SaaS開発に必要な主要エンジニアリング職種と、それぞれの専門領域・技術スタック・日常業務。",
+    "roles": [
+      {
+        "name": "フロントエンドエンジニア",
+        "icon": "Monitor",
+        "color": "#3B82F6",
+        "description": "ユーザーが直接触れるUI/UXを構築する。パフォーマンスとアクセシビリティを両立させる。",
+        "techStack": {
+          "language": ["TypeScript", "JavaScript"],
+          "framework": ["React", "Next.js", "Vue.js"],
+          "styling": ["Tailwind CSS", "CSS Modules", "Styled Components"],
+          "stateManagement": ["Zustand", "Jotai", "React Query"],
+          "testing": ["Jest", "React Testing Library", "Playwright", "Storybook"],
+          "build": ["Vite", "webpack", "Turbopack"]
+        },
+        "dailyTasks": [
+          "UIコンポーネント実装・Storybookカタログ更新",
+          "API連携（REST / GraphQL）とデータバインディング",
+          "レスポンシブデザイン対応（モバイル↔デスクトップ）",
+          "パフォーマンス最適化（Lighthouse 90+目標）",
+          "コードレビュー（PR レビュー 2-3件/日）",
+          "デザイナーとのUI調整（Figma⇔実装の差分解消）"
+        ],
+        "kpis": [
+          { "name": "Lighthouse Score", "target": "90+" },
+          { "name": "Core Web Vitals (LCP)", "target": "< 2.5s" },
+          { "name": "コンポーネントカバレッジ", "target": "80%+" },
+          { "name": "バンドルサイズ増加率", "target": "< 5%/月" }
+        ]
+      },
+      {
+        "name": "バックエンドエンジニア",
+        "icon": "Server",
+        "color": "#10B981",
+        "description": "ビジネスロジック、API設計、データベース設計を担う。スケーラビリティとセキュリティが最重要。",
+        "techStack": {
+          "language": ["Go", "Python", "TypeScript (Node.js)", "Java/Kotlin"],
+          "framework": ["Gin", "FastAPI", "NestJS", "Spring Boot"],
+          "database": ["PostgreSQL", "MySQL", "Redis", "DynamoDB"],
+          "messageQueue": ["SQS", "Kafka", "RabbitMQ"],
+          "api": ["REST (OpenAPI)", "GraphQL", "gRPC"],
+          "testing": ["Go test", "pytest", "JUnit"]
+        },
+        "dailyTasks": [
+          "API設計・実装（エンドポイント追加・修正）",
+          "DBマイグレーション・クエリ最適化",
+          "ビジネスロジック実装・ドメインモデリング",
+          "API テスト・負荷テスト",
+          "セキュリティ対策（認証・認可・入力検証）",
+          "コードレビュー・設計レビュー参加"
+        ],
+        "kpis": [
+          { "name": "API レスポンスタイム (p95)", "target": "< 200ms" },
+          { "name": "API可用性", "target": "99.9%+" },
+          { "name": "テストカバレッジ", "target": "85%+" },
+          { "name": "セキュリティ脆弱性", "target": "Critical: 0" }
+        ]
+      },
+      {
+        "name": "QAエンジニア",
+        "icon": "ShieldCheck",
+        "color": "#F59E0B",
+        "description": "プロダクト品質の番人。テスト戦略の策定から自動化まで、品質を多角的に担保する。",
+        "techStack": {
+          "automation": ["Playwright", "Cypress", "Selenium"],
+          "apiTesting": ["Postman", "REST Assured", "k6"],
+          "performance": ["k6", "JMeter", "Lighthouse"],
+          "security": ["OWASP ZAP", "Burp Suite"],
+          "management": ["TestRail", "Zephyr", "Qase"],
+          "ci": ["GitHub Actions", "Jenkins"]
+        },
+        "dailyTasks": [
+          "テストケース設計・レビュー",
+          "手動テスト実行（新機能・リグレッション）",
+          "E2Eテスト自動化スクリプト作成・保守",
+          "バグ報告・再現手順の文書化",
+          "テストカバレッジ分析・品質メトリクスレポート",
+          "開発チームとの品質基準すり合わせ"
+        ],
+        "kpis": [
+          { "name": "バグ検出率（本番前）", "target": "95%+" },
+          { "name": "E2Eテスト自動化率", "target": "70%+" },
+          { "name": "リグレッションバグ件数", "target": "< 3件/スプリント" },
+          { "name": "テスト実行時間", "target": "< 30分（CI）" }
+        ]
+      },
+      {
+        "name": "インフラ / SREエンジニア",
+        "icon": "Cloud",
+        "color": "#8B5CF6",
+        "description": "サービスの信頼性・スケーラビリティ・セキュリティを担保するインフラストラクチャを設計・運用する。",
+        "techStack": {
+          "cloud": ["AWS", "GCP", "Azure"],
+          "iac": ["Terraform", "AWS CDK", "Pulumi"],
+          "container": ["Docker", "Kubernetes (EKS)", "ECS Fargate"],
+          "cicd": ["GitHub Actions", "AWS CodePipeline", "ArgoCD"],
+          "monitoring": ["Datadog", "CloudWatch", "Grafana", "PagerDuty"],
+          "security": ["AWS IAM", "GuardDuty", "WAF", "Vault"]
+        },
+        "dailyTasks": [
+          "インフラ監視・アラート対応",
+          "IaCによるインフラ構成管理",
+          "CI/CDパイプライン構築・改善",
+          "コスト最適化（Reserved Instance, Savings Plans）",
+          "セキュリティパッチ適用・脆弱性対応",
+          "障害対応・ポストモーテム作成"
+        ],
+        "kpis": [
+          { "name": "サービス稼働率（SLA）", "target": "99.95%+" },
+          { "name": "MTTR（平均復旧時間）", "target": "< 30分" },
+          { "name": "インフラコスト/売上比率", "target": "< 15%" },
+          { "name": "デプロイ成功率", "target": "99%+" }
+        ]
+      }
+    ]
+  },
+  "architecture": {
+    "title": "アーキテクチャ設計",
+    "description": "SaaS プロダクトの典型的なシステム構成。AWS を中心としたクラウドネイティブアーキテクチャ。",
+    "patterns": [
+      {
+        "name": "モノリス → モジュラーモノリス",
+        "phase": "初期〜Series A",
+        "description": "単一アプリケーションで素早くMVPを構築。モジュール境界を意識して将来の分離に備える。",
+        "pros": ["開発速度が速い", "運用が簡単", "チーム間調整が少ない"],
+        "cons": ["スケール限界がある", "デプロイが全体影響", "技術的負債が蓄積しやすい"],
+        "bestFor": "エンジニア10名以下、PMF探索フェーズ"
+      },
+      {
+        "name": "マイクロサービス",
+        "phase": "Series B〜",
+        "description": "ドメイン境界に沿ってサービスを分割。独立してデプロイ・スケール可能にする。",
+        "pros": ["独立デプロイ", "技術選定の自由度", "チーム自律性"],
+        "cons": ["運用複雑性", "分散トランザクション", "ネットワーク障害リスク"],
+        "bestFor": "エンジニア30名以上、明確なドメイン境界がある"
+      }
+    ],
+    "awsArchitecture": {
+      "title": "AWS 構成例（SaaS プロダクト）",
+      "layers": [
+        {
+          "name": "CDN / Edge",
+          "services": [
+            { "service": "CloudFront", "purpose": "静的アセット配信・APIキャッシュ", "icon": "🌐" },
+            { "service": "Route 53", "purpose": "DNS管理・ヘルスチェック", "icon": "🔗" },
+            { "service": "WAF", "purpose": "Webアプリケーションファイアウォール", "icon": "🛡️" }
+          ]
+        },
+        {
+          "name": "コンピュート",
+          "services": [
+            { "service": "ECS Fargate", "purpose": "コンテナ実行環境（サーバーレス）", "icon": "📦" },
+            { "service": "Lambda", "purpose": "イベント駆動処理・バッチ", "icon": "⚡" },
+            { "service": "ALB", "purpose": "ロードバランシング・SSL終端", "icon": "⚖️" }
+          ]
+        },
+        {
+          "name": "データ",
+          "services": [
+            { "service": "RDS (Aurora PostgreSQL)", "purpose": "メインDB（マルチAZ）", "icon": "🗄️" },
+            { "service": "ElastiCache (Redis)", "purpose": "セッション・キャッシュ", "icon": "⚡" },
+            { "service": "S3", "purpose": "ファイルストレージ・バックアップ", "icon": "📁" },
+            { "service": "DynamoDB", "purpose": "高スループット Key-Value", "icon": "🔑" }
+          ]
+        },
+        {
+          "name": "メッセージング / 非同期",
+          "services": [
+            { "service": "SQS", "purpose": "メッセージキュー（非同期処理）", "icon": "📨" },
+            { "service": "SNS", "purpose": "Pub/Sub通知", "icon": "📢" },
+            { "service": "EventBridge", "purpose": "イベントバス（サービス間連携）", "icon": "🔀" }
+          ]
+        },
+        {
+          "name": "監視 / セキュリティ",
+          "services": [
+            { "service": "CloudWatch", "purpose": "メトリクス・ログ・アラート", "icon": "📊" },
+            { "service": "X-Ray", "purpose": "分散トレーシング", "icon": "🔍" },
+            { "service": "GuardDuty", "purpose": "脅威検出", "icon": "🔒" },
+            { "service": "Secrets Manager", "purpose": "シークレット管理", "icon": "🔐" }
+          ]
+        },
+        {
+          "name": "CI/CD",
+          "services": [
+            { "service": "CodePipeline", "purpose": "デプロイパイプライン", "icon": "🔄" },
+            { "service": "ECR", "purpose": "コンテナレジストリ", "icon": "🐳" },
+            { "service": "CodeBuild", "purpose": "ビルド環境", "icon": "🏗️" }
+          ]
+        }
+      ],
+      "costOptimization": [
+        { "strategy": "Reserved Instances / Savings Plans", "saving": "最大72%削減", "target": "RDS, ElastiCache" },
+        { "strategy": "Fargate Spot", "saving": "最大70%削減", "target": "非クリティカルなバッチ処理" },
+        { "strategy": "S3 Intelligent-Tiering", "saving": "最大40%削減", "target": "アクセス頻度が変動するオブジェクト" },
+        { "strategy": "Auto Scaling", "saving": "需要に応じて最適化", "target": "ECS タスク数" }
+      ]
+    },
+    "securityLayers": [
+      { "layer": "ネットワーク", "measures": ["VPC分離", "Security Group", "NACLs", "PrivateLink"] },
+      { "layer": "アプリケーション", "measures": ["WAF", "CORS設定", "CSP", "入力バリデーション"] },
+      { "layer": "データ", "measures": ["暗号化（AES-256）", "TLS 1.3", "KMS鍵管理", "データマスキング"] },
+      { "layer": "認証・認可", "measures": ["OAuth 2.0 / OIDC", "MFA", "RBAC", "JWTトークン管理"] },
+      { "layer": "監査", "measures": ["CloudTrail", "アクセスログ", "変更履歴", "SOC2対応"] }
+    ]
+  }
+}

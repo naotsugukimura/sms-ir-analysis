@@ -50,6 +50,15 @@ export const NAV_ITEMS: NavItem[] = [
     ],
   },
   {
+    href: "/org/rd",
+    label: "SaaS組織",
+    icon: "Cog",
+    children: [
+      { href: "/org/rd", label: "R&D（開発）" },
+      { href: "/org/ga", label: "G&A（管理）" },
+    ],
+  },
+  {
     href: "/saas-model",
     label: "SaaSモデル深掘り",
     icon: "Microscope",

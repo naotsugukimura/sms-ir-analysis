@@ -1,0 +1,412 @@
+{
+  "overview": {
+    "title": "G&A（General & Administrative）",
+    "subtitle": "管理部門の全体像",
+    "description": "SaaS企業のG&A部門は、経営基盤を支えるバックオフィス機能の総称。経理・財務、人事、法務、総務、経営企画の5機能で構成され、事業のスケールに合わせて段階的に専門化する。",
+    "headcountRatio": "SaaS企業全体の10-20%がG&A人員（効率化が進んだ企業で10%未満）",
+    "costStructure": {
+      "label": "G&Aコスト構成",
+      "items": [
+        { "category": "人件費", "ratio": "50-60%", "detail": "経理・人事・法務・総務スタッフ給与" },
+        { "category": "オフィス・設備費", "ratio": "15-20%", "detail": "賃料、光熱費、備品" },
+        { "category": "外部専門家費用", "ratio": "10-15%", "detail": "監査法人、顧問弁護士、社労士、税理士" },
+        { "category": "SaaS・ツール費", "ratio": "5-10%", "detail": "freee、SmartHR、Slack、Google Workspace等" },
+        { "category": "保険・福利厚生", "ratio": "5-10%", "detail": "社会保険、福利厚生サービス" }
+      ]
+    },
+    "keyMetrics": [
+      { "name": "G&A比率（対売上）", "target": "15-20%", "elite": "10%以下" },
+      { "name": "従業員一人当たりG&Aコスト", "target": "年間120万円以下", "elite": "年間80万円以下" },
+      { "name": "月次決算クローズ日数", "target": "10営業日以内", "elite": "5営業日以内" },
+      { "name": "採用リードタイム", "target": "45日以内", "elite": "30日以内" }
+    ]
+  },
+  "finance": {
+    "title": "経理・財務（Finance & Accounting）",
+    "icon": "Calculator",
+    "color": "#10B981",
+    "description": "会社のお金の流れを正確に記録・管理し、経営判断に必要な数値を提供する。SaaS特有のMRR/ARR計算、収益認識基準への対応が重要。",
+    "subFunctions": [
+      {
+        "name": "経理（Accounting）",
+        "description": "日常の会計処理から決算業務まで、財務情報の正確な記録と報告を行う。",
+        "dailyTasks": [
+          "請求書発行・売掛金管理（SaaS月額課金の自動請求）",
+          "仕訳入力・勘定科目管理",
+          "経費精算の承認・処理",
+          "入金消込（銀行API連携で自動化）",
+          "買掛金管理・支払い処理"
+        ],
+        "monthlyTasks": [
+          "月次決算（PL/BS/CF作成）",
+          "MRR/ARR/Churn Rate の算出・レポート",
+          "部門別予実管理レポート作成",
+          "固定資産管理・減価償却計算",
+          "税金関連（源泉徴収、消費税申告準備）"
+        ],
+        "yearlyTasks": [
+          "年次決算・財務諸表作成",
+          "監査法人対応（IPO準備企業は必須）",
+          "法人税申告・税務調査対応",
+          "収益認識基準（ASC 606 / IFRS 15）対応",
+          "内部統制（J-SOX）整備・運用"
+        ],
+        "tools": ["freee会計", "マネーフォワード", "SAP", "Oracle NetSuite"],
+        "saasSpecific": [
+          "MRR認識ルール（月額按分、前受収益の管理）",
+          "ARR計算（年間契約の繰延収益処理）",
+          "マルチエレメントアレンジメント（複数サービスの収益配分）",
+          "SaaS KPIレポート（投資家向け）",
+          "Deferred Revenue（繰延収益）の正確な管理"
+        ]
+      },
+      {
+        "name": "財務（Treasury / FP&A）",
+        "description": "資金調達、資金管理、予算策定、財務分析を通じて経営の意思決定を支援する。",
+        "dailyTasks": [
+          "キャッシュフロー管理（日次残高確認）",
+          "為替リスク管理（海外事業がある場合）",
+          "資金繰り表の更新"
+        ],
+        "monthlyTasks": [
+          "予実分析レポート作成（Budget vs Actual）",
+          "キャッシュフロー予測（ランウェイ計算）",
+          "KPIダッシュボード更新（MRR, ARR, NRR, CAC等）",
+          "部門別コスト分析",
+          "取締役会資料作成"
+        ],
+        "yearlyTasks": [
+          "年間予算策定（ボトムアップ + トップダウン）",
+          "中期経営計画の財務モデル作成",
+          "資金調達（エクイティ / デット）の検討・実行",
+          "バリュエーション分析（PSR, ARRマルチプル）"
+        ],
+        "tools": ["Loglass", "Spreadsheet (予算モデル)", "Tableau", "Looker"],
+        "saasSpecific": [
+          "SaaS Unit Economics モデリング（LTV/CAC比率）",
+          "コホート分析によるChurn予測",
+          "ARR成長率 vs Burn Rate のバランス（Rule of 40）",
+          "ランウェイ計算（残存キャッシュ ÷ 月次バーンレート）",
+          "投資家向けKPIパッケージ作成"
+        ]
+      }
+    ],
+    "kpis": [
+      { "name": "月次決算クローズ", "target": "翌月10営業日以内" },
+      { "name": "請求エラー率", "target": "0.1%以下" },
+      { "name": "入金消込自動化率", "target": "90%以上" },
+      { "name": "予実差異率", "target": "±5%以内" },
+      { "name": "財務レポート作成時間", "target": "3営業日以内" }
+    ]
+  },
+  "humanResources": {
+    "title": "人事（Human Resources）",
+    "icon": "Users",
+    "color": "#3B82F6",
+    "description": "SaaS企業の最重要資産である「人」の採用・育成・評価・定着を担う。高成長フェーズでは特に採用と組織設計が経営課題の中心になる。",
+    "subFunctions": [
+      {
+        "name": "採用（Recruiting）",
+        "description": "事業計画に基づく採用計画の策定から、候補者の発掘・選考・入社までを一貫して管理する。",
+        "dailyTasks": [
+          "求人媒体・スカウト管理（ビズリーチ, Wantedly, Green等）",
+          "候補者との日程調整・コミュニケーション",
+          "書類選考・スクリーニング面談",
+          "エージェントとのリレーション管理",
+          "採用パイプライン進捗管理"
+        ],
+        "processes": [
+          { "step": 1, "name": "採用計画策定", "detail": "事業計画→必要人員数→ポジション定義→JD作成" },
+          { "step": 2, "name": "母集団形成", "detail": "媒体掲載、ダイレクトリクルーティング、リファラル、エージェント" },
+          { "step": 3, "name": "選考プロセス", "detail": "書類選考→カジュアル面談→1次面接→技術課題→2次面接→最終面接" },
+          { "step": 4, "name": "オファー・クロージング", "detail": "条件提示、カウンターオファー対応、入社意思確認" },
+          { "step": 5, "name": "オンボーディング", "detail": "入社前フォロー→初日オリエン→30/60/90日プラン→定着フォロー" }
+        ],
+        "channels": [
+          { "channel": "ダイレクトリクルーティング", "ratio": "30-40%", "cost": "低", "quality": "高" },
+          { "channel": "リファラル（社員紹介）", "ratio": "20-30%", "cost": "最低", "quality": "最高" },
+          { "channel": "転職エージェント", "ratio": "20-30%", "cost": "高（年収35%）", "quality": "中-高" },
+          { "channel": "求人媒体", "ratio": "10-20%", "cost": "中", "quality": "中" }
+        ]
+      },
+      {
+        "name": "人事制度・評価（HR Operations）",
+        "description": "等級制度・評価制度・報酬制度の3つの柱を設計・運用する。",
+        "frameworks": [
+          {
+            "name": "等級制度（グレード）",
+            "description": "役割と期待値を段階的に定義",
+            "levels": [
+              { "grade": "J1-J2", "title": "ジュニア", "description": "定型業務を自律的に遂行" },
+              { "grade": "M1-M2", "title": "ミドル", "description": "非定型業務を自走、後輩指導" },
+              { "grade": "S1-S2", "title": "シニア", "description": "チーム成果を牽引、技術的意思決定" },
+              { "grade": "L1", "title": "リード/マネージャー", "description": "組織目標達成、メンバー育成" },
+              { "grade": "D1", "title": "ディレクター", "description": "部門戦略策定、複数チーム統括" },
+              { "grade": "VP", "title": "VP", "description": "全社戦略への貢献、経営参画" }
+            ]
+          },
+          {
+            "name": "評価制度",
+            "description": "成果（What）と行動（How）の2軸で評価",
+            "cycle": "半期（4月/10月）",
+            "process": [
+              "目標設定（OKR / MBO）",
+              "中間レビュー（1on1ベース）",
+              "自己評価記入",
+              "上長評価・フィードバック面談",
+              "キャリブレーション（評価調整会議）",
+              "評価確定・報酬反映"
+            ]
+          },
+          {
+            "name": "報酬制度",
+            "description": "市場水準を踏まえた競争力のある報酬パッケージ",
+            "components": [
+              { "element": "基本給", "description": "等級に応じたベース給与（市場50-75%タイル）" },
+              { "element": "賞与", "description": "会社業績×個人評価で変動（0-4ヶ月）" },
+              { "element": "ストックオプション", "description": "4年ベスティング（1年クリフ）" },
+              { "element": "福利厚生", "description": "リモートワーク手当、学習支援、健康支援" }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "組織開発（Organization Development）",
+        "description": "組織の健全性を維持し、企業文化を醸成する。",
+        "activities": [
+          "エンゲージメントサーベイ（四半期、Wevox等）",
+          "1on1制度の設計・浸透",
+          "マネージャー研修・リーダーシップ開発",
+          "バリュー浸透プログラム",
+          "ダイバーシティ&インクルージョン推進"
+        ]
+      }
+    ],
+    "tools": ["SmartHR", "HERP", "HRMOS", "Wevox", "カオナビ", "Slack"],
+    "kpis": [
+      { "name": "採用充足率", "target": "90%以上" },
+      { "name": "採用リードタイム", "target": "45日以内" },
+      { "name": "採用コスト/人", "target": "100万円以下" },
+      { "name": "離職率（年間）", "target": "10%以下" },
+      { "name": "エンゲージメントスコア", "target": "70以上" },
+      { "name": "リファラル採用比率", "target": "30%以上" }
+    ]
+  },
+  "legal": {
+    "title": "法務（Legal & Compliance）",
+    "icon": "Scale",
+    "color": "#F59E0B",
+    "description": "契約審査・知的財産・コンプライアンスを通じて、事業リスクを最小化する。SaaS特有のサブスクリプション契約、利用規約、データ保護が中心。",
+    "subFunctions": [
+      {
+        "name": "契約法務",
+        "description": "顧客・パートナー・ベンダーとの契約を審査・管理する。",
+        "dailyTasks": [
+          "契約書レビュー（NDA, 業務委託, SaaS利用規約）",
+          "契約交渉のサポート（営業同行含む）",
+          "契約テンプレートの整備・更新",
+          "電子契約管理（CloudSign, DocuSign）",
+          "契約台帳管理・更新期限アラート"
+        ],
+        "saasContracts": [
+          { "type": "SaaS利用規約", "description": "サービス提供条件、SLA、責任制限", "frequency": "年1回見直し" },
+          { "type": "プライバシーポリシー", "description": "個人情報取扱方針、Cookie同意", "frequency": "法改正時" },
+          { "type": "データ処理契約（DPA）", "description": "個人データの委託処理条件", "frequency": "顧客要請時" },
+          { "type": "SLA（サービスレベル合意）", "description": "可用性99.9%等の品質保証", "frequency": "契約締結時" },
+          { "type": "パートナー契約", "description": "販売代理店、API連携パートナー", "frequency": "随時" }
+        ]
+      },
+      {
+        "name": "コンプライアンス",
+        "description": "法令遵守体制を整備し、事業リスクを予防する。",
+        "areas": [
+          { "area": "個人情報保護", "laws": ["個人情報保護法", "GDPR（EU展開時）"], "actions": ["プライバシー影響評価", "データマッピング", "漏洩対応手順整備"] },
+          { "area": "労働法", "laws": ["労働基準法", "労働安全衛生法"], "actions": ["36協定管理", "残業時間モニタリング", "ハラスメント防止"] },
+          { "area": "下請法", "laws": ["下請代金支払遅延等防止法"], "actions": ["発注書面交付", "支払期日管理", "下請先管理台帳"] },
+          { "area": "知的財産", "laws": ["特許法", "商標法", "著作権法"], "actions": ["特許出願", "商標登録", "OSSライセンス管理"] }
+        ]
+      },
+      {
+        "name": "IPO準備法務（成長フェーズ）",
+        "description": "上場に向けた法的整備を行う。",
+        "tasks": [
+          "定款・規程類の整備",
+          "取締役会・株主総会の運営",
+          "コーポレートガバナンス体制構築",
+          "内部通報制度の整備",
+          "反社チェック体制の構築"
+        ]
+      }
+    ],
+    "tools": ["CloudSign", "LegalForce", "MNTSQ", "ContractS CLM"],
+    "kpis": [
+      { "name": "契約審査リードタイム", "target": "3営業日以内" },
+      { "name": "法務相談対応率", "target": "24時間以内初回回答" },
+      { "name": "コンプライアンス研修受講率", "target": "100%" },
+      { "name": "重大法務リスク件数", "target": "0件" }
+    ]
+  },
+  "generalAffairs": {
+    "title": "総務・情報システム（General Affairs & IT）",
+    "icon": "Building",
+    "color": "#8B5CF6",
+    "description": "オフィス環境整備・ファシリティ管理からコーポレートIT・情報セキュリティまで、社員の生産的な働く環境を整える。",
+    "subFunctions": [
+      {
+        "name": "総務（General Affairs）",
+        "description": "オフィス環境・備品・庶務全般を管理し、社員の生産性を支える。",
+        "dailyTasks": [
+          "郵便物・宅配の受取・配布",
+          "来客対応・会議室管理",
+          "備品発注・在庫管理",
+          "社内問い合わせ対応（ヘルプデスク）",
+          "入退社手続きのオフィス関連（ID発行、PC準備等）"
+        ],
+        "monthlyTasks": [
+          "オフィス設備点検・修繕手配",
+          "請求書処理（賃料、光熱費、通信費等）",
+          "社内イベント企画・運営",
+          "BCP（事業継続計画）の更新",
+          "防災・避難訓練の計画"
+        ],
+        "yearlyTasks": [
+          "オフィス移転・増床の検討",
+          "固定資産棚卸し",
+          "保険契約の見直し",
+          "株主総会の事務局対応"
+        ]
+      },
+      {
+        "name": "情報システム（Corporate IT / 情シス）",
+        "description": "社内ITインフラの構築・運用、SaaS管理、情報セキュリティを担う。プロダクト開発のインフラ（SRE）とは別。",
+        "dailyTasks": [
+          "社内ITヘルプデスク（PCトラブル、アカウント問題等）",
+          "アカウント発行・権限管理（IdP: Okta, Google Workspace）",
+          "SaaSツールのライセンス管理",
+          "セキュリティインシデント対応",
+          "VPN・ネットワーク監視"
+        ],
+        "managedTools": {
+          "communication": ["Slack", "Microsoft Teams", "Zoom"],
+          "productivity": ["Google Workspace", "Notion", "Confluence"],
+          "security": ["Okta (SSO/IdP)", "CrowdStrike", "Jamf"],
+          "device": ["MDM (モバイルデバイス管理)", "PC資産管理"],
+          "network": ["VPN (Tailscale, Cloudflare)", "Wi-Fi管理"]
+        },
+        "securityFramework": [
+          { "area": "アクセス管理", "measures": ["SSO/MFA必須", "最小権限原則", "定期アクセスレビュー"] },
+          { "area": "端末管理", "measures": ["ディスク暗号化", "リモートワイプ", "OS自動更新"] },
+          { "area": "データ保護", "measures": ["DLP（データ漏洩防止）", "メール暗号化", "USB制限"] },
+          { "area": "教育・啓発", "measures": ["フィッシング訓練", "セキュリティ研修", "インシデント報告体制"] }
+        ]
+      }
+    ],
+    "tools": ["Okta", "Jamf", "Google Workspace", "Slack", "ServiceNow"],
+    "kpis": [
+      { "name": "IT問い合わせ解決率（当日）", "target": "80%以上" },
+      { "name": "セキュリティインシデント件数", "target": "0件/月" },
+      { "name": "SaaSツール利用率", "target": "90%以上" },
+      { "name": "ISMS認証維持", "target": "更新審査合格" }
+    ]
+  },
+  "corporatePlanning": {
+    "title": "経営企画（Corporate Planning / Strategy）",
+    "icon": "Compass",
+    "color": "#EF4444",
+    "description": "経営戦略の策定・実行管理、M&A、新規事業開発を通じて、企業価値の最大化を目指す。CEOの右腕として全社横断的に機能する。",
+    "subFunctions": [
+      {
+        "name": "戦略企画",
+        "description": "中長期の経営戦略を策定し、全社の方向性を定める。",
+        "activities": [
+          "中期経営計画（3-5年）の策定",
+          "年度事業計画の策定・部門展開",
+          "市場調査・競合分析（マクロ環境分析）",
+          "取締役会・経営会議の資料作成・運営",
+          "KPI設計・進捗モニタリング"
+        ],
+        "frameworks": [
+          { "name": "3C分析", "purpose": "市場・競合・自社の俯瞰" },
+          { "name": "PEST分析", "purpose": "マクロ環境変化の把握" },
+          { "name": "SWOT分析", "purpose": "戦略オプションの導出" },
+          { "name": "バリューチェーン分析", "purpose": "競争優位の源泉特定" },
+          { "name": "OKR/KPIツリー", "purpose": "全社目標の部門展開" }
+        ]
+      },
+      {
+        "name": "M&A・アライアンス",
+        "description": "非有機的成長（Inorganic Growth）を通じて事業を拡大する。",
+        "process": [
+          { "phase": "ソーシング", "detail": "ターゲットリスト作成、FA（フィナンシャルアドバイザー）選定" },
+          { "phase": "初期検討", "detail": "NDA締結、初期的企業価値評価、シナジー仮説構築" },
+          { "phase": "デューデリジェンス", "detail": "財務DD、法務DD、ビジネスDD、IT DD" },
+          { "phase": "バリュエーション", "detail": "DCF法、類似企業比較法、類似取引比較法" },
+          { "phase": "交渉・契約", "detail": "LOI、SPA（株式譲渡契約）、クロージング" },
+          { "phase": "PMI", "detail": "統合計画策定、100日プラン、シナジー実現" }
+        ]
+      },
+      {
+        "name": "IR（Investor Relations）",
+        "description": "投資家・アナリストとのコミュニケーションを通じて、適正な企業価値評価を実現する。",
+        "activities": [
+          "決算説明資料の作成（四半期）",
+          "決算説明会の開催・運営",
+          "投資家面談（1on1ミーティング）",
+          "適時開示（TDnet）対応",
+          "IRサイトの更新・管理",
+          "アナリストレポートのモニタリング"
+        ],
+        "materials": [
+          { "name": "決算短信", "frequency": "四半期", "audience": "市場全体" },
+          { "name": "決算説明資料", "frequency": "四半期", "audience": "投資家・アナリスト" },
+          { "name": "有価証券報告書", "frequency": "年次", "audience": "規制当局・市場" },
+          { "name": "統合報告書", "frequency": "年次", "audience": "長期投資家" },
+          { "name": "コーポレートガバナンス報告書", "frequency": "年次", "audience": "東証" }
+        ]
+      }
+    ],
+    "tools": ["Loglass", "SPEEDA", "Bloomberg Terminal", "IR-navi", "TDnet"],
+    "kpis": [
+      { "name": "中計達成率", "target": "80%以上" },
+      { "name": "投資家面談数", "target": "年間200件以上" },
+      { "name": "適時開示ミス", "target": "0件" },
+      { "name": "M&A案件検討数", "target": "年間10件以上" }
+    ]
+  },
+  "crossFunctional": {
+    "title": "G&A部門間連携",
+    "description": "G&A各部門は独立して機能しつつ、重要な業務プロセスで密に連携する。",
+    "workflows": [
+      {
+        "name": "入社プロセス",
+        "steps": [
+          { "dept": "人事", "action": "内定・オファーレター発行" },
+          { "dept": "法務", "action": "雇用契約書作成・NDA締結" },
+          { "dept": "総務/情シス", "action": "PC手配・アカウント発行・座席準備" },
+          { "dept": "経理", "action": "給与登録・社会保険手続き" },
+          { "dept": "人事", "action": "オンボーディングプログラム開始" }
+        ]
+      },
+      {
+        "name": "月次決算プロセス",
+        "steps": [
+          { "dept": "経理", "action": "売上データ集計（SaaS MRR確定）" },
+          { "dept": "経理", "action": "費用計上・発生主義調整" },
+          { "dept": "財務/FP&A", "action": "予実差異分析・レポート作成" },
+          { "dept": "経営企画", "action": "KPIダッシュボード更新" },
+          { "dept": "経営企画", "action": "経営会議へ報告" }
+        ]
+      },
+      {
+        "name": "コンプライアンス対応",
+        "steps": [
+          { "dept": "法務", "action": "法改正モニタリング・影響評価" },
+          { "dept": "人事", "action": "研修プログラム更新・全社展開" },
+          { "dept": "情シス", "action": "システム対応（データ保護等）" },
+          { "dept": "総務", "action": "規程改定・周知" },
+          { "dept": "経営企画", "action": "取締役会報告" }
+        ]
+      }
+    ]
+  }
+}
