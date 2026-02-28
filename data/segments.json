@@ -1,0 +1,64 @@
+[
+  {
+    "id": "career",
+    "name": "キャリア事業",
+    "nameEn": "Career / Staffing",
+    "color": "#3B82F6",
+    "icon": "Users",
+    "description": "医療・介護・福祉業界に特化した人材紹介サービス。看護師、介護職、理学療法士等の専門職の転職支援を行い、人手不足に悩む医療機関・介護施設と求職者をマッチングする。業界最大級のデータベースと専門コンサルタントによる高いマッチング精度が強み。",
+    "revenueShareLatest": 0.485,
+    "subServices": [
+      { "name": "ナース人材バンク", "description": "看護師専門の転職支援サービス。業界シェアNo.1", "launchYear": 2003, "status": "core" },
+      { "name": "カイゴジョブ", "description": "介護職専門の求人・転職支援サービス", "launchYear": 2005, "status": "core" },
+      { "name": "コメディカルドットコム", "description": "理学療法士・作業療法士等のコメディカル人材紹介", "launchYear": 2008, "status": "growing" },
+      { "name": "障害福祉人材紹介", "description": "障害福祉サービス事業所向けの人材紹介", "launchYear": 2020, "status": "new" }
+    ],
+    "sourceRef": "fy25-q3-presentation"
+  },
+  {
+    "id": "care-saas",
+    "name": "介護・障害福祉SaaS",
+    "nameEn": "Care / Disability Welfare SaaS",
+    "color": "#10B981",
+    "icon": "Monitor",
+    "description": "介護・障害福祉事業者向けの経営支援プラットフォーム「カイポケ」を中心としたSaaS事業。介護保険・障害福祉の報酬請求、利用者管理、記録業務、経営分析をワンストップで提供。BPOサービスとの組み合わせで事業者の業務負荷を包括的に軽減する。",
+    "revenueShareLatest": 0.287,
+    "subServices": [
+      { "name": "カイポケ（介護）", "description": "介護事業所向けSaaS。請求・記録・経営管理", "launchYear": 2011, "status": "core" },
+      { "name": "カイポケ（障害福祉）", "description": "障害福祉サービス事業所向けSaaS", "launchYear": 2020, "status": "growing" },
+      { "name": "BPOサービス", "description": "請求業務代行・記録代行等のアウトソーシング", "launchYear": 2023, "status": "new" },
+      { "name": "ファクタリング", "description": "介護報酬の早期資金化サービス", "launchYear": 2018, "status": "growing" }
+    ],
+    "sourceRef": "fy25-q3-presentation"
+  },
+  {
+    "id": "healthcare",
+    "name": "ヘルスケア",
+    "nameEn": "Healthcare",
+    "color": "#F59E0B",
+    "icon": "Heart",
+    "description": "企業の健康経営支援と生活者向けヘルスケアサービス。従業員の健康管理・保健指導プラットフォームや、医療・介護に関する情報メディアを運営。企業の健康経営推進と、個人の健康・介護に関する意思決定を支援する。",
+    "revenueShareLatest": 0.228,
+    "subServices": [
+      { "name": "リモートナース", "description": "企業向け産業保健サービス（遠隔保健指導）", "launchYear": 2015, "status": "growing" },
+      { "name": "健康経営支援", "description": "企業の健康経営度向上を支援するコンサルティング", "launchYear": 2016, "status": "core" },
+      { "name": "介護のほんね", "description": "介護施設の口コミ・検索メディア", "launchYear": 2014, "status": "core" },
+      { "name": "安心介護", "description": "介護に関する情報提供・相談プラットフォーム", "launchYear": 2012, "status": "core" }
+    ],
+    "sourceRef": "fy25-q3-presentation"
+  },
+  {
+    "id": "international",
+    "name": "海外事業",
+    "nameEn": "International (MIMS)",
+    "color": "#8B5CF6",
+    "icon": "Globe",
+    "description": "MIMSグループを中心としたAPAC地域での医療関連事業。医療従事者向けの医薬品情報・臨床情報プラットフォームを運営し、製薬企業のマーケティング支援を行う。約365万人の医療従事者会員を持つ。",
+    "revenueShareLatest": 0.0,
+    "subServices": [
+      { "name": "MIMS", "description": "APAC向け医薬品情報プラットフォーム（365万人会員）", "launchYear": 2015, "status": "core" },
+      { "name": "医療従事者マーケティング", "description": "製薬企業向けデジタルマーケティング支援", "launchYear": 2016, "status": "growing" }
+    ],
+    "sourceRef": "fy25-q3-presentation"
+  }
+]

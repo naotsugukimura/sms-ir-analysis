@@ -1,0 +1,104 @@
+[
+  {
+    "segmentId": "career",
+    "summary": "医療・介護業界の求職者と人材を求める事業所をマッチングする成功報酬型の人材紹介モデル。業界最大級のデータベースと専門コンサルタントにより高いマッチング精度を実現。",
+    "valueProposition": "業界特化の深い理解と大規模データベースによる高いマッチング精度",
+    "revenueModel": "成功報酬型（年収の25-35%）",
+    "customerSegment": "病院、介護施設、障害福祉事業所",
+    "keyMetrics": ["紹介件数", "成約率", "定着率", "求職者登録数", "ARPA"],
+    "nodes": [
+      { "id": "jobseeker", "label": "求職者\n（看護師・介護職等）", "type": "end-user", "description": "転職を希望する医療・介護の専門職", "position": { "x": 50, "y": 200 } },
+      { "id": "sms-career", "label": "SMS\nキャリア事業", "type": "sms", "description": "人材マッチングプラットフォーム運営", "position": { "x": 350, "y": 200 } },
+      { "id": "facility", "label": "医療機関\n介護施設", "type": "customer", "description": "人材を求める医療・介護事業者", "position": { "x": 650, "y": 200 } },
+      { "id": "govt", "label": "厚生労働省", "type": "government", "description": "人員配置基準・資格要件の設定", "position": { "x": 350, "y": 30 } },
+      { "id": "school", "label": "看護学校\n養成機関", "type": "partner", "description": "医療・介護人材の輩出元", "position": { "x": 50, "y": 30 } }
+    ],
+    "edges": [
+      { "id": "e1", "source": "jobseeker", "target": "sms-career", "label": "求職登録", "type": "information", "description": "経歴・希望条件の登録" },
+      { "id": "e2", "source": "sms-career", "target": "jobseeker", "label": "求人情報・キャリア相談", "type": "service", "description": "マッチングした求人の提案とキャリア支援" },
+      { "id": "e3", "source": "sms-career", "target": "facility", "label": "人材紹介", "type": "service", "description": "要件に合った人材の紹介" },
+      { "id": "e4", "source": "facility", "target": "sms-career", "label": "紹介手数料", "type": "money", "description": "成功報酬（年収の25-35%）" },
+      { "id": "e5", "source": "facility", "target": "jobseeker", "label": "雇用契約", "type": "contract", "description": "正規雇用・派遣契約" },
+      { "id": "e6", "source": "govt", "target": "facility", "label": "人員配置基準", "type": "information", "description": "法定の人員配置要件" },
+      { "id": "e7", "source": "school", "target": "jobseeker", "label": "資格取得者", "type": "service", "description": "新卒・資格取得者の供給" }
+    ],
+    "sourceRef": "fy25-q3-presentation"
+  },
+  {
+    "segmentId": "care-saas",
+    "summary": "介護・障害福祉事業者向けの経営支援SaaS「カイポケ」を核に、BPO・ファクタリング・M&A仲介等の周辺サービスを展開するプラットフォームモデル。月額課金（SaaS）と従量課金（BPO・ファクタリング）の複合収益構造。",
+    "valueProposition": "介護保険・障害福祉の複雑な請求業務をワンストップで効率化",
+    "revenueModel": "月額SaaS利用料 + BPO従量課金 + ファクタリング手数料",
+    "customerSegment": "介護事業所、障害福祉サービス事業所（約27万事業所が対象市場）",
+    "keyMetrics": ["カイポケ会員数", "ARPA", "解約率", "有料オプション利用率", "BPO利用事業所数"],
+    "nodes": [
+      { "id": "care-facility", "label": "介護事業所\n障害福祉事業所", "type": "customer", "description": "カイポケを利用する介護・福祉事業者（59,300事業所）", "position": { "x": 50, "y": 200 } },
+      { "id": "sms-saas", "label": "SMS\nカイポケ", "type": "sms", "description": "介護・障害福祉向けSaaS+BPOプラットフォーム", "position": { "x": 350, "y": 200 } },
+      { "id": "kokuho", "label": "国保連\n（審査支払機関）", "type": "government", "description": "介護・障害福祉報酬の審査・支払い", "position": { "x": 650, "y": 80 } },
+      { "id": "user", "label": "サービス利用者\n（高齢者・障害者）", "type": "end-user", "description": "介護・障害福祉サービスの利用者", "position": { "x": 50, "y": 30 } },
+      { "id": "bpo-center", "label": "BPOセンター", "type": "partner", "description": "請求・記録業務の代行処理拠点", "position": { "x": 650, "y": 320 } },
+      { "id": "bank", "label": "金融機関", "type": "partner", "description": "ファクタリング資金の提供元", "position": { "x": 350, "y": 380 } }
+    ],
+    "edges": [
+      { "id": "e1", "source": "care-facility", "target": "sms-saas", "label": "月額SaaS利用料", "type": "money", "description": "カイポケ利用料（ARPA約50万円/年）" },
+      { "id": "e2", "source": "sms-saas", "target": "care-facility", "label": "請求・記録・経営管理機能", "type": "service", "description": "報酬請求、利用者管理、記録、経営分析" },
+      { "id": "e3", "source": "care-facility", "target": "kokuho", "label": "報酬請求データ", "type": "data", "description": "カイポケ経由で国保連に請求データを送信" },
+      { "id": "e4", "source": "kokuho", "target": "care-facility", "label": "介護報酬・訓練等給付費", "type": "money", "description": "審査後の報酬支払い" },
+      { "id": "e5", "source": "user", "target": "care-facility", "label": "サービス利用・自己負担", "type": "money", "description": "1-3割の自己負担金" },
+      { "id": "e6", "source": "care-facility", "target": "user", "label": "介護・福祉サービス提供", "type": "service", "description": "介護・障害福祉サービスの提供" },
+      { "id": "e7", "source": "sms-saas", "target": "bpo-center", "label": "業務委託", "type": "contract", "description": "請求・記録業務のBPO処理" },
+      { "id": "e8", "source": "bpo-center", "target": "sms-saas", "label": "処理済みデータ", "type": "data", "description": "BPO処理結果の返却" },
+      { "id": "e9", "source": "sms-saas", "target": "care-facility", "label": "早期資金化", "type": "money", "description": "報酬支払前のファクタリング" },
+      { "id": "e10", "source": "care-facility", "target": "sms-saas", "label": "経営データ", "type": "data", "description": "利用データ・経営指標の蓄積" }
+    ],
+    "sourceRef": "fy25-q3-presentation"
+  },
+  {
+    "segmentId": "healthcare",
+    "summary": "企業向け健康経営支援と生活者向け情報メディアの二本柱。企業には産業保健サービスや健康管理プラットフォームを提供し、個人には介護施設検索・口コミサイトなどの情報サービスを展開。",
+    "valueProposition": "企業の健康経営と個人の医療・介護の意思決定を情報で支援",
+    "revenueModel": "企業向けSaaS/コンサル料 + メディア広告収入 + 送客手数料",
+    "customerSegment": "企業の人事・総務部門、介護サービスを探す個人・家族",
+    "keyMetrics": ["法人契約数", "メディアPV数", "送客件数", "リモートナース利用企業数"],
+    "nodes": [
+      { "id": "company", "label": "企業\n（人事・総務）", "type": "customer", "description": "健康経営に取り組む企業", "position": { "x": 50, "y": 120 } },
+      { "id": "sms-hc", "label": "SMS\nヘルスケア", "type": "sms", "description": "健康経営支援・情報メディア運営", "position": { "x": 350, "y": 200 } },
+      { "id": "employee", "label": "従業員", "type": "end-user", "description": "健康管理・保健指導の対象", "position": { "x": 50, "y": 320 } },
+      { "id": "individual", "label": "個人・家族", "type": "end-user", "description": "介護施設を探す個人", "position": { "x": 650, "y": 320 } },
+      { "id": "care-home", "label": "介護施設", "type": "partner", "description": "メディア掲載・送客先", "position": { "x": 650, "y": 120 } }
+    ],
+    "edges": [
+      { "id": "e1", "source": "company", "target": "sms-hc", "label": "コンサル・SaaS利用料", "type": "money", "description": "健康経営支援の対価" },
+      { "id": "e2", "source": "sms-hc", "target": "company", "label": "産業保健サービス", "type": "service", "description": "保健指導・健康経営度向上支援" },
+      { "id": "e3", "source": "sms-hc", "target": "employee", "label": "保健指導・健康情報", "type": "service", "description": "リモートナースによる遠隔保健指導" },
+      { "id": "e4", "source": "employee", "target": "sms-hc", "label": "健康データ", "type": "data", "description": "健診結果・生活習慣データ" },
+      { "id": "e5", "source": "individual", "target": "sms-hc", "label": "施設検索・口コミ閲覧", "type": "information", "description": "メディアへのアクセス" },
+      { "id": "e6", "source": "sms-hc", "target": "individual", "label": "施設情報・比較データ", "type": "information", "description": "介護のほんね等による情報提供" },
+      { "id": "e7", "source": "sms-hc", "target": "care-home", "label": "入居者送客", "type": "service", "description": "メディア経由の送客" },
+      { "id": "e8", "source": "care-home", "target": "sms-hc", "label": "掲載料・送客手数料", "type": "money", "description": "広告掲載・成約報酬" }
+    ],
+    "sourceRef": "fy25-q3-presentation"
+  },
+  {
+    "segmentId": "international",
+    "summary": "MIMSグループを通じてAPAC14ヶ国で医療従事者向けの医薬品情報プラットフォームを運営。約365万人の医療従事者会員に対し、医薬品情報・臨床知見を提供し、製薬企業のマーケティング支援で収益化。",
+    "valueProposition": "APAC最大級の医療従事者ネットワークと医薬品情報基盤",
+    "revenueModel": "製薬企業からの広告・マーケティング収入 + 医療データ分析",
+    "customerSegment": "グローバル製薬企業、APAC地域の医療従事者",
+    "keyMetrics": ["会員数", "MAU", "製薬企業クライアント数", "国別展開数"],
+    "nodes": [
+      { "id": "pharma", "label": "製薬企業", "type": "customer", "description": "グローバル製薬企業（マーケティング依頼主）", "position": { "x": 50, "y": 200 } },
+      { "id": "sms-intl", "label": "SMS\nMIMSグループ", "type": "sms", "description": "APAC医療情報プラットフォーム", "position": { "x": 350, "y": 200 } },
+      { "id": "doctor", "label": "医療従事者\n（365万人）", "type": "end-user", "description": "APAC14ヶ国の医師・看護師", "position": { "x": 650, "y": 200 } },
+      { "id": "regulator", "label": "各国規制当局", "type": "government", "description": "医薬品情報の規制・監督", "position": { "x": 350, "y": 30 } }
+    ],
+    "edges": [
+      { "id": "e1", "source": "pharma", "target": "sms-intl", "label": "広告・マーケティング費", "type": "money", "description": "医療従事者向けプロモーション費用" },
+      { "id": "e2", "source": "sms-intl", "target": "pharma", "label": "リーチ・エンゲージメントデータ", "type": "data", "description": "マーケティング効果分析" },
+      { "id": "e3", "source": "sms-intl", "target": "doctor", "label": "医薬品情報・臨床知見", "type": "information", "description": "最新の医薬品情報と臨床ガイドライン" },
+      { "id": "e4", "source": "doctor", "target": "sms-intl", "label": "利用データ・フィードバック", "type": "data", "description": "閲覧行動・関心領域データ" },
+      { "id": "e5", "source": "regulator", "target": "sms-intl", "label": "規制・ガイドライン", "type": "information", "description": "各国の医薬品情報規制" }
+    ],
+    "sourceRef": "fy25-q3-presentation"
+  }
+]

@@ -1,0 +1,10 @@
+[
+  { "id": "fy25-q3-presentation", "title": "2026年3月期 第3四半期 決算説明資料", "type": "presentation", "fiscalPeriod": "FY2025 Q3", "publishDate": "2025-02-14", "pdfUrl": "", "irPageUrl": "https://www.bm-sms.co.jp/ir/" },
+  { "id": "fy25-q3-tanshin", "title": "2026年3月期 第3四半期 決算短信", "type": "tanshin", "fiscalPeriod": "FY2025 Q3", "publishDate": "2025-02-14", "pdfUrl": "", "irPageUrl": "https://www.bm-sms.co.jp/ir/" },
+  { "id": "fy25-tanshin", "title": "2025年3月期 決算短信", "type": "tanshin", "fiscalPeriod": "FY2025", "publishDate": "2025-05-15", "pdfUrl": "", "irPageUrl": "https://www.bm-sms.co.jp/ir/" },
+  { "id": "fy25-yuho", "title": "2025年3月期 有価証券報告書", "type": "yuho", "fiscalPeriod": "FY2025", "publishDate": "2025-06-30", "pdfUrl": "", "irPageUrl": "https://www.bm-sms.co.jp/ir/" },
+  { "id": "fy24-tanshin", "title": "2024年3月期 決算短信", "type": "tanshin", "fiscalPeriod": "FY2024", "publishDate": "2024-05-15", "pdfUrl": "", "irPageUrl": "https://www.bm-sms.co.jp/ir/" },
+  { "id": "fy23-tanshin", "title": "2023年3月期 決算短信", "type": "tanshin", "fiscalPeriod": "FY2023", "publishDate": "2023-05-15", "pdfUrl": "", "irPageUrl": "https://www.bm-sms.co.jp/ir/" },
+  { "id": "fy22-tanshin", "title": "2022年3月期 決算短信", "type": "tanshin", "fiscalPeriod": "FY2022", "publishDate": "2022-05-13", "pdfUrl": "", "irPageUrl": "https://www.bm-sms.co.jp/ir/" },
+  { "id": "fy21-tanshin", "title": "2021年3月期 決算短信", "type": "tanshin", "fiscalPeriod": "FY2021", "publishDate": "2021-05-14", "pdfUrl": "", "irPageUrl": "https://www.bm-sms.co.jp/ir/" }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "name": "中期経営計画 2026-2028",
+    "period": "2026/3 - 2028/3",
+    "targets": {
+      "revenue": 75000,
+      "operatingProfit": 12000,
+      "epsGrowthRate": 0.15,
+      "roeTarget": 0.20,
+      "description": "EPS年平均成長率15%、ROE20%の達成を目指す。共創型ポートフォリオ経営への変革を推進。"
+    },
+    "keyStrategies": [
+      {
+        "title": "共創型ポートフォリオ経営への変革",
+        "description": "各事業の自律的成長とセグメント間シナジーの最大化。事業ステージに応じた戦略的アプローチで資本効率を向上。",
+        "relatedSegments": ["career", "care-saas", "healthcare", "international"]
+      },
+      {
+        "title": "AI BPO戦略の推進",
+        "description": "AIとBPOを融合した独自のサービスモデルにより、福祉事業所の請求・記録・計画作成業務を包括的に代行。",
+        "relatedSegments": ["care-saas"]
+      },
+      {
+        "title": "カイポケ障害福祉対応の強化",
+        "description": "介護領域で実績のあるカイポケを障害福祉サービスに本格対応させ、オールインワンSaaSとして展開。",
+        "relatedSegments": ["care-saas"]
+      },
+      {
+        "title": "キャピタルアロケーション最適化",
+        "description": "成長投資とリターンのバランスを最適化。EPS成長率15%とROE20%を両立させる資本政策を推進。",
+        "relatedSegments": ["career", "care-saas", "healthcare", "international"]
+      }
+    ],
+    "sourceRef": "fy25-q3-presentation"
+  },
+  {
+    "name": "長期ビジョン 2030",
+    "period": "2028/3 - 2030/3",
+    "targets": {
+      "revenue": 120000,
+      "description": "売上高1,200億円。医療・介護・障害福祉の三領域をカバーする社会インフラ企業として、テクノロジーとBPOで業界のDXを牽引する。"
+    },
+    "keyStrategies": [
+      {
+        "title": "三領域統合プラットフォーム",
+        "description": "医療・介護・障害福祉を横断するデータプラットフォームを構築し、利用者のライフステージ全体をカバーするサービス連携を実現。",
+        "relatedSegments": ["career", "care-saas", "healthcare"]
+      },
+      {
+        "title": "AI自動化の深化",
+        "description": "請求・記録業務の完全自動化に加え、AIによる支援計画提案・サービス品質評価など高度な業務領域へのAI適用を拡大。",
+        "relatedSegments": ["care-saas"]
+      }
+    ],
+    "sourceRef": "fy25-q3-presentation"
+  }
+]

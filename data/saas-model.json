@@ -1,0 +1,235 @@
+{
+  "revenueFormula": {
+    "title": "SaaS売上の公式",
+    "formula": "MRR = ARPA × 顧客数",
+    "expanded": "年間売上 = MRR × 12 = ARPA × 顧客数 × 12",
+    "alternativeView": "売上 = LTV × 新規獲得顧客数 （累積ベースで見た場合）",
+    "components": [
+      {
+        "key": "MRR",
+        "name": "Monthly Recurring Revenue",
+        "nameJa": "月次経常収益",
+        "description": "毎月繰り返し発生する収益。SaaSの最重要指標。解約・アップセル・新規を全て含む。",
+        "smsContext": "カイポケの月額利用料 × 利用事業所数"
+      },
+      {
+        "key": "ARR",
+        "name": "Annual Recurring Revenue",
+        "nameJa": "年間経常収益",
+        "description": "MRR × 12。年間ベースの経常収益。投資家が最も注目する指標。",
+        "smsContext": "カイポケのARPA（年間）約50万円 × 26,350法人"
+      },
+      {
+        "key": "ARPA",
+        "name": "Average Revenue Per Account",
+        "nameJa": "1アカウント平均売上",
+        "description": "1顧客（法人/アカウント）あたりの平均月額売上。アップセル・クロスセルで上昇させることが重要。",
+        "smsContext": "カイポケARPA: 500,827円/年（≒41,736円/月）。有料オプション・BPO利用で上昇余地あり。"
+      }
+    ]
+  },
+  "predictability": {
+    "title": "SaaSの最大の特徴：予測可能性",
+    "description": "SaaSは来期の売上を高い精度で予測できる。なぜなら、既存顧客の継続率（リテンション）が分かれば、ベースとなる売上が見えるから。",
+    "logic": [
+      "来期MRR ≒ 今期MRR × NRR + 新規MRR",
+      "既存顧客の90%以上が継続する場合、売上の土台が安定",
+      "新規獲得が0でも、既存だけで売上の大部分を維持",
+      "これが「ストック型」と呼ばれる理由"
+    ],
+    "comparisonWithOther": {
+      "saas": { "nextYearVisibility": "80-95%", "description": "既存顧客の継続が見えるので、来期売上の8-9割は予測可能" },
+      "staffing": { "nextYearVisibility": "10-30%", "description": "紹介成約がフロー型のため、来期売上の予測は困難" },
+      "consulting": { "nextYearVisibility": "20-40%", "description": "プロジェクト単位のため、パイプラインで推測するのみ" }
+    }
+  },
+  "keyMetrics": [
+    {
+      "key": "NRR",
+      "name": "Net Revenue Retention",
+      "nameJa": "売上継続率（ネット）",
+      "formula": "NRR = (期初MRR + Expansion - Contraction - Churn) ÷ 期初MRR",
+      "description": "既存顧客だけで売上がどれだけ維持・成長するかを示す。100%超なら既存顧客だけで成長可能。",
+      "benchmark": { "excellent": "120%以上", "good": "110-120%", "average": "100-110%", "bad": "100%未満" },
+      "components": [
+        { "name": "Expansion", "description": "既存顧客のアップセル・クロスセルによる増額", "example": "カイポケの有料オプション追加、BPOサービス利用開始" },
+        { "name": "Contraction", "description": "既存顧客のダウングレードによる減額", "example": "オプション解約、利用プラン縮小" },
+        { "name": "Churn", "description": "既存顧客の完全解約", "example": "カイポケ解約（事業所閉鎖、競合乗り換え等）" }
+      ],
+      "smsContext": "カイポケは解約率改善に注力中。ARPA向上（BPO・ファクタリング追加）でExpansion増を目指す。"
+    },
+    {
+      "key": "UnitEconomics",
+      "name": "Unit Economics",
+      "nameJa": "ユニットエコノミクス",
+      "formula": "LTV ÷ CAC > 3x が健全な目安",
+      "description": "1顧客を獲得するためのコスト（CAC）と、その顧客が生涯にわたって生み出す収益（LTV）の関係。SaaSの事業健全性を測る最も根本的な指標。",
+      "subMetrics": [
+        {
+          "key": "LTV",
+          "name": "Lifetime Value",
+          "nameJa": "顧客生涯価値",
+          "formula": "LTV = ARPA ÷ 月次解約率",
+          "alternativeFormula": "LTV = ARPA × 平均契約月数",
+          "description": "1顧客が契約期間中にもたらす総収益。解約率が低いほどLTVは大きくなる。",
+          "example": "月額4万円 ÷ 月次解約率2% = LTV 200万円"
+        },
+        {
+          "key": "CAC",
+          "name": "Customer Acquisition Cost",
+          "nameJa": "顧客獲得コスト",
+          "formula": "CAC = (S&M費用) ÷ 新規獲得顧客数",
+          "description": "1顧客を新規獲得するためにかかるマーケティング・営業コストの合計。",
+          "example": "S&M費用1億円 ÷ 新規200社 = CAC 50万円"
+        },
+        {
+          "key": "CACPayback",
+          "name": "CAC Payback Period",
+          "nameJa": "CAC回収期間",
+          "formula": "CAC Payback = CAC ÷ 月額ARPA",
+          "description": "CACを何ヶ月で回収できるかの指標。12ヶ月以内が健全。",
+          "benchmark": { "excellent": "6ヶ月以内", "good": "6-12ヶ月", "average": "12-18ヶ月", "bad": "18ヶ月以上" }
+        }
+      ]
+    },
+    {
+      "key": "SM",
+      "name": "Sales & Marketing",
+      "nameJa": "販売費・マーケティング費",
+      "description": "SaaSにおけるS&Mは「投資」としての性格が強い。CACの回収がLTVで見えているため、S&Mの増加は必ずしもネガティブではない。",
+      "breakdown": [
+        { "name": "インバウンドマーケ", "description": "コンテンツマーケティング、SEO、ウェビナー等。CACが低く効率的だが、スケールに時間がかかる。" },
+        { "name": "アウトバウンド営業", "description": "テレアポ、訪問営業、展示会。CACは高いが、大企業やバーティカル市場では有効。" },
+        { "name": "既存顧客CS", "description": "カスタマーサクセス。解約率低下とExpansion増に直結。S&Mの中でROIが最も高い。" }
+      ],
+      "smsContext": "カイポケはバーティカルSaaSのため、介護・福祉業界に特化した営業（訪問・セミナー）とCSが重要。業界の制度改定タイミングに合わせた営業が効果的。"
+    }
+  ],
+  "saasCategories": {
+    "b2bVsB2c": {
+      "b2b": {
+        "name": "B2B SaaS",
+        "nameJa": "法人向けSaaS",
+        "description": "企業や法人を顧客とするSaaS。契約単価が高く、解約率が低い傾向。営業・CSの人的コストが高い。",
+        "characteristics": [
+          "ARPA: 高い（月額数万〜数百万円）",
+          "解約率: 低い（月次0.5-3%）",
+          "営業サイクル: 長い（1-6ヶ月）",
+          "意思決定者: 複数人（稟議プロセス）",
+          "カスタマーサクセス: 重要（ハイタッチ）",
+          "LTV: 大きい"
+        ],
+        "examples": ["Salesforce", "Slack", "カイポケ（SMS）", "freee", "マネーフォワード"]
+      },
+      "b2c": {
+        "name": "B2C SaaS",
+        "nameJa": "個人向けSaaS",
+        "description": "個人消費者を顧客とするSaaS。契約単価は低いが、ユーザー数でスケールする。プロダクト主導の成長が重要。",
+        "characteristics": [
+          "ARPA: 低い（月額数百〜数千円）",
+          "解約率: 高い（月次3-10%）",
+          "営業サイクル: なし（セルフサーブ）",
+          "意思決定者: 個人（即決）",
+          "カスタマーサクセス: 軽い（テックタッチ）",
+          "LTV: 小さいがボリュームでカバー"
+        ],
+        "examples": ["Spotify", "Netflix", "Notion個人版", "1Password"]
+      }
+    },
+    "horizontalVsVertical": {
+      "horizontal": {
+        "name": "ホリゾンタルSaaS",
+        "nameJa": "業界横断型SaaS",
+        "description": "特定の業務機能を業界を問わず提供するSaaS。CRM、会計、HR、チャットなど。市場規模は大きいが競争も激しい。",
+        "characteristics": [
+          "TAM: 巨大（全業界が対象）",
+          "競争: 激烈（グローバル大手が参入）",
+          "差別化: 機能・UI・価格で勝負",
+          "参入障壁: 低い（模倣されやすい）",
+          "勝者総取り: なりやすい",
+          "スイッチングコスト: 比較的低い"
+        ],
+        "examples": [
+          { "name": "Salesforce", "function": "CRM/SFA" },
+          { "name": "Slack", "function": "チャット" },
+          { "name": "freee", "function": "会計" },
+          { "name": "SmartHR", "function": "人事労務" }
+        ],
+        "howToBuild": [
+          "1. 汎用的な業務課題を特定（会計、HR、CRM等）",
+          "2. PMFを早期に見つける（広い市場で素早く検証）",
+          "3. PLG（Product-Led Growth）でセルフサーブ展開",
+          "4. フリーミアムや無料トライアルで大量獲得",
+          "5. ネットワーク効果・プラットフォーム化で防御壁構築",
+          "6. グローバル展開でTAMを最大化"
+        ]
+      },
+      "vertical": {
+        "name": "バーティカルSaaS",
+        "nameJa": "業界特化型SaaS",
+        "description": "特定の業界・業種に特化したSaaS。介護、医療、建設、不動産など。業界知識が深く必要だが、一度獲得すると解約されにくい。",
+        "characteristics": [
+          "TAM: 限定的（特定業界のみ）",
+          "競争: 比較的少ない（業界知識が参入障壁）",
+          "差別化: 業界理解の深さ・制度対応",
+          "参入障壁: 高い（業界固有の知識・規制対応）",
+          "勝者総取り: なりにくい（地域性あり）",
+          "スイッチングコスト: 非常に高い（業務に深く組み込まれる）"
+        ],
+        "examples": [
+          { "name": "カイポケ（SMS）", "industry": "介護・障害福祉" },
+          { "name": "CLINICS（メドレー）", "industry": "医療・クリニック" },
+          { "name": "ANDPAD", "industry": "建設" },
+          { "name": "いい生活", "industry": "不動産" },
+          { "name": "Veeva Systems", "industry": "製薬" }
+        ],
+        "howToBuild": [
+          "1. 特定業界の深い課題理解（現場経験・ヒアリング）",
+          "2. 業界固有の規制・制度への対応（＝最大の参入障壁）",
+          "3. 業界キーパーソンとの信頼関係構築（口コミ重要）",
+          "4. ランド&エクスパンド（1機能で入り、周辺機能を拡張）",
+          "5. SaaS→BPO→データ→金融と周辺サービスを積層",
+          "6. 業界インフラ化して解約不能なポジションを確立"
+        ],
+        "smsKaipokeMapping": {
+          "description": "カイポケはバーティカルSaaSの典型例",
+          "layers": [
+            { "layer": "Layer 1: SaaS基盤", "content": "介護保険・障害福祉の報酬請求・記録", "status": "確立済み" },
+            { "layer": "Layer 2: BPO", "content": "請求業務代行・記録代行", "status": "成長中" },
+            { "layer": "Layer 3: 金融", "content": "ファクタリング（報酬早期資金化）", "status": "成長中" },
+            { "layer": "Layer 4: マッチング", "content": "M&A仲介・人材紹介連携", "status": "展開中" },
+            { "layer": "Layer 5: データ", "content": "経営分析・需要予測（将来構想）", "status": "構想段階" }
+          ]
+        }
+      }
+    }
+  },
+  "smsApplied": {
+    "segmentName": "介護・障害福祉SaaS（カイポケ）",
+    "revenueModel": {
+      "formula": "カイポケ売上 = ARPA × 法人数 × 12",
+      "currentNumbers": {
+        "arpa": 500827,
+        "arpaUnit": "円/年",
+        "accounts": 26350,
+        "accountUnit": "法人",
+        "facilities": 59300,
+        "facilityUnit": "事業所",
+        "estimatedARR": 13197
+      }
+    },
+    "unitEconomicsEstimate": {
+      "ltv": "ARPA 50万円/年 ÷ 推定年間解約率15% ≒ 333万円",
+      "cac": "推定40-60万円（営業・マーケ費÷新規獲得法人数）",
+      "ltvCacRatio": "5.5-8.3x（健全水準を大きく上回る）",
+      "cacPayback": "推定10-14ヶ月",
+      "note": "実際の数値はIRで開示されていないため、推定値。開示されている数字から逆算。"
+    },
+    "growthLevers": [
+      { "lever": "顧客数拡大", "description": "障害福祉事業所（約15万所）への横展開。介護事業所の深耕。", "impact": "高" },
+      { "lever": "ARPA向上", "description": "BPO・ファクタリング・有料オプション追加による客単価UP。", "impact": "高" },
+      { "lever": "解約率改善", "description": "プロダクト品質向上とCSによる解約率低下→NRR改善。", "impact": "中" },
+      { "lever": "AI BPO", "description": "AI活用でBPOの生産性向上→利益率改善+サービス拡大。", "impact": "中" }
+    ]
+  }
+}

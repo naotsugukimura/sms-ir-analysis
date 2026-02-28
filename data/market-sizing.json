@@ -1,0 +1,54 @@
+[
+  {
+    "segmentId": "career",
+    "tam": { "value": 1200000, "unit": "百万円", "year": 2025, "description": "医療・介護・福祉領域の人材紹介市場規模。2040年には看護師32万人、介護職57万人の追加人材が必要とされ、市場は拡大基調。" },
+    "growthRate": 0.08,
+    "growthDrivers": [
+      "高齢化による医療・介護需要の増加",
+      "2040年問題（人材不足の深刻化）",
+      "処遇改善加算による給与水準上昇",
+      "転職市場のオンライン化加速"
+    ],
+    "competitiveLandscape": "マイナビ、リクルート等の大手が参入するも、SMSはナース人材バンクで業界No.1。医療・介護特化の専門性が参入障壁となっている。",
+    "sourceRef": "fy25-q3-presentation"
+  },
+  {
+    "segmentId": "care-saas",
+    "tam": { "value": 500000, "unit": "百万円", "year": 2025, "description": "介護・障害福祉向けICT市場規模。全国約27万の介護事業所＋約15万の障害福祉事業所が対象。SaaS化率はまだ低く成長余地大。" },
+    "growthRate": 0.12,
+    "growthDrivers": [
+      "介護報酬のICT加算による導入促進",
+      "障害福祉サービス事業所数の年平均6.7%増加",
+      "人手不足によるDX需要の高まり",
+      "BPO需要の顕在化（請求業務の外部委託）"
+    ],
+    "competitiveLandscape": "NDソフトウェア、ワイズマンが介護ソフト大手。障害福祉領域ではLITALICO、HUG等が競合。カイポケはSaaS+BPOの複合モデルで差別化。",
+    "sourceRef": "fy25-q3-presentation"
+  },
+  {
+    "segmentId": "healthcare",
+    "tam": { "value": 300000, "unit": "百万円", "year": 2025, "description": "企業向け健康経営支援市場と介護関連メディア市場の合計。健康経営への企業投資拡大と高齢化による介護情報ニーズの増加が追い風。" },
+    "growthRate": 0.06,
+    "growthDrivers": [
+      "健康経営銘柄・ホワイト500等の認定制度",
+      "企業の従業員well-being投資増加",
+      "高齢者人口増による介護施設検索需要",
+      "オンライン保健指導の普及"
+    ],
+    "competitiveLandscape": "健康経営支援ではベネフィット・ワン、バリューHR等が競合。介護メディアではLIFULL介護が最大手。SMSは両領域の複合展開で差別化。",
+    "sourceRef": "fy25-q3-presentation"
+  },
+  {
+    "segmentId": "international",
+    "tam": { "value": 800000, "unit": "百万円", "year": 2025, "description": "APAC地域の医療従事者向けデジタルマーケティング市場。14ヶ国365万人の医療従事者会員基盤を活用。" },
+    "growthRate": 0.10,
+    "growthDrivers": [
+      "APAC地域の高齢化進行（特に中国・東南アジア）",
+      "製薬企業のデジタルマーケティングシフト",
+      "医療従事者のデジタル情報収集習慣の定着",
+      "新興国における医療インフラ整備"
+    ],
+    "competitiveLandscape": "Doximity（米国）、M3（日本）等が類似モデル。MIMSはAPAC地域でのネットワーク規模が最大の強み。",
+    "sourceRef": "fy25-q3-presentation"
+  }
+]

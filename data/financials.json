@@ -1,0 +1,122 @@
+{
+  "currency": "JPY",
+  "unit": "million",
+  "fiscalYears": [
+    {
+      "year": "FY2021",
+      "fiscalYearLabel": "2021年3月期",
+      "revenue": 35850,
+      "operatingProfit": 4300,
+      "ordinaryProfit": 4350,
+      "netIncome": 2850,
+      "operatingMargin": 12.0,
+      "roe": 19.5,
+      "employees": 3050,
+      "segments": [
+        { "segmentId": "career", "revenue": 19500, "profit": 2800 },
+        { "segmentId": "care-saas", "revenue": 8200, "profit": 950 },
+        { "segmentId": "healthcare", "revenue": 8150, "profit": 550 }
+      ],
+      "sourceRef": "fy21-tanshin"
+    },
+    {
+      "year": "FY2022",
+      "fiscalYearLabel": "2022年3月期",
+      "revenue": 39800,
+      "operatingProfit": 5170,
+      "ordinaryProfit": 5230,
+      "netIncome": 3420,
+      "operatingMargin": 13.0,
+      "roe": 20.8,
+      "employees": 3280,
+      "segments": [
+        { "segmentId": "career", "revenue": 21200, "profit": 3200 },
+        { "segmentId": "care-saas", "revenue": 9800, "profit": 1250 },
+        { "segmentId": "healthcare", "revenue": 8800, "profit": 720 }
+      ],
+      "operatingCF": 9818,
+      "investingCF": -2079,
+      "financingCF": -3987,
+      "freeCF": 7739,
+      "sourceRef": "fy22-tanshin"
+    },
+    {
+      "year": "FY2023",
+      "fiscalYearLabel": "2023年3月期",
+      "revenue": 44600,
+      "operatingProfit": 5800,
+      "ordinaryProfit": 5870,
+      "netIncome": 3830,
+      "operatingMargin": 13.0,
+      "roe": 21.5,
+      "employees": 3520,
+      "segments": [
+        { "segmentId": "career", "revenue": 23100, "profit": 3550 },
+        { "segmentId": "care-saas", "revenue": 11500, "profit": 1380 },
+        { "segmentId": "healthcare", "revenue": 10000, "profit": 870 }
+      ],
+      "operatingCF": 10250,
+      "investingCF": -2500,
+      "financingCF": -4200,
+      "freeCF": 7750,
+      "sourceRef": "fy23-tanshin"
+    },
+    {
+      "year": "FY2024",
+      "fiscalYearLabel": "2024年3月期",
+      "revenue": 52400,
+      "operatingProfit": 6200,
+      "ordinaryProfit": 6300,
+      "netIncome": 4100,
+      "operatingMargin": 11.8,
+      "roe": 19.8,
+      "employees": 3800,
+      "segments": [
+        { "segmentId": "career", "revenue": 24800, "profit": 3200 },
+        { "segmentId": "care-saas", "revenue": 13500, "profit": 1800 },
+        { "segmentId": "healthcare", "revenue": 14100, "profit": 1200 }
+      ],
+      "operatingCF": 11500,
+      "investingCF": -3200,
+      "financingCF": -5000,
+      "freeCF": 8300,
+      "sourceRef": "fy24-tanshin"
+    },
+    {
+      "year": "FY2025",
+      "fiscalYearLabel": "2025年3月期",
+      "revenue": 55200,
+      "operatingProfit": 6350,
+      "ordinaryProfit": 6450,
+      "netIncome": 4200,
+      "operatingMargin": 11.5,
+      "roe": 19.0,
+      "employees": 4000,
+      "segments": [
+        { "segmentId": "career", "revenue": 26800, "profit": 3500 },
+        { "segmentId": "care-saas", "revenue": 15800, "profit": 2100 },
+        { "segmentId": "healthcare", "revenue": 12600, "profit": 750 }
+      ],
+      "operatingCF": 12000,
+      "investingCF": -3500,
+      "financingCF": -5500,
+      "freeCF": 8500,
+      "sourceRef": "fy25-tanshin"
+    },
+    {
+      "year": "FY2026",
+      "fiscalYearLabel": "2026年3月期（Q3累計）",
+      "revenue": 47346,
+      "operatingProfit": 3905,
+      "netIncome": 2600,
+      "operatingMargin": 8.2,
+      "employees": 4731,
+      "segments": [
+        { "segmentId": "career", "revenue": 22000, "profit": 2500 },
+        { "segmentId": "care-saas", "revenue": 14500, "profit": 1200 },
+        { "segmentId": "healthcare", "revenue": 10846, "profit": 205 }
+      ],
+      "sourceRef": "fy25-q3-presentation"
+    }
+  ]
+}

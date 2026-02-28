@@ -1,0 +1,80 @@
+[
+  {
+    "year": 2003, "month": 4, "category": "founding",
+    "title": "エス・エム・エス設立",
+    "description": "医療・介護分野の人材紹介事業を目的として設立。「高齢社会に適した情報インフラを構築する」をミッションに掲げる。",
+    "relatedSegment": "career", "significance": "high", "sourceRef": "fy25-yuho"
+  },
+  {
+    "year": 2008, "month": 3, "category": "ipo",
+    "title": "東証マザーズ上場",
+    "description": "看護師向け人材紹介「ナース人材バンク」の急成長が評価され、東証マザーズに上場。",
+    "relatedSegment": "career", "significance": "high", "sourceRef": "fy25-yuho"
+  },
+  {
+    "year": 2011, "category": "new_business",
+    "title": "カイポケ提供開始",
+    "description": "介護事業者向けSaaS「カイポケ」の提供を開始。介護保険請求業務の効率化を中心に経営支援プラットフォームを構築。",
+    "relatedSegment": "care-saas", "significance": "high", "sourceRef": "fy25-yuho"
+  },
+  {
+    "year": 2014, "month": 9, "category": "milestone",
+    "title": "東証一部に市場変更",
+    "description": "人材紹介事業とSaaS事業の二本柱による成長モデルが確立し、東証一部へ市場変更。",
+    "significance": "high", "sourceRef": "fy25-yuho"
+  },
+  {
+    "year": 2015, "month": 10, "category": "ma",
+    "title": "MIMSグループ買収",
+    "description": "APAC各国での医療関連事業者向けマーケティング支援とグローバルキャリア事業の展開のため、MIMSグループを買収。",
+    "relatedSegment": "international", "significance": "high", "sourceRef": "fy25-q3-presentation"
+  },
+  {
+    "year": 2016, "category": "expansion",
+    "title": "海外事業の本格展開",
+    "description": "東南アジアを中心に医療・介護関連サービスの海外展開を加速。アジアの高齢化市場における事業機会を開拓。",
+    "relatedSegment": "international", "significance": "medium", "sourceRef": "fy25-yuho"
+  },
+  {
+    "year": 2018, "category": "milestone",
+    "title": "ナース人材バンク業界No.1達成",
+    "description": "看護師向け人材紹介サービスが業界シェアNo.1を達成。年間紹介件数で他社を大きく引き離す。",
+    "relatedSegment": "career", "significance": "high", "sourceRef": "fy25-yuho"
+  },
+  {
+    "year": 2020, "category": "new_business",
+    "title": "障害福祉向けSaaS参入",
+    "description": "カイポケの対象領域を障害福祉サービスに拡大。障害福祉の報酬請求・記録業務のDX化を支援するサービスを開始。",
+    "relatedSegment": "care-saas", "significance": "high", "sourceRef": "fy25-yuho"
+  },
+  {
+    "year": 2021, "category": "ma",
+    "title": "介護事業者向けM&A仲介開始",
+    "description": "介護事業者の事業承継・M&A仲介サービスを開始。後継者不足に悩む中小介護事業者のニーズに対応。",
+    "relatedSegment": "care-saas", "significance": "medium", "sourceRef": "fy25-yuho"
+  },
+  {
+    "year": 2022, "month": 4, "category": "milestone",
+    "title": "プライム市場移行",
+    "description": "東証再編でプライム市場へ移行。時価総額3,000億円超のヘルスケアIT企業としての地位を確立。",
+    "significance": "high", "sourceRef": "fy25-yuho"
+  },
+  {
+    "year": 2023, "category": "new_business",
+    "title": "BPOサービスの本格展開",
+    "description": "介護・障害福祉事業者向けのBPOサービスを本格展開。請求業務代行を中心に事業者の業務負荷軽減を支援。",
+    "relatedSegment": "care-saas", "significance": "high", "sourceRef": "fy25-yuho"
+  },
+  {
+    "year": 2024, "category": "management",
+    "title": "AI BPO戦略発表",
+    "description": "生成AIを活用したBPOサービスの高度化戦略を発表。AIによる書類読み取り・データ入力の自動化を推進。",
+    "relatedSegment": "care-saas", "significance": "high", "sourceRef": "fy25-q3-presentation"
+  },
+  {
+    "year": 2025, "month": 1, "category": "new_business",
+    "title": "障害福祉支援部新設",
+    "description": "障害福祉サービス事業者への支援を専門とする「障害福祉支援部」を新設。カイポケ・BPO・人材紹介を一体的に提供。",
+    "relatedSegment": "care-saas", "significance": "high", "sourceRef": "fy25-q3-presentation"
+  }
+]
