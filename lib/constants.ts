@@ -31,6 +31,15 @@ export const NAV_ITEMS: NavItem[] = [
     ],
   },
   {
+    href: "/market",
+    label: "マーケット環境",
+    icon: "BarChart3",
+    children: [
+      { href: "/market", label: "マーケット概要" },
+      { href: "/market/competitors", label: "競合分析" },
+    ],
+  },
+  {
     href: "/saas-model",
     label: "SaaSモデル深掘り",
     icon: "Microscope",

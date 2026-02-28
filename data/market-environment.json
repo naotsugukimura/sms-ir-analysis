@@ -1,0 +1,153 @@
+{
+  "agingDemographics": {
+    "title": "高齢化の進行と将来推計",
+    "sourceRef": "内閣府 高齢社会白書 / 国立社会保障・人口問題研究所",
+    "data": [
+      { "year": 2015, "totalPopulation": 12709, "over65": 3387, "over75": 1632, "agingRate": 26.6, "type": "actual" },
+      { "year": 2016, "totalPopulation": 12693, "over65": 3459, "over75": 1691, "agingRate": 27.3, "type": "actual" },
+      { "year": 2017, "totalPopulation": 12671, "over65": 3515, "over75": 1748, "agingRate": 27.7, "type": "actual" },
+      { "year": 2018, "totalPopulation": 12644, "over65": 3558, "over75": 1798, "agingRate": 28.1, "type": "actual" },
+      { "year": 2019, "totalPopulation": 12617, "over65": 3589, "over75": 1849, "agingRate": 28.4, "type": "actual" },
+      { "year": 2020, "totalPopulation": 12571, "over65": 3619, "over75": 1872, "agingRate": 28.8, "type": "actual" },
+      { "year": 2021, "totalPopulation": 12550, "over65": 3640, "over75": 1880, "agingRate": 29.0, "type": "actual" },
+      { "year": 2022, "totalPopulation": 12495, "over65": 3624, "over75": 1937, "agingRate": 29.0, "type": "actual" },
+      { "year": 2023, "totalPopulation": 12435, "over65": 3623, "over75": 2005, "agingRate": 29.1, "type": "actual" },
+      { "year": 2024, "totalPopulation": 12380, "over65": 3625, "over75": 2040, "agingRate": 29.3, "type": "actual" },
+      { "year": 2025, "totalPopulation": 12326, "over65": 3653, "over75": 2180, "agingRate": 29.6, "type": "estimate" },
+      { "year": 2030, "totalPopulation": 11913, "over65": 3716, "over75": 2288, "agingRate": 31.2, "type": "estimate" },
+      { "year": 2035, "totalPopulation": 11522, "over65": 3782, "over75": 2260, "agingRate": 32.8, "type": "estimate" },
+      { "year": 2040, "totalPopulation": 11092, "over65": 3921, "over75": 2239, "agingRate": 35.3, "type": "estimate" }
+    ],
+    "unit": {
+      "population": "万人",
+      "agingRate": "%"
+    },
+    "insights": [
+      "2025年：団塊世代が全員75歳以上に（2025年問題）",
+      "2040年：団塊ジュニア世代が65歳以上に（2040年問題）",
+      "75歳以上人口は2025年に2,180万人でピーク付近",
+      "高齢化率は2040年に35.3%まで上昇見込み"
+    ]
+  },
+  "careFacilities": {
+    "title": "介護事業所数の推移",
+    "sourceRef": "厚生労働省 介護サービス施設・事業所調査",
+    "totalTrend": [
+      { "year": 2015, "total": 230073 },
+      { "year": 2016, "total": 233542 },
+      { "year": 2017, "total": 237036 },
+      { "year": 2018, "total": 241084 },
+      { "year": 2019, "total": 244637 },
+      { "year": 2020, "total": 248024 },
+      { "year": 2021, "total": 252102 },
+      { "year": 2022, "total": 256376 },
+      { "year": 2023, "total": 260418 },
+      { "year": 2024, "total": 264500 }
+    ],
+    "byServiceType": [
+      { "serviceType": "訪問介護", "count2020": 34825, "count2024": 33200, "trend": "減少", "note": "人手不足による閉鎖増加" },
+      { "serviceType": "通所介護", "count2020": 24035, "count2024": 24800, "trend": "微増", "note": "小規模デイ含む" },
+      { "serviceType": "居宅介護支援", "count2020": 39825, "count2024": 38500, "trend": "減少", "note": "ケアマネ不足" },
+      { "serviceType": "特別養護老人ホーム", "count2020": 10312, "count2024": 10800, "trend": "微増", "note": "待機者は依然多い" },
+      { "serviceType": "介護老人保健施設", "count2020": 4304, "count2024": 4250, "trend": "横ばい", "note": "" },
+      { "serviceType": "グループホーム", "count2020": 13783, "count2024": 14500, "trend": "増加", "note": "認知症ケアの需要増" },
+      { "serviceType": "訪問看護", "count2020": 13003, "count2024": 15500, "trend": "増加", "note": "在宅医療の推進" },
+      { "serviceType": "通所リハビリ", "count2020": 7956, "count2024": 8100, "trend": "微増", "note": "" },
+      { "serviceType": "小規模多機能", "count2020": 5502, "count2024": 5900, "trend": "増加", "note": "地域密着型の推進" }
+    ]
+  },
+  "disabilityFacilities": {
+    "title": "障害福祉サービス事業所数の推移",
+    "sourceRef": "厚生労働省 社会福祉施設等調査",
+    "totalTrend": [
+      { "year": 2016, "total": 98500 },
+      { "year": 2017, "total": 102800 },
+      { "year": 2018, "total": 107300 },
+      { "year": 2019, "total": 112000 },
+      { "year": 2020, "total": 109000 },
+      { "year": 2021, "total": 116800 },
+      { "year": 2022, "total": 123500 },
+      { "year": 2023, "total": 130200 },
+      { "year": 2024, "total": 138000 }
+    ],
+    "byServiceType": [
+      { "serviceType": "就労継続支援B型", "count2024": 36200, "growthRate": 8.5, "note": "最も事業所数が多い" },
+      { "serviceType": "放課後等デイサービス", "count2024": 21500, "growthRate": 12.0, "note": "急成長。参入規制強化の議論あり" },
+      { "serviceType": "就労継続支援A型", "count2024": 4800, "growthRate": 3.0, "note": "質の確保が課題" },
+      { "serviceType": "共同生活援助(GH)", "count2024": 15800, "growthRate": 10.0, "note": "グループホーム需要増" },
+      { "serviceType": "生活介護", "count2024": 12500, "growthRate": 5.0, "note": "" },
+      { "serviceType": "居宅介護", "count2024": 24000, "growthRate": 4.0, "note": "訪問系サービス" },
+      { "serviceType": "児童発達支援", "count2024": 11500, "growthRate": 15.0, "note": "最も高い成長率" }
+    ],
+    "insights": [
+      "障害福祉事業所数は年平均6-7%で増加、2024年に約13.8万事業所",
+      "介護事業所（約26万）の約半数の規模で急成長中",
+      "カイポケにとって大きな成長市場（障害福祉対応が競争優位）",
+      "制度改定が頻繁で、対応力がソフトの選定に直結"
+    ]
+  },
+  "ictMarket": {
+    "title": "介護ICT市場規模の推移と予測",
+    "sourceRef": "矢野経済研究所 / 各種市場調査レポート",
+    "data": [
+      { "year": 2020, "marketSize": 260, "type": "actual" },
+      { "year": 2021, "marketSize": 295, "type": "actual" },
+      { "year": 2022, "marketSize": 320, "type": "actual" },
+      { "year": 2023, "marketSize": 350, "type": "actual" },
+      { "year": 2024, "marketSize": 546, "type": "actual" },
+      { "year": 2025, "marketSize": 750, "type": "estimate" },
+      { "year": 2026, "marketSize": 980, "type": "estimate" },
+      { "year": 2027, "marketSize": 1250, "type": "estimate" },
+      { "year": 2028, "marketSize": 1520, "type": "estimate" },
+      { "year": 2029, "marketSize": 1800, "type": "estimate" },
+      { "year": 2030, "marketSize": 2115, "type": "estimate" }
+    ],
+    "unit": "億円",
+    "cagr": "22.5%（2023-2030）",
+    "growthDrivers": [
+      { "driver": "ICT導入補助金", "description": "ICT導入支援事業（最大260万円/事業所）。補助率1/2〜3/4。タブレット・ソフト・Wi-Fi等が対象。", "impact": "高" },
+      { "driver": "介護報酬のICT加算", "description": "2024年度報酬改定でICT活用による人員配置基準の緩和。テレワーク・見守りセンサー活用。", "impact": "高" },
+      { "driver": "LIFE（科学的介護）", "description": "科学的介護情報システムへのデータ提出が加算要件。ソフトからの自動連携が必須。", "impact": "中" },
+      { "driver": "2024年度介護報酬改定", "description": "処遇改善加算の一本化、ICT活用の推進、生産性向上の要件強化。", "impact": "高" },
+      { "driver": "人手不足", "description": "介護人材不足が深刻化し、ICT・DX化が経営課題のトップに。2025年に約32万人不足。", "impact": "高" }
+    ]
+  },
+  "careWorkforce": {
+    "title": "介護人材の需給ギャップ",
+    "sourceRef": "厚生労働省 介護人材確保に向けた取り組み",
+    "data": {
+      "currentWorkers": 215,
+      "currentWorkersUnit": "万人（2023年）",
+      "requiredBy2025": 243,
+      "requiredBy2025Unit": "万人",
+      "shortageBy2025": 32,
+      "shortageBy2025Unit": "万人",
+      "requiredBy2040": 280,
+      "requiredBy2040Unit": "万人",
+      "shortageBy2040": 69,
+      "shortageBy2040Unit": "万人",
+      "jobOpeningRatio": 3.79,
+      "jobOpeningRatioNote": "介護分野の有効求人倍率（2024年）。全産業平均1.25倍の約3倍。"
+    },
+    "implications": [
+      "人手不足 → ICT活用による生産性向上が不可避",
+      "記録業務の効率化需要 → SaaS導入の後押し",
+      "夜間見守りのICT化 → センサー連携ソフトの需要増",
+      "外国人介護人材の増加 → 多言語対応ニーズ"
+    ]
+  },
+  "policyTimeline": {
+    "title": "介護・障害福祉 制度改定の主要トピック",
+    "events": [
+      { "year": 2015, "title": "介護報酬改定（-2.27%）", "description": "全体としてマイナス改定。処遇改善加算の拡充。小規模デイの基本報酬引き下げ。", "impact": "ソフト変更対応が必要", "category": "介護" },
+      { "year": 2018, "title": "介護報酬改定（+0.54%）", "description": "自立支援・重度化防止にインセンティブ。通所介護のアウトカム評価導入。", "impact": "新加算への対応", "category": "介護" },
+      { "year": 2018, "title": "障害福祉報酬改定（+0.47%）", "description": "就労継続支援A型の経営改善計画義務化。放課後デイの質の評価。", "impact": "障害福祉ソフトの需要増", "category": "障害" },
+      { "year": 2019, "title": "消費税10%引上げ", "description": "介護報酬の臨時改定（+0.39%）。処遇改善加算の拡充（特定処遇改善加算の新設）。", "impact": "ソフトの税率・加算対応", "category": "介護" },
+      { "year": 2021, "title": "介護報酬改定（+0.70%）", "description": "LIFE（科学的介護情報システム）の本格運用開始。リハ・栄養・口腔のデータ提出が加算要件に。", "impact": "LIFE連携機能の必須化", "category": "介護" },
+      { "year": 2021, "title": "ICT導入支援事業の拡充", "description": "補助上限の引き上げ（1事業所あたり最大100万円→260万円）。対象機器の拡大。", "impact": "ソフト導入加速の追い風", "category": "ICT" },
+      { "year": 2024, "title": "介護報酬改定（+1.59%）", "description": "処遇改善加算の一本化。ICT活用による人員配置基準緩和。生産性向上に係る取組の推進。", "impact": "ICTソフト導入の強い追い風", "category": "介護" },
+      { "year": 2024, "title": "障害福祉報酬改定（+1.12%）", "description": "就労選択支援の創設。グループホームの新類型。意思決定支援の推進。", "impact": "新サービス類型への対応", "category": "障害" },
+      { "year": 2024, "title": "医療DX推進法の影響", "description": "電子処方箋、マイナ保険証等。介護分野へのDX波及が加速。", "impact": "医療・介護連携の高度化", "category": "ICT" }
+    ]
+  }
+}

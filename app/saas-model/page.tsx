@@ -4,6 +4,8 @@ import { SaasPredictability } from "@/components/saas-model/SaasPredictability";
 import { SaasKeyMetrics } from "@/components/saas-model/SaasKeyMetrics";
 import { SaasCategories } from "@/components/saas-model/SaasCategories";
 import { SmsKaipokeApplied } from "@/components/saas-model/SmsKaipokeApplied";
+import { SaasAdvancedMetrics } from "@/components/saas-model/SaasAdvancedMetrics";
+import { SaasStageBenchmarks } from "@/components/saas-model/SaasStageBenchmarks";
 
 import saasData from "@/data/saas-model.json";
 
@@ -29,6 +31,12 @@ export default function SaasModelPage() {
 
       {/* ⑤ カイポケへの当てはめ */}
       <SmsKaipokeApplied data={saasData.smsApplied} />
+
+      {/* ⑥ SaaS上級指標（Rule of 40, Magic Number, etc.） */}
+      <SaasAdvancedMetrics metrics={saasData.advancedMetrics as any} />
+
+      {/* ⑦ ステージ別ベンチマーク */}
+      <SaasStageBenchmarks data={saasData.stageBenchmarks as any} />
     </div>
   );
 }

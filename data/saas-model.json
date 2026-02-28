@@ -231,5 +231,203 @@
       { "lever": "解約率改善", "description": "プロダクト品質向上とCSによる解約率低下→NRR改善。", "impact": "中" },
       { "lever": "AI BPO", "description": "AI活用でBPOの生産性向上→利益率改善+サービス拡大。", "impact": "中" }
     ]
+  },
+  "advancedMetrics": [
+    {
+      "key": "RuleOf40",
+      "name": "Rule of 40",
+      "nameJa": "40%ルール",
+      "formula": "売上成長率(%) + 営業利益率(%) ≧ 40%",
+      "description": "SaaS企業の成長と収益性のバランスを測る最も重要な総合指標。成長投資で赤字でも、成長率が高ければ許容される。逆に成長が鈍化したら利益を出す必要がある。",
+      "benchmark": {
+        "excellent": { "label": "60%以上", "description": "トップティア。Datadog, CrowdStrike等" },
+        "good": { "label": "40-60%", "description": "優良SaaS。市場から高評価" },
+        "average": { "label": "20-40%", "description": "改善余地あり。成長か利益かどちらかに寄せるべき" },
+        "bad": { "label": "20%未満", "description": "要改善。成長も利益も不十分" }
+      },
+      "stageGuidelines": [
+        { "stage": "Seed〜Series A", "guideline": "成長率重視（成長率50%+, 利益率-30%〜-50%でもOK）" },
+        { "stage": "Series B〜C", "guideline": "Rule of 40達成を目指す（成長率30%+, 利益率-10%〜+10%）" },
+        { "stage": "IPO後", "guideline": "Rule of 40安定維持。成長鈍化時は利益率でカバー" },
+        { "stage": "成熟期", "guideline": "成長率10-20%でも、利益率20-30%で40%超を維持" }
+      ],
+      "smsContext": "SMS全体の売上成長率約15% + 営業利益率約18% = 約33%。Rule of 40にはやや未達だが、カイポケ単体は成長率20%超で改善傾向。"
+    },
+    {
+      "key": "MagicNumber",
+      "name": "Magic Number",
+      "nameJa": "マジックナンバー",
+      "formula": "(当四半期ARR - 前四半期ARR) ÷ 前四半期S&M費用",
+      "description": "S&M（販売・マーケティング）投資の効率性を測る指標。1ドルのS&M投資がどれだけのARR増加を生むか。",
+      "benchmark": {
+        "excellent": { "label": "1.5以上", "description": "非常に効率的。S&Mをもっと積極投資すべき" },
+        "good": { "label": "1.0-1.5", "description": "効率的。健全な成長投資" },
+        "average": { "label": "0.5-1.0", "description": "まずまず。効率改善の余地あり" },
+        "bad": { "label": "0.5未満", "description": "S&M効率が悪い。チャネルや戦略の見直しが必要" }
+      },
+      "interpretation": [
+        "> 1.0: S&M投資を増やすべき（投資した以上にリターンがある）",
+        "0.75-1.0: 現状維持が適切",
+        "< 0.75: S&M効率の改善が先。Product改善やチャネル見直し",
+        "< 0.5: 根本的な問題あり。PMFの再検証が必要"
+      ]
+    },
+    {
+      "key": "BurnMultiple",
+      "name": "Burn Multiple",
+      "nameJa": "バーンマルチプル",
+      "formula": "Net Burn ÷ Net New ARR",
+      "description": "1ドルのARRを獲得するために何ドルの現金を燃やしたか。低いほど資本効率が良い。David Sacks（Craft Ventures）が提唱。",
+      "benchmark": {
+        "amazing": { "label": "< 1x", "description": "素晴らしい。ARR増加>キャッシュ消費" },
+        "great": { "label": "1-1.5x", "description": "優秀。効率的な成長" },
+        "good": { "label": "1.5-2x", "description": "良好。許容範囲" },
+        "bad": { "label": "2-3x", "description": "要改善。資本効率が低い" },
+        "terrible": { "label": "> 3x", "description": "危険。持続不可能な燃焼速度" }
+      },
+      "note": "黒字企業の場合、Burn Multipleはマイナス（=キャッシュを生んでいる）になるため、この指標は主にグロースステージのスタートアップで使用。"
+    },
+    {
+      "key": "SaaSQuickRatio",
+      "name": "SaaS Quick Ratio",
+      "nameJa": "SaaSクイックレシオ",
+      "formula": "(New MRR + Expansion MRR) ÷ (Churned MRR + Contraction MRR)",
+      "description": "MRRの増加分と減少分の比率。4以上が健全。成長の「質」を測る指標。",
+      "benchmark": {
+        "excellent": { "label": "4以上", "description": "非常に健全。成長が解約を大きく上回る" },
+        "good": { "label": "2-4", "description": "健全。安定した成長" },
+        "average": { "label": "1-2", "description": "成長と解約が拮抗。改善必要" },
+        "bad": { "label": "1未満", "description": "MRRが縮小中。緊急対応が必要" }
+      },
+      "interpretation": "Quick Ratioが高いほど「穴の空いていないバケツ」。解約が少なく新規+Expansionが多い状態。"
+    },
+    {
+      "key": "GrossMargin",
+      "name": "Gross Margin",
+      "nameJa": "粗利率",
+      "formula": "(売上 - 売上原価) ÷ 売上 × 100",
+      "description": "SaaSの粗利率は一般的に70-85%。ソフトウェアは限界費用が低いため高粗利。BPOを含むと粗利率は下がるが、ARPA向上で補完。",
+      "benchmark": {
+        "pureSaaS": { "label": "75-90%", "description": "純粋なSaaS。インフラコストのみ" },
+        "saasWithServices": { "label": "60-75%", "description": "SaaS+プロフェッショナルサービス" },
+        "saasWithBpo": { "label": "50-65%", "description": "SaaS+BPO。人件費が原価に含まれる" },
+        "verticalSaaS": { "label": "65-80%", "description": "バーティカルSaaS平均" }
+      },
+      "smsContext": "カイポケはSaaS+BPOモデルのため、粗利率は純粋SaaSよりやや低い（推定60-70%）。ただしBPO部分はAI化により粗利率改善の余地が大きい。"
+    },
+    {
+      "key": "NDRvsGDR",
+      "name": "NDR vs GDR",
+      "nameJa": "ネットリテンション vs グロスリテンション",
+      "metrics": [
+        {
+          "key": "NDR",
+          "name": "Net Dollar Retention (NDR)",
+          "formula": "(期初ARR + Expansion - Contraction - Churn) ÷ 期初ARR",
+          "description": "Expansionを含めた既存顧客の収益維持率。100%超なら既存顧客だけで成長。",
+          "benchmark": { "excellent": "130%以上", "good": "110-130%", "average": "100-110%", "bad": "100%未満" },
+          "note": "NRR (Net Revenue Retention) と同義"
+        },
+        {
+          "key": "GDR",
+          "name": "Gross Dollar Retention (GDR)",
+          "formula": "(期初ARR - Contraction - Churn) ÷ 期初ARR",
+          "description": "Expansionを除外した純粋な顧客維持率。解約・ダウングレードだけの影響。100%が上限。",
+          "benchmark": { "excellent": "95%以上", "good": "90-95%", "average": "85-90%", "bad": "85%未満" },
+          "note": "GDRが低い場合、Expansionでカバーしても根本的な問題（プロダクト不満）がある"
+        }
+      ],
+      "relationship": "NDR = GDR + Expansion Rate。GDRは「守り」、NDRは「守り+攻め」。GDRが高い上でExpansionを伸ばすのが理想。"
+    },
+    {
+      "key": "PMF",
+      "name": "Product-Market Fit",
+      "nameJa": "プロダクト・マーケット・フィット",
+      "description": "製品が市場のニーズに適合している状態。SaaSの成否を決める最も根本的な概念。",
+      "seanEllisTest": {
+        "question": "このプロダクトが使えなくなったら、どう感じますか？",
+        "threshold": "「とても残念」と回答するユーザーが40%以上ならPMF達成",
+        "interpretation": [
+          "40%以上: PMF達成。成長投資のアクセルを踏むべき",
+          "25-40%: PMFに近い。プロダクト改善を継続",
+          "25%未満: PMF未達。ピボットまたは大幅改善が必要"
+        ]
+      },
+      "quantitativeIndicators": [
+        { "indicator": "月次解約率", "pmfAchieved": "< 2%", "notAchieved": "> 5%" },
+        { "indicator": "NPS", "pmfAchieved": "> 50", "notAchieved": "< 20" },
+        { "indicator": "オーガニック成長比率", "pmfAchieved": "> 30%", "notAchieved": "< 10%" },
+        { "indicator": "口コミ紹介率", "pmfAchieved": "> 20%", "notAchieved": "< 5%" }
+      ],
+      "smsContext": "カイポケは介護・障害福祉の請求業務という必須ニーズに対応しており、基本的なPMFは達成済み。BPO・ファクタリングのPMFをさらに検証中。"
+    }
+  ],
+  "stageBenchmarks": {
+    "title": "SaaSステージ別ベンチマーク",
+    "stages": [
+      {
+        "stage": "Seed",
+        "arrRange": "0-1億円",
+        "focusMetrics": ["PMF検証", "初期顧客獲得"],
+        "benchmarks": {
+          "成長率": "月次15-20%（MoM）",
+          "解約率": "まだ測定困難",
+          "LTV/CAC": "測定不要（PMF優先）",
+          "Rule of 40": "適用外",
+          "重要なこと": "PMFの達成が全て"
+        }
+      },
+      {
+        "stage": "Series A",
+        "arrRange": "1-5億円",
+        "focusMetrics": ["再現可能な獲得チャネル", "Unit Economics"],
+        "benchmarks": {
+          "成長率": "年100-200%（T2D3目安）",
+          "解約率": "月次 < 3%",
+          "LTV/CAC": "> 3x",
+          "Rule of 40": "成長率で達成",
+          "重要なこと": "スケーラブルな獲得方法の確立"
+        }
+      },
+      {
+        "stage": "Series B",
+        "arrRange": "5-20億円",
+        "focusMetrics": ["NRR", "CAC Payback", "組織スケール"],
+        "benchmarks": {
+          "成長率": "年80-150%",
+          "解約率": "月次 < 2%",
+          "LTV/CAC": "> 3x",
+          "NRR": "> 110%",
+          "Rule of 40": "40%以上を維持",
+          "重要なこと": "NRRの安定とS&M効率の最適化"
+        }
+      },
+      {
+        "stage": "Growth / Pre-IPO",
+        "arrRange": "20-100億円",
+        "focusMetrics": ["Rule of 40", "FCFマージン", "マルチプロダクト"],
+        "benchmarks": {
+          "成長率": "年30-80%",
+          "解約率": "月次 < 1.5%",
+          "NRR": "> 115%",
+          "Rule of 40": "> 40%（必須）",
+          "Gross Margin": "> 70%",
+          "重要なこと": "持続可能な成長と利益のバランス"
+        }
+      },
+      {
+        "stage": "Public / 上場後",
+        "arrRange": "100億円以上",
+        "focusMetrics": ["FCFマージン", "Rule of 40", "マルチプロダクト展開"],
+        "benchmarks": {
+          "成長率": "年15-40%",
+          "解約率": "月次 < 1%",
+          "NRR": "> 120%",
+          "Rule of 40": "> 40%（安定維持）",
+          "FCFマージン": "> 15%",
+          "重要なこと": "株主還元と成長投資のバランス。マルチプロダクト化によるTAM拡大"
+        }
+      }
+    ]
   }
 }

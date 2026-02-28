@@ -9,6 +9,7 @@ import {
   TrendingUp,
   FileText,
   Microscope,
+  BarChart3,
   Menu,
   ChevronRight,
 } from "lucide-react";
@@ -24,6 +25,7 @@ const ICON_MAP = {
   LayoutDashboard,
   Target,
   Layers,
+  BarChart3,
   Microscope,
   TrendingUp,
   FileText,

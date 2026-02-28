@@ -1,0 +1,323 @@
+{
+  "marketOverview": {
+    "title": "介護・障害福祉ソフト市場 競合マップ",
+    "totalAddressableMarket": {
+      "careFacilities": 264500,
+      "disabilityFacilities": 138000,
+      "total": 402500,
+      "unit": "事業所",
+      "note": "介護+障害福祉の全事業所がTAM"
+    },
+    "softwarePenetrationRate": {
+      "overall": 65,
+      "unit": "%",
+      "note": "何らかのソフトを導入している事業所の割合。残り35%が紙・Excel運用。"
+    },
+    "topShareRanking": [
+      { "rank": 1, "product": "ほのぼのNEXT", "company": "NDソフトウェア", "facilities": 71900, "share": 17.9 },
+      { "rank": 2, "product": "ワイズマン", "company": "ワイズマン", "facilities": 61200, "share": 15.2 },
+      { "rank": 3, "product": "カイポケ", "company": "SMS", "facilities": 50400, "share": 12.5 },
+      { "rank": 4, "product": "カナミッククラウド", "company": "カナミックネットワーク", "facilities": 43000, "share": 10.7 },
+      { "rank": 5, "product": "ケアカルテ", "company": "ケアコネクトジャパン", "facilities": 18000, "share": 4.5 },
+      { "rank": 6, "product": "まもる君", "company": "インフォ・テック", "facilities": 12000, "share": 3.0 },
+      { "rank": 7, "product": "介舟ファミリー", "company": "日立ケアテック", "facilities": 10000, "share": 2.5 }
+    ]
+  },
+  "competitors": [
+    {
+      "id": "kaipoke",
+      "product": "カイポケ",
+      "company": "株式会社エス・エム・エス",
+      "companyOverview": {
+        "listed": "東証プライム（2175）",
+        "revenue": "57,093百万円（FY2025連結）",
+        "employees": 4303,
+        "founded": 2003
+      },
+      "facilities": 50400,
+      "facilitiesUnit": "事業所（59,300事業所）",
+      "pricing": {
+        "monthly": "5,000〜25,000円",
+        "initialCost": "0円",
+        "freeTrial": "最大36ヶ月無料（他社からの移行支援）",
+        "model": "月額サブスクリプション"
+      },
+      "features": [
+        { "name": "介護保険請求", "available": true, "strength": "high" },
+        { "name": "障害福祉請求", "available": true, "strength": "high" },
+        { "name": "介護記録", "available": true, "strength": "high" },
+        { "name": "計画書作成", "available": true, "strength": "medium" },
+        { "name": "タブレット対応", "available": true, "strength": "high" },
+        { "name": "LIFE連携", "available": true, "strength": "high" },
+        { "name": "BPO（請求代行）", "available": true, "strength": "high" },
+        { "name": "ファクタリング", "available": true, "strength": "high" },
+        { "name": "AI機能", "available": true, "strength": "medium" },
+        { "name": "経営分析", "available": true, "strength": "medium" },
+        { "name": "勤怠管理", "available": true, "strength": "medium" },
+        { "name": "給与計算", "available": true, "strength": "low" }
+      ],
+      "targetServices": ["訪問介護", "通所介護", "居宅介護支援", "施設系", "障害福祉全般", "児童発達支援"],
+      "strengths": [
+        "初期費用0円・低価格でITリテラシーの低い事業所にも導入しやすい",
+        "障害福祉にも強い（介護＋障害の両方に対応）",
+        "SaaS+BPO+ファクタリングの複合モデル（ARPA向上）",
+        "SMS本体の人材紹介・メディアとのシナジー",
+        "クラウドネイティブ（オンプレミス不要）"
+      ],
+      "weaknesses": [
+        "大規模法人・広域法人向けの機能がやや弱い",
+        "ほのぼの・ワイズマンと比べてブランド認知がやや低い",
+        "カスタマイズ性が低い（SaaSの宿命）"
+      ],
+      "moat": "SaaS+BPO+ファクタリングの複合モデル。一度導入するとBPO・金融まで利用が広がり、スイッチングコストが極めて高くなる。"
+    },
+    {
+      "id": "honobono",
+      "product": "ほのぼのNEXT",
+      "company": "NDソフトウェア株式会社",
+      "companyOverview": {
+        "listed": "非上場（エス・エム・エスの子会社 → 2020年セコムが買収）",
+        "revenue": "約150億円（推定）",
+        "employees": 700,
+        "founded": 1984
+      },
+      "facilities": 71900,
+      "facilitiesUnit": "事業所",
+      "pricing": {
+        "monthly": "要問合せ（推定15,000〜50,000円）",
+        "initialCost": "50〜200万円（サーバー構築含む）",
+        "freeTrial": "なし",
+        "model": "オンプレミス＋保守料"
+      },
+      "features": [
+        { "name": "介護保険請求", "available": true, "strength": "high" },
+        { "name": "障害福祉請求", "available": true, "strength": "medium" },
+        { "name": "介護記録", "available": true, "strength": "high" },
+        { "name": "計画書作成", "available": true, "strength": "high" },
+        { "name": "タブレット対応", "available": true, "strength": "medium" },
+        { "name": "LIFE連携", "available": true, "strength": "high" },
+        { "name": "BPO（請求代行）", "available": false, "strength": "none" },
+        { "name": "ファクタリング", "available": false, "strength": "none" },
+        { "name": "AI機能", "available": true, "strength": "low" },
+        { "name": "経営分析", "available": true, "strength": "high" },
+        { "name": "勤怠管理", "available": true, "strength": "high" },
+        { "name": "給与計算", "available": true, "strength": "medium" }
+      ],
+      "targetServices": ["訪問介護", "通所介護", "居宅介護支援", "施設系", "老健", "グループホーム"],
+      "strengths": [
+        "業界シェアNo.1（71,900事業所）の圧倒的ブランド力",
+        "40年の歴史による信頼性と実績",
+        "大規模法人・広域法人向けの統合管理機能が充実",
+        "セコムグループの資本力・信頼性",
+        "オンプレミスの安定性（ネット環境不安のある施設に強い）"
+      ],
+      "weaknesses": [
+        "初期費用が高額（小規模事業所にはハードル高い）",
+        "オンプレミス中心でクラウド化が遅れている",
+        "BPO・金融サービスがない（SaaS単体の提供）",
+        "UIが古い印象（レガシー感）"
+      ],
+      "moat": "40年の実績と71,900事業所の導入基盤。大規模法人のスイッチングコストが極めて高い。セコムの信頼性。"
+    },
+    {
+      "id": "wiseman",
+      "product": "ワイズマン",
+      "company": "株式会社ワイズマン",
+      "companyOverview": {
+        "listed": "非上場",
+        "revenue": "約80億円（推定）",
+        "employees": 500,
+        "founded": 1983
+      },
+      "facilities": 61200,
+      "facilitiesUnit": "事業所",
+      "pricing": {
+        "monthly": "要問合せ（推定10,000〜40,000円）",
+        "initialCost": "30〜150万円",
+        "freeTrial": "デモ対応あり",
+        "model": "オンプレミス＋クラウドの選択制"
+      },
+      "features": [
+        { "name": "介護保険請求", "available": true, "strength": "high" },
+        { "name": "障害福祉請求", "available": true, "strength": "medium" },
+        { "name": "介護記録", "available": true, "strength": "high" },
+        { "name": "計画書作成", "available": true, "strength": "high" },
+        { "name": "タブレット対応", "available": true, "strength": "medium" },
+        { "name": "LIFE連携", "available": true, "strength": "high" },
+        { "name": "BPO（請求代行）", "available": false, "strength": "none" },
+        { "name": "ファクタリング", "available": false, "strength": "none" },
+        { "name": "AI機能", "available": true, "strength": "medium" },
+        { "name": "経営分析", "available": true, "strength": "high" },
+        { "name": "勤怠管理", "available": true, "strength": "high" },
+        { "name": "給与計算", "available": true, "strength": "medium" }
+      ],
+      "targetServices": ["訪問介護", "通所介護", "居宅介護支援", "施設系", "老健", "医療連携"],
+      "strengths": [
+        "医療・介護連携に強み（医療機関向けも展開）",
+        "エリア別営業の手厚いサポート体制",
+        "クラウド移行を推進中（ハイブリッド対応）",
+        "安定したシェア2位のポジション"
+      ],
+      "weaknesses": [
+        "クラウドネイティブではない（移行途上）",
+        "障害福祉領域はカイポケに劣る",
+        "BPO・金融等の付加サービスがない",
+        "ブランド刷新が課題"
+      ],
+      "moat": "医療・介護連携の知見と40年のサポート体制。東北を中心とした地域密着型の顧客基盤。"
+    },
+    {
+      "id": "kanamic",
+      "product": "カナミッククラウド",
+      "company": "株式会社カナミックネットワーク",
+      "companyOverview": {
+        "listed": "東証グロース（3939）",
+        "revenue": "約30億円",
+        "employees": 250,
+        "founded": 2000
+      },
+      "facilities": 43000,
+      "facilitiesUnit": "事業所",
+      "pricing": {
+        "monthly": "7,000〜30,000円",
+        "initialCost": "0〜30万円",
+        "freeTrial": "あり（1ヶ月）",
+        "model": "クラウドサブスクリプション"
+      },
+      "features": [
+        { "name": "介護保険請求", "available": true, "strength": "high" },
+        { "name": "障害福祉請求", "available": true, "strength": "medium" },
+        { "name": "介護記録", "available": true, "strength": "high" },
+        { "name": "計画書作成", "available": true, "strength": "high" },
+        { "name": "タブレット対応", "available": true, "strength": "high" },
+        { "name": "LIFE連携", "available": true, "strength": "high" },
+        { "name": "BPO（請求代行）", "available": false, "strength": "none" },
+        { "name": "ファクタリング", "available": false, "strength": "none" },
+        { "name": "AI機能", "available": true, "strength": "medium" },
+        { "name": "経営分析", "available": true, "strength": "medium" },
+        { "name": "勤怠管理", "available": true, "strength": "medium" },
+        { "name": "給与計算", "available": false, "strength": "none" }
+      ],
+      "targetServices": ["訪問介護", "通所介護", "居宅介護支援", "施設系", "地域包括"],
+      "strengths": [
+        "クラウドネイティブ（SaaS型）",
+        "地域包括ケア・多職種連携プラットフォームが強み",
+        "自治体連携の実績が豊富",
+        "上場企業としての信頼性"
+      ],
+      "weaknesses": [
+        "カイポケほどの価格競争力がない",
+        "BPO・金融サービスがない",
+        "障害福祉領域の対応がやや弱い",
+        "SMSのような大企業のシナジーがない"
+      ],
+      "moat": "地域包括ケア・多職種連携のプラットフォーム。自治体との連携実績。"
+    },
+    {
+      "id": "care-karte",
+      "product": "ケアカルテ",
+      "company": "株式会社ケアコネクトジャパン",
+      "companyOverview": {
+        "listed": "非上場",
+        "revenue": "約20億円（推定）",
+        "employees": 200,
+        "founded": 2000
+      },
+      "facilities": 18000,
+      "facilitiesUnit": "事業所",
+      "pricing": {
+        "monthly": "10,000〜35,000円",
+        "initialCost": "10〜50万円",
+        "freeTrial": "デモ対応あり",
+        "model": "クラウド＋オンプレミス"
+      },
+      "features": [
+        { "name": "介護保険請求", "available": true, "strength": "high" },
+        { "name": "障害福祉請求", "available": true, "strength": "low" },
+        { "name": "介護記録", "available": true, "strength": "high" },
+        { "name": "計画書作成", "available": true, "strength": "high" },
+        { "name": "タブレット対応", "available": true, "strength": "medium" },
+        { "name": "LIFE連携", "available": true, "strength": "high" },
+        { "name": "BPO（請求代行）", "available": false, "strength": "none" },
+        { "name": "ファクタリング", "available": false, "strength": "none" },
+        { "name": "AI機能", "available": true, "strength": "low" },
+        { "name": "経営分析", "available": true, "strength": "medium" },
+        { "name": "勤怠管理", "available": true, "strength": "medium" },
+        { "name": "給与計算", "available": false, "strength": "none" }
+      ],
+      "targetServices": ["施設系", "通所介護", "居宅介護支援"],
+      "strengths": [
+        "施設系サービスに特化した深い機能",
+        "介護記録のUI/UXが高評価",
+        "サポート体制が手厚い"
+      ],
+      "weaknesses": [
+        "シェアが小さい（5位）",
+        "訪問系・障害福祉への対応が弱い",
+        "BPO・金融サービスがない"
+      ],
+      "moat": "施設系に特化した深い業務理解。"
+    }
+  ],
+  "competitiveAnalysis": {
+    "kaipokeAdvantages": {
+      "title": "カイポケの競争優位性まとめ",
+      "items": [
+        {
+          "category": "価格戦略",
+          "description": "初期費用0円 + 月額5,000円〜で業界最安水準。ITリテラシーの低い小規模事業所の初回導入ハードルを下げている。",
+          "vsCompetitors": "ほのぼの・ワイズマンは初期50-200万円。カナミックも初期費用あり。"
+        },
+        {
+          "category": "複合モデル（ARPA向上）",
+          "description": "SaaS → BPO（請求代行）→ ファクタリング（報酬早期資金化）→ 人材紹介連携。低価格で入り、付加サービスでARPAを引き上げるモデル。",
+          "vsCompetitors": "競合は全てSaaS単体。BPO+ファクタリングの複合モデルはカイポケのみ。"
+        },
+        {
+          "category": "障害福祉対応",
+          "description": "介護+障害福祉の両方に強い。障害福祉事業所は年6-7%増加しており、成長市場。",
+          "vsCompetitors": "ほのぼの・ワイズマンは介護中心。障害福祉対応はカイポケが最も強い。"
+        },
+        {
+          "category": "クラウドネイティブ",
+          "description": "完全クラウド型のため、導入・アップデートが容易。制度改定への対応が早い。",
+          "vsCompetitors": "ほのぼの・ワイズマンはオンプレミス中心で、クラウド移行は道半ば。"
+        },
+        {
+          "category": "SMSシナジー",
+          "description": "キャリア事業（人材紹介）、ヘルスケア（メディア）との連携。介護事業所に対する総合的な価値提供。",
+          "vsCompetitors": "独立系ソフトベンダーにはこのシナジーがない。"
+        }
+      ]
+    },
+    "selectionCriteria": {
+      "title": "介護ソフト選定時の重視ポイント",
+      "criteria": [
+        { "item": "操作性・使いやすさ", "importance": 95, "kaipokeScore": 85 },
+        { "item": "料金の安さ", "importance": 90, "kaipokeScore": 95 },
+        { "item": "制度改定への対応速度", "importance": 88, "kaipokeScore": 90 },
+        { "item": "サポート体制", "importance": 85, "kaipokeScore": 80 },
+        { "item": "対応サービス種別の多さ", "importance": 80, "kaipokeScore": 90 },
+        { "item": "LIFE連携", "importance": 78, "kaipokeScore": 85 },
+        { "item": "タブレット・モバイル対応", "importance": 75, "kaipokeScore": 88 },
+        { "item": "他システムとの連携", "importance": 70, "kaipokeScore": 75 },
+        { "item": "経営分析・レポート", "importance": 65, "kaipokeScore": 70 },
+        { "item": "BPO・付加サービス", "importance": 55, "kaipokeScore": 95 }
+      ]
+    },
+    "ictSubsidy": {
+      "title": "ICT導入支援事業（補助金）の概要",
+      "maxAmount": "最大260万円/事業所",
+      "subsidyRate": "1/2〜3/4",
+      "targetItems": [
+        "介護ソフト（記録・請求・計画書）",
+        "タブレット端末",
+        "Wi-Fi環境整備",
+        "見守りセンサー",
+        "インカム",
+        "クラウドサービス利用料（初年度）"
+      ],
+      "impact": "補助金によりソフト導入のコストハードルが大幅に下がり、特にクラウド型SaaSの導入が加速。カイポケは初期費用0円のため、補助金をタブレット等のハード購入に充てられる優位性がある。"
+    }
+  }
+}
