@@ -40,6 +40,16 @@ export const NAV_ITEMS: NavItem[] = [
     ],
   },
   {
+    href: "/sales/issue-sheet",
+    label: "営業",
+    icon: "Briefcase",
+    children: [
+      { href: "/sales/issue-sheet", label: "課題整理シート" },
+      { href: "/sales/spin-script", label: "SPIN話法スクリプト" },
+      { href: "/sales/the-model", label: "The Model" },
+    ],
+  },
+  {
     href: "/saas-model",
     label: "SaaSモデル深掘り",
     icon: "Microscope",

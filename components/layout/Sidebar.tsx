@@ -10,6 +10,7 @@ import {
   FileText,
   Microscope,
   BarChart3,
+  Briefcase,
   Menu,
   ChevronRight,
 } from "lucide-react";
@@ -26,6 +27,7 @@ const ICON_MAP = {
   Target,
   Layers,
   BarChart3,
+  Briefcase,
   Microscope,
   TrendingUp,
   FileText,
