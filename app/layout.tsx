@@ -17,8 +17,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SMS IR分析 - 株式会社エス・エム・エス",
-  description: "SMS（2175）の事業ポートフォリオ・ビジネスモデル・財務分析サイト",
+  title: "SaaS Deep Dive - SaaS事業を深く学ぶ",
+  description: "SaaS事業を4つの層で体系的に学ぶ。概論から組織構造、プロセス設計、日々のオペレーションまで。",
 };
 
 export default function RootLayout({
@@ -41,7 +41,7 @@ export default function RootLayout({
             <main className="flex-1 overflow-y-auto">
               <div className="sticky top-0 z-10 flex items-center gap-2 border-b border-border bg-background/80 px-4 py-2 backdrop-blur-sm md:hidden">
                 <MobileNav />
-                <span className="text-sm font-bold">SMS IR分析</span>
+                <span className="text-sm font-bold">SaaS Deep Dive</span>
               </div>
               <div className="mx-auto max-w-6xl px-4 py-6 md:px-8">
                 {children}

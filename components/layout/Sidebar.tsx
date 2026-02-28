@@ -167,7 +167,7 @@ function NavContent({ onNavigate }: { onNavigate?: () => void }) {
       <Separator />
       <div className="px-4 py-3">
         <p className="text-[10px] text-muted-foreground">
-          株式会社エス・エム・エス
+          SaaS Deep Dive
         </p>
       </div>
     </div>
