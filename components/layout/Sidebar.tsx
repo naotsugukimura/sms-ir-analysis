@@ -14,6 +14,7 @@ import {
   Cog,
   Menu,
   ChevronRight,
+  BookOpen,
 } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
@@ -33,6 +34,7 @@ const ICON_MAP = {
   Microscope,
   TrendingUp,
   FileText,
+  BookOpen,
 } as const;
 
 function NavGroup({
@@ -128,25 +130,38 @@ function NavContent({ onNavigate }: { onNavigate?: () => void }) {
   return (
     <div className="flex h-full flex-col">
       <div className="flex items-center gap-2 px-4 py-5">
-        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#1E3A5F] text-xs font-bold text-white">
-          SMS
+        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-purple-600 text-xs font-bold text-white">
+          S
         </div>
         <div>
-          <h1 className="text-sm font-bold leading-tight">SMS IR分析</h1>
-          <p className="text-[10px] text-muted-foreground">2175 プライム</p>
+          <h1 className="text-sm font-bold leading-tight">SaaS Deep Dive</h1>
+          <p className="text-[10px] text-muted-foreground">SaaS事業を深く学ぶ</p>
         </div>
       </div>
       <Separator />
       <ScrollArea className="flex-1 px-2 py-3">
         <nav className="flex flex-col gap-0.5">
-          {NAV_ITEMS.map((item) => (
-            <NavGroup
-              key={item.href}
-              item={item}
-              pathname={pathname}
-              onNavigate={onNavigate}
-            />
-          ))}
+          {NAV_ITEMS.map((item, i) => {
+            const showSection =
+              item.section &&
+              (i === 0 || NAV_ITEMS[i - 1]?.section !== item.section);
+            return (
+              <div key={item.href}>
+                {showSection && (
+                  <div className="mt-4 mb-1 px-3 first:mt-0">
+                    <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground/60">
+                      {item.section}
+                    </span>
+                  </div>
+                )}
+                <NavGroup
+                  item={item}
+                  pathname={pathname}
+                  onNavigate={onNavigate}
+                />
+              </div>
+            );
+          })}
         </nav>
       </ScrollArea>
       <Separator />

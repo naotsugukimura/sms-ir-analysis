@@ -4,74 +4,62 @@ export interface NavItem {
   href: string;
   label: string;
   icon: string;
+  section?: string;
   children?: { href: string; label: string }[];
 }
 
 export const NAV_ITEMS: NavItem[] = [
+  // --- ホーム ---
   {
     href: "/",
-    label: "ダッシュボード",
+    label: "ホーム",
     icon: "LayoutDashboard",
   },
+
+  // --- Layer 1: SaaS概論 ---
   {
-    href: "/mission",
-    label: "ミッション & ポートフォリオ",
-    icon: "Target",
+    href: "/saas-model",
+    label: "SaaS概論",
+    icon: "Microscope",
+    section: "Layer 1",
   },
-  {
-    href: "/segments",
-    label: "事業セグメント",
-    icon: "Layers",
-    children: [
-      { href: "/segments", label: "セグメント一覧" },
-      { href: "/segments/career", label: "キャリア事業" },
-      { href: "/segments/care-saas", label: "介護・障害福祉SaaS" },
-      { href: "/segments/healthcare", label: "ヘルスケア" },
-      { href: "/segments/international", label: "海外事業" },
-    ],
-  },
-  {
-    href: "/market",
-    label: "マーケット環境",
-    icon: "BarChart3",
-    children: [
-      { href: "/market", label: "マーケット概要" },
-      { href: "/market/competitors", label: "競合分析" },
-    ],
-  },
-  {
-    href: "/sales/issue-sheet",
-    label: "営業",
-    icon: "Briefcase",
-    children: [
-      { href: "/sales/issue-sheet", label: "課題整理シート" },
-      { href: "/sales/spin-script", label: "SPIN話法スクリプト" },
-      { href: "/sales/the-model", label: "The Model" },
-    ],
-  },
+
+  // --- Layer 2: SaaS組織 ---
   {
     href: "/org/rd",
     label: "SaaS組織",
     icon: "Cog",
+    section: "Layer 2",
     children: [
       { href: "/org/rd", label: "R&D（開発）" },
       { href: "/org/ga", label: "G&A（管理）" },
     ],
   },
+
+  // --- Layer 3: プロセス・指標 ---
   {
-    href: "/saas-model",
-    label: "SaaSモデル深掘り",
-    icon: "Microscope",
+    href: "/sales/the-model",
+    label: "プロセス・指標",
+    icon: "BarChart3",
+    section: "Layer 3",
+    children: [
+      { href: "/sales/the-model", label: "The Model" },
+      { href: "/sales/issue-sheet", label: "課題整理シート" },
+    ],
   },
+
+  // --- Layer 4: セールス実践 ---
   {
-    href: "/timeline",
-    label: "時系列分析",
-    icon: "TrendingUp",
-  },
-  {
-    href: "/sources",
-    label: "IR資料",
-    icon: "FileText",
+    href: "/sales/spin-script",
+    label: "セールス実践",
+    icon: "Briefcase",
+    section: "Layer 4",
+    children: [
+      { href: "/sales/spin-script", label: "SPIN（就労B型）" },
+      { href: "/sales/spin-script/soudan", label: "SPIN（相談支援）" },
+      { href: "/sales/is-script", label: "ISスクリプト" },
+      { href: "/sales/glossary", label: "マーケティング用語集" },
+    ],
   },
 ];
 
