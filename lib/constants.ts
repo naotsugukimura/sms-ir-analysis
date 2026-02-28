@@ -26,11 +26,13 @@ export const NAV_ITEMS: NavItem[] = [
 
   // --- Layer 2: SaaS組織 ---
   {
-    href: "/org/rd",
+    href: "/org",
     label: "SaaS組織",
     icon: "Cog",
     section: "Layer 2",
     children: [
+      { href: "/org", label: "組織全体マップ" },
+      { href: "/sales/the-model", label: "S&M（営業）" },
       { href: "/org/rd", label: "R&D（開発）" },
       { href: "/org/ga", label: "G&A（管理）" },
     ],
@@ -38,12 +40,11 @@ export const NAV_ITEMS: NavItem[] = [
 
   // --- Layer 3: プロセス・指標 ---
   {
-    href: "/sales/the-model",
+    href: "/sales/issue-sheet",
     label: "プロセス・指標",
     icon: "BarChart3",
     section: "Layer 3",
     children: [
-      { href: "/sales/the-model", label: "The Model" },
       { href: "/sales/issue-sheet", label: "課題整理シート" },
     ],
   },
@@ -55,9 +56,8 @@ export const NAV_ITEMS: NavItem[] = [
     icon: "Briefcase",
     section: "Layer 4",
     children: [
-      { href: "/sales/spin-script", label: "SPIN（就労B型）" },
-      { href: "/sales/spin-script/soudan", label: "SPIN（相談支援）" },
-      { href: "/sales/is-script", label: "ISスクリプト" },
+      { href: "/sales/spin-script", label: "IS架電 / SPIN商談" },
+      { href: "/sales/is-script", label: "ISスクリプト詳細" },
       { href: "/sales/glossary", label: "マーケティング用語集" },
     ],
   },
