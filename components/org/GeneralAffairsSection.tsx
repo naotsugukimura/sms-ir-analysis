@@ -12,6 +12,7 @@ import {
   TrendingUp,
   Wrench,
 } from "lucide-react";
+import { GaSectionExtras } from "./GaSectionExtras";
 
 interface SubFunction {
   name: string;
@@ -39,6 +40,10 @@ interface GAData {
   subFunctions: SubFunction[];
   tools: string[];
   kpis: KPI[];
+  salaryRange?: Record<string, string>;
+  headcountGuide?: string;
+  bestPractices?: string[];
+  commonMistakes?: string[];
 }
 
 const toolCategoryLabels: Record<string, string> = {
@@ -192,6 +197,14 @@ export function GeneralAffairsSection({ data }: { data: GAData }) {
           </div>
         </CardContent>
       </Card>
+
+      <GaSectionExtras
+        color={data.color}
+        salaryRange={data.salaryRange}
+        headcountGuide={data.headcountGuide}
+        bestPractices={data.bestPractices}
+        commonMistakes={data.commonMistakes}
+      />
     </div>
   );
 }

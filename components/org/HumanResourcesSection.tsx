@@ -13,6 +13,7 @@ import {
   ChevronDown,
   ChevronUp,
 } from "lucide-react";
+import { GaSectionExtras } from "./GaSectionExtras";
 
 interface Channel {
   channel: string;
@@ -68,6 +69,10 @@ interface HRData {
   subFunctions: SubFunction[];
   tools: string[];
   kpis: KPI[];
+  salaryRange?: Record<string, string>;
+  headcountGuide?: string;
+  bestPractices?: string[];
+  commonMistakes?: string[];
 }
 
 const costColors: Record<string, string> = {
@@ -293,6 +298,14 @@ export function HumanResourcesSection({ data }: { data: HRData }) {
           </CardContent>
         </Card>
       </div>
+
+      <GaSectionExtras
+        color={data.color}
+        salaryRange={data.salaryRange}
+        headcountGuide={data.headcountGuide}
+        bestPractices={data.bestPractices}
+        commonMistakes={data.commonMistakes}
+      />
     </div>
   );
 }

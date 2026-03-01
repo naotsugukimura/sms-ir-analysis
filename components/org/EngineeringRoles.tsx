@@ -2,7 +2,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Monitor, Server, ShieldCheck, Cloud, Wrench, TrendingUp } from "lucide-react";
+import { Monitor, Server, ShieldCheck, Cloud, Wrench, TrendingUp, DollarSign, Users } from "lucide-react";
 
 interface KPI {
   name: string;
@@ -13,6 +13,13 @@ interface TechStack {
   [category: string]: string[];
 }
 
+interface SalaryRange {
+  junior: string;
+  mid: string;
+  senior: string;
+  lead: string;
+}
+
 interface Role {
   name: string;
   icon: string;
@@ -21,6 +28,8 @@ interface Role {
   techStack: TechStack;
   dailyTasks: string[];
   kpis: KPI[];
+  salaryRange?: SalaryRange;
+  headcountGuide?: string;
 }
 
 interface RolesData {
@@ -136,6 +145,50 @@ export function EngineeringRoles({ data }: { data: RolesData }) {
                     ))}
                   </div>
                 </div>
+
+                {/* 年収レンジ & 人員ガイド */}
+                {(role.salaryRange || role.headcountGuide) && (
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    {role.salaryRange && (
+                      <div className="rounded-lg border border-border p-3">
+                        <div className="flex items-center gap-2 mb-2">
+                          <DollarSign className="h-3.5 w-3.5 text-emerald-400" />
+                          <span className="text-xs font-semibold text-muted-foreground">年収レンジ</span>
+                        </div>
+                        <div className="space-y-1.5">
+                          {Object.entries(role.salaryRange).map(([level, range]) => {
+                            const labels: Record<string, string> = { junior: "ジュニア", mid: "ミドル", senior: "シニア", lead: "リード" };
+                            return (
+                              <div key={level} className="flex items-center justify-between">
+                                <span className="text-xs text-muted-foreground">{labels[level] || level}</span>
+                                <span className="text-xs font-semibold" style={{ color: role.color }}>{range}</span>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+                    {role.headcountGuide && (
+                      <div className="rounded-lg border border-border p-3">
+                        <div className="flex items-center gap-2 mb-2">
+                          <Users className="h-3.5 w-3.5 text-blue-400" />
+                          <span className="text-xs font-semibold text-muted-foreground">成長フェーズ別人員</span>
+                        </div>
+                        <div className="space-y-1.5">
+                          {role.headcountGuide.split(", ").map((item) => {
+                            const [stage, count] = item.split(": ");
+                            return (
+                              <div key={stage} className="flex items-center justify-between">
+                                <span className="text-xs text-muted-foreground">{stage}</span>
+                                <span className="text-xs font-semibold" style={{ color: role.color }}>{count}</span>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                )}
               </CardContent>
             </Card>
           );

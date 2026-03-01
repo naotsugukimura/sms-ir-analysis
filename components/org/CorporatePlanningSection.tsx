@@ -10,6 +10,7 @@ import {
   TrendingUp,
   Wrench,
 } from "lucide-react";
+import { GaSectionExtras } from "./GaSectionExtras";
 
 interface Framework {
   name: string;
@@ -49,6 +50,10 @@ interface CPData {
   subFunctions: SubFunction[];
   tools: string[];
   kpis: KPI[];
+  salaryRange?: Record<string, string>;
+  headcountGuide?: string;
+  bestPractices?: string[];
+  commonMistakes?: string[];
 }
 
 export function CorporatePlanningSection({ data }: { data: CPData }) {
@@ -195,6 +200,14 @@ export function CorporatePlanningSection({ data }: { data: CPData }) {
           </CardContent>
         </Card>
       </div>
+
+      <GaSectionExtras
+        color={data.color}
+        salaryRange={data.salaryRange}
+        headcountGuide={data.headcountGuide}
+        bestPractices={data.bestPractices}
+        commonMistakes={data.commonMistakes}
+      />
     </div>
   );
 }

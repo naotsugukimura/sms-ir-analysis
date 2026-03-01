@@ -7,6 +7,7 @@ import { LegalSection } from "@/components/org/LegalSection";
 import { GeneralAffairsSection } from "@/components/org/GeneralAffairsSection";
 import { CorporatePlanningSection } from "@/components/org/CorporatePlanningSection";
 import { CrossFunctionalSection } from "@/components/org/CrossFunctionalSection";
+import { GaHeadcountByStage } from "@/components/org/GaHeadcountByStage";
 
 export default function GaPage() {
   return (
@@ -21,6 +22,9 @@ export default function GaPage() {
       <LegalSection data={gaData.legal} />
       <GeneralAffairsSection data={gaData.generalAffairs} />
       <CorporatePlanningSection data={gaData.corporatePlanning} />
+      {gaData.headcountByStage && (
+        <GaHeadcountByStage data={gaData.headcountByStage} />
+      )}
       <CrossFunctionalSection data={gaData.crossFunctional} />
     </div>
   );

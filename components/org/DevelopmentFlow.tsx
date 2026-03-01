@@ -12,6 +12,9 @@ import {
   Wrench,
   FileOutput,
   ListChecks,
+  CheckCircle2,
+  AlertTriangle,
+  ShieldCheck,
 } from "lucide-react";
 
 interface Phase {
@@ -29,6 +32,9 @@ interface Phase {
   sections?: Array<{ name: string; content: string }>;
   practices?: Array<{ name: string; detail: string }>;
   strategies?: Array<{ name: string; description: string; risk: string }>;
+  bestPractices?: string[];
+  antiPatterns?: string[];
+  gateConditions?: string[];
 }
 
 interface FlowData {
@@ -238,6 +244,61 @@ export function DevelopmentFlow({ data }: { data: FlowData }) {
                               リスク: {s.risk}
                             </Badge>
                           </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* ベストプラクティス & アンチパターン */}
+                  {(phase.bestPractices || phase.antiPatterns) && (
+                    <div className="grid gap-3 sm:grid-cols-2">
+                      {phase.bestPractices && (
+                        <div className="rounded-lg border border-emerald-500/20 bg-emerald-950/10 p-3">
+                          <div className="flex items-center gap-2 mb-2">
+                            <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400" />
+                            <span className="text-xs font-semibold text-emerald-400">ベストプラクティス</span>
+                          </div>
+                          <ul className="space-y-1">
+                            {phase.bestPractices.map((bp, i) => (
+                              <li key={i} className="text-xs text-muted-foreground flex items-start gap-2">
+                                <span className="shrink-0 mt-1 h-1 w-1 rounded-full bg-emerald-400/60" />
+                                <span>{bp}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                      {phase.antiPatterns && (
+                        <div className="rounded-lg border border-red-500/20 bg-red-950/10 p-3">
+                          <div className="flex items-center gap-2 mb-2">
+                            <AlertTriangle className="h-3.5 w-3.5 text-red-400" />
+                            <span className="text-xs font-semibold text-red-400">アンチパターン</span>
+                          </div>
+                          <ul className="space-y-1">
+                            {phase.antiPatterns.map((ap, i) => (
+                              <li key={i} className="text-xs text-muted-foreground flex items-start gap-2">
+                                <span className="shrink-0 mt-1 h-1 w-1 rounded-full bg-red-400/60" />
+                                <span>{ap}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {/* フェーズゲート条件 */}
+                  {phase.gateConditions && (
+                    <div className="rounded-lg border border-amber-500/20 bg-amber-950/10 p-3">
+                      <div className="flex items-center gap-2 mb-2">
+                        <ShieldCheck className="h-3.5 w-3.5 text-amber-400" />
+                        <span className="text-xs font-semibold text-amber-400">フェーズゲート条件（次フェーズへの移行基準）</span>
+                      </div>
+                      <div className="flex flex-wrap gap-1.5">
+                        {phase.gateConditions.map((gc, i) => (
+                          <Badge key={i} variant="outline" className="text-xs border-amber-500/30 text-amber-400">
+                            {gc}
+                          </Badge>
                         ))}
                       </div>
                     </div>

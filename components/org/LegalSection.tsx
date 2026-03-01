@@ -3,6 +3,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Scale, FileText, Shield, Landmark, TrendingUp, Wrench } from "lucide-react";
+import { GaSectionExtras } from "./GaSectionExtras";
 
 interface SaasContract {
   type: string;
@@ -38,6 +39,10 @@ interface LegalData {
   subFunctions: SubFunction[];
   tools: string[];
   kpis: KPI[];
+  salaryRange?: Record<string, string>;
+  headcountGuide?: string;
+  bestPractices?: string[];
+  commonMistakes?: string[];
 }
 
 export function LegalSection({ data }: { data: LegalData }) {
@@ -174,6 +179,14 @@ export function LegalSection({ data }: { data: LegalData }) {
           </CardContent>
         </Card>
       </div>
+
+      <GaSectionExtras
+        color={data.color}
+        salaryRange={data.salaryRange}
+        headcountGuide={data.headcountGuide}
+        bestPractices={data.bestPractices}
+        commonMistakes={data.commonMistakes}
+      />
     </div>
   );
 }

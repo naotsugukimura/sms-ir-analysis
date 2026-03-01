@@ -3,6 +3,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calculator, Calendar, CalendarDays, CalendarRange, TrendingUp, Wrench, Zap } from "lucide-react";
+import { GaSectionExtras } from "./GaSectionExtras";
 
 interface SubFunction {
   name: string;
@@ -26,6 +27,10 @@ interface FinanceData {
   description: string;
   subFunctions: SubFunction[];
   kpis: KPI[];
+  salaryRange?: Record<string, string>;
+  headcountGuide?: string;
+  bestPractices?: string[];
+  commonMistakes?: string[];
 }
 
 export function FinanceSection({ data }: { data: FinanceData }) {
@@ -144,6 +149,14 @@ export function FinanceSection({ data }: { data: FinanceData }) {
           </div>
         </CardContent>
       </Card>
+
+      <GaSectionExtras
+        color={data.color}
+        salaryRange={data.salaryRange}
+        headcountGuide={data.headcountGuide}
+        bestPractices={data.bestPractices}
+        commonMistakes={data.commonMistakes}
+      />
     </div>
   );
 }
