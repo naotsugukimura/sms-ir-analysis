@@ -6,11 +6,7 @@ import { Badge } from "@/components/ui/badge";
 
 const IctMarketChartInner = dynamic(() => import("./IctMarketChartInner"), {
   ssr: false,
-  loading: () => (
-    <div className="flex h-80 items-center justify-center text-muted-foreground">
-      読み込み中...
-    </div>
-  ),
+  loading: () => <div className="h-80 animate-pulse rounded-lg bg-muted" />,
 });
 
 

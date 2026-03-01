@@ -6,7 +6,10 @@ import { SourceBadge } from "@/components/shared/SourceBadge";
 import type { SegmentBusinessModel } from "@/lib/types";
 import { FLOW_TYPE_CONFIG } from "@/lib/constants";
 
-const FlowChartInner = dynamic(() => import("./FlowChartInner"), { ssr: false });
+const FlowChartInner = dynamic(() => import("./FlowChartInner"), {
+  ssr: false,
+  loading: () => <div className="h-[400px] animate-pulse rounded-lg bg-muted" />,
+});
 
 export function StakeholderFlowChart({
   model,

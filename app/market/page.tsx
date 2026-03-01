@@ -1,4 +1,7 @@
+"use client";
+
 import { PageHeader } from "@/components/layout/PageHeader";
+import { SectionNav, type SectionDef } from "@/components/layout/SectionNav";
 import { IctMarketChart } from "@/components/market/IctMarketChart";
 import { AgingDemographics } from "@/components/market/AgingDemographics";
 import { CareWorkforce } from "@/components/market/CareWorkforce";
@@ -8,6 +11,15 @@ import { MarketInsights } from "@/components/market/MarketInsights";
 
 import marketData from "@/data/market-environment.json";
 
+const SECTIONS: SectionDef[] = [
+  { id: "insights", label: "インサイト" },
+  { id: "ict-market", label: "ICT市場規模" },
+  { id: "aging", label: "高齢化" },
+  { id: "workforce", label: "介護人材" },
+  { id: "drivers", label: "成長ドライバー" },
+  { id: "policy", label: "制度改定" },
+];
+
 export default function MarketPage() {
   return (
     <div className="space-y-8">
@@ -16,23 +28,31 @@ export default function MarketPage() {
         description="介護・障害福祉市場の構造とICT市場の成長ドライバーを理解する"
       />
 
-      {/* ① マーケット全体の構造的インサイト */}
-      <MarketInsights data={marketData} />
+      <SectionNav sections={SECTIONS} />
 
-      {/* ② 介護ICT市場規模の推移 */}
-      <IctMarketChart data={marketData.ictMarket} />
+      <section id="insights">
+        <MarketInsights data={marketData} />
+      </section>
 
-      {/* ③ 高齢化の進行と将来推計 */}
-      <AgingDemographics data={marketData.agingDemographics} />
+      <section id="ict-market">
+        <IctMarketChart data={marketData.ictMarket} />
+      </section>
 
-      {/* ④ 介護人材の需給ギャップ */}
-      <CareWorkforce data={marketData.careWorkforce} />
+      <section id="aging">
+        <AgingDemographics data={marketData.agingDemographics} />
+      </section>
 
-      {/* ⑤ ICT市場の成長ドライバー */}
-      <IctGrowthDrivers data={marketData.ictMarket} />
+      <section id="workforce">
+        <CareWorkforce data={marketData.careWorkforce} />
+      </section>
 
-      {/* ⑥ 制度改定タイムライン */}
-      <PolicyTimeline events={marketData.policyTimeline.events} />
+      <section id="drivers">
+        <IctGrowthDrivers data={marketData.ictMarket} />
+      </section>
+
+      <section id="policy">
+        <PolicyTimeline events={marketData.policyTimeline.events} />
+      </section>
     </div>
   );
 }

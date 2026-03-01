@@ -6,7 +6,10 @@ import type { ConsolidatedFinancials, SegmentDefinition } from "@/lib/types";
 import { SEGMENT_CONFIG, CHART_TOOLTIP_STYLE } from "@/lib/constants";
 import { formatRevenue } from "@/lib/utils";
 
-const ChartInner = dynamic(() => import("./SegmentOverviewChartInner"), { ssr: false });
+const ChartInner = dynamic(() => import("./SegmentOverviewChartInner"), {
+  ssr: false,
+  loading: () => <div className="h-[300px] animate-pulse rounded-lg bg-muted" />,
+});
 
 export function SegmentOverviewChart({
   financials,

@@ -6,11 +6,7 @@ import { Badge } from "@/components/ui/badge";
 
 const MarketShareChartInner = dynamic(() => import("./MarketShareChartInner"), {
   ssr: false,
-  loading: () => (
-    <div className="flex h-72 items-center justify-center text-muted-foreground">
-      読み込み中...
-    </div>
-  ),
+  loading: () => <div className="h-72 animate-pulse rounded-lg bg-muted" />,
 });
 
 export function MarketShareChart({ data }: { data: any }) {

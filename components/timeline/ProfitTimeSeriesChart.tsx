@@ -6,7 +6,10 @@ import type { ConsolidatedFinancials } from "@/lib/types";
 import { CHART_TOOLTIP_STYLE } from "@/lib/constants";
 import { formatRevenue, formatPercent } from "@/lib/utils";
 
-const ChartInner = dynamic(() => import("./ProfitChartInner"), { ssr: false });
+const ChartInner = dynamic(() => import("./ProfitChartInner"), {
+  ssr: false,
+  loading: () => <div className="h-[350px] animate-pulse rounded-lg bg-muted" />,
+});
 
 export function ProfitTimeSeriesChart({ financials }: { financials: ConsolidatedFinancials }) {
   const data = financials.fiscalYears.map((fy) => ({

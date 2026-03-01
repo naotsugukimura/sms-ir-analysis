@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { PageHeader } from "@/components/layout/PageHeader";
+import { SectionNav, type SectionDef } from "@/components/layout/SectionNav";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -130,6 +133,13 @@ const COST_STRUCTURE = {
   ],
 };
 
+const SECTIONS: SectionDef[] = [
+  { id: "units", label: "3ユニット" },
+  { id: "cost-structure", label: "コスト構造" },
+  { id: "cross-flows", label: "連携フロー" },
+  { id: "detail-links", label: "詳細リンク" },
+];
+
 export default function OrgOverviewPage() {
   return (
     <div className="space-y-8">
@@ -138,7 +148,10 @@ export default function OrgOverviewPage() {
         description="S&M（営業）/ R&D（開発）/ G&A（管理）の3つの機能組織がどう連携してSaaS事業を動かすか"
       />
 
+      <SectionNav sections={SECTIONS} />
+
       {/* 3 Unit Cards - Z-pattern top row */}
+      <section id="units">
       <div className="grid gap-4 md:grid-cols-3">
         {UNITS.map((unit) => {
           const Icon = unit.icon;
@@ -196,8 +209,10 @@ export default function OrgOverviewPage() {
           );
         })}
       </div>
+      </section>
 
       {/* Cost Structure Bar */}
+      <section id="cost-structure">
       <Card className="border-border/50">
         <CardHeader className="pb-2">
           <CardTitle className="text-sm">{COST_STRUCTURE.title}</CardTitle>
@@ -225,8 +240,10 @@ export default function OrgOverviewPage() {
           </div>
         </CardContent>
       </Card>
+      </section>
 
       {/* Cross-functional Flows */}
+      <section id="cross-flows">
       <div>
         <h3 className="text-sm font-bold mb-4 flex items-center gap-2">
           <RefreshCw className="h-4 w-4 text-amber-400" />
@@ -274,8 +291,10 @@ export default function OrgOverviewPage() {
           })}
         </div>
       </div>
+      </section>
 
       {/* Detail Links */}
+      <section id="detail-links">
       <div className="grid gap-3 sm:grid-cols-3">
         {UNITS.map((unit) => {
           const Icon = unit.icon;
@@ -300,6 +319,7 @@ export default function OrgOverviewPage() {
           );
         })}
       </div>
+      </section>
     </div>
   );
 }

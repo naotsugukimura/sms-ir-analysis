@@ -3,7 +3,10 @@
 import dynamic from "next/dynamic";
 import { Card, CardContent } from "@/components/ui/card";
 
-const FlowDiagram = dynamic(() => import("./SegmentFlowDiagram"), { ssr: false });
+const FlowDiagram = dynamic(() => import("./SegmentFlowDiagram"), {
+  ssr: false,
+  loading: () => <div className="h-[400px] animate-pulse rounded-lg bg-muted" />,
+});
 
 export function SegmentInterconnections() {
   return (

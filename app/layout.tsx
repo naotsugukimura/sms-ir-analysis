@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Sans_JP, JetBrains_Mono } from "next/font/google";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Sidebar, MobileNav } from "@/components/layout/Sidebar";
+import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import "./globals.css";
 
 const notoSansJP = Noto_Sans_JP({
@@ -44,6 +45,9 @@ export default function RootLayout({
                 <span className="text-sm font-bold">SaaS Deep Dive</span>
               </div>
               <div className="mx-auto max-w-6xl px-4 py-6 md:px-8">
+                <div className="mb-4">
+                  <Breadcrumb />
+                </div>
                 {children}
               </div>
             </main>

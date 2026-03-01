@@ -30,13 +30,15 @@ export default function TheModelPage() {
 
       {/* タブUI */}
       <Tabs defaultValue="marketing" className="w-full">
-        <TabsList className="w-full justify-start overflow-x-auto">
-          {TAB_ITEMS.map((tab) => (
-            <TabsTrigger key={tab.value} value={tab.value} className="text-xs">
-              {tab.label}
-            </TabsTrigger>
-          ))}
-        </TabsList>
+        <div className="sticky top-0 z-10 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 -mx-4 px-4 py-2 border-b border-border md:-mx-8 md:px-8">
+          <TabsList className="w-full justify-start overflow-x-auto">
+            {TAB_ITEMS.map((tab) => (
+              <TabsTrigger key={tab.value} value={tab.value} className="text-xs">
+                {tab.label}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+        </div>
 
         <TabsContent value="marketing" className="space-y-6 mt-4">
           <MarketingSection data={modelData.marketing as any} />

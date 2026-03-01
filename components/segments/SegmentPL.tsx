@@ -14,7 +14,10 @@ import type { ConsolidatedFinancials, SegmentId } from "@/lib/types";
 import { formatRevenue, formatPercent, calcYoY } from "@/lib/utils";
 import { CHART_TOOLTIP_STYLE } from "@/lib/constants";
 
-const PLChartInner = dynamic(() => import("./PLChartInner"), { ssr: false });
+const PLChartInner = dynamic(() => import("./PLChartInner"), {
+  ssr: false,
+  loading: () => <div className="h-[280px] animate-pulse rounded-lg bg-muted" />,
+});
 
 export function SegmentPL({
   segmentId,

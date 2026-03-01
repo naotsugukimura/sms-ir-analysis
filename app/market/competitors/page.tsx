@@ -1,4 +1,7 @@
+"use client";
+
 import { PageHeader } from "@/components/layout/PageHeader";
+import { SectionNav, type SectionDef } from "@/components/layout/SectionNav";
 import { MarketShareChart } from "@/components/competitors/MarketShareChart";
 import { CompetitorCards } from "@/components/competitors/CompetitorCards";
 import { FeatureComparison } from "@/components/competitors/FeatureComparison";
@@ -8,6 +11,15 @@ import { IctSubsidy } from "@/components/competitors/IctSubsidy";
 
 import competitorData from "@/data/competitors.json";
 
+const SECTIONS: SectionDef[] = [
+  { id: "market-share", label: "市場シェア" },
+  { id: "competitors", label: "競合製品" },
+  { id: "features", label: "機能比較" },
+  { id: "advantages", label: "競争優位性" },
+  { id: "criteria", label: "選定基準" },
+  { id: "subsidy", label: "ICT補助金" },
+];
+
 export default function CompetitorsPage() {
   return (
     <div className="space-y-8">
@@ -16,23 +28,31 @@ export default function CompetitorsPage() {
         description="介護・障害福祉ソフト市場の競争環境とカイポケのポジショニングを分析する"
       />
 
-      {/* ① 市場シェアチャート */}
-      <MarketShareChart data={competitorData.marketOverview} />
+      <SectionNav sections={SECTIONS} />
 
-      {/* ② 競合製品カード */}
-      <CompetitorCards competitors={competitorData.competitors} />
+      <section id="market-share">
+        <MarketShareChart data={competitorData.marketOverview} />
+      </section>
 
-      {/* ③ 機能比較マトリクス */}
-      <FeatureComparison competitors={competitorData.competitors} />
+      <section id="competitors">
+        <CompetitorCards competitors={competitorData.competitors} />
+      </section>
 
-      {/* ④ カイポケの競争優位性 */}
-      <KaipokeAdvantages data={competitorData.competitiveAnalysis.kaipokeAdvantages} />
+      <section id="features">
+        <FeatureComparison competitors={competitorData.competitors} />
+      </section>
 
-      {/* ⑤ 選定基準とカイポケのスコア */}
-      <SelectionCriteria data={competitorData.competitiveAnalysis.selectionCriteria} />
+      <section id="advantages">
+        <KaipokeAdvantages data={competitorData.competitiveAnalysis.kaipokeAdvantages} />
+      </section>
 
-      {/* ⑥ ICT導入補助金 */}
-      <IctSubsidy data={competitorData.competitiveAnalysis.ictSubsidy} />
+      <section id="criteria">
+        <SelectionCriteria data={competitorData.competitiveAnalysis.selectionCriteria} />
+      </section>
+
+      <section id="subsidy">
+        <IctSubsidy data={competitorData.competitiveAnalysis.ictSubsidy} />
+      </section>
     </div>
   );
 }
