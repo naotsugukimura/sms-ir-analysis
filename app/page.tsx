@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Sparkline } from "@/components/ui/sparkline";
 
 // --- SMS 実例企業データ（FY2025 確定値 / FY2026 Q3累計より） ---
 const SMS_KPIS = [
@@ -23,6 +24,7 @@ const SMS_KPIS = [
     meta: "FY2025",
     delta: "+5.3% YoY",
     positive: true,
+    sparkline: [35850, 39800, 44600, 52400, 55200],
     color: "text-blue-400",
     border: "border-blue-500/20",
     bg: "bg-blue-500/5",
@@ -33,6 +35,7 @@ const SMS_KPIS = [
     meta: "FY2025 / カイポケ",
     delta: "+17.0% YoY",
     positive: true,
+    sparkline: [8200, 9800, 11500, 13500, 15800],
     color: "text-emerald-400",
     border: "border-emerald-500/20",
     bg: "bg-emerald-500/5",
@@ -43,6 +46,7 @@ const SMS_KPIS = [
     meta: "FY2025",
     delta: "SaaS水準を維持",
     positive: true,
+    sparkline: [12.0, 13.0, 13.0, 11.8, 11.5],
     color: "text-amber-400",
     border: "border-amber-500/20",
     bg: "bg-amber-500/5",
@@ -53,6 +57,7 @@ const SMS_KPIS = [
     meta: "FY2026 Q3",
     delta: "東証プライム上場",
     positive: true,
+    sparkline: [3050, 3280, 3520, 3800, 4000],
     color: "text-purple-400",
     border: "border-purple-500/20",
     bg: "bg-purple-500/5",
@@ -233,9 +238,20 @@ export default function HomePage() {
               className={`rounded-xl border ${kpi.border} ${kpi.bg} p-4`}
             >
               <p className="text-[11px] text-muted-foreground">{kpi.label}</p>
-              <p className={`mt-1 text-2xl font-bold tabular-nums ${kpi.color}`}>
-                {kpi.value}
-              </p>
+              <div className="mt-1 flex items-end justify-between gap-2">
+                <p className={`text-2xl font-bold tabular-nums leading-none ${kpi.color}`}>
+                  {kpi.value}
+                </p>
+                {kpi.sparkline && (
+                  <Sparkline
+                    data={kpi.sparkline}
+                    width={56}
+                    height={20}
+                    color="currentColor"
+                    className={`shrink-0 opacity-60 ${kpi.color}`}
+                  />
+                )}
+              </div>
               <div className="mt-1 flex items-center justify-between">
                 <span className="text-[10px] text-muted-foreground/70">
                   {kpi.meta}

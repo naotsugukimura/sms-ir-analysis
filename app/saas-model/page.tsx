@@ -3,6 +3,7 @@
 import { TrendingUp, BarChart3, Target, Heart } from "lucide-react";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { SmsCta } from "@/components/shared/SmsCta";
+import { SectionNav } from "@/components/layout/SectionNav";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SaasIntroduction } from "@/components/saas-model/SaasIntroduction";
 import { FlowVsStock } from "@/components/saas-model/FlowVsStock";
@@ -76,16 +77,32 @@ export default function SaasModelPage() {
 
         {/* ── タブ②：KPI・財務 ── */}
         <TabsContent value="kpi" className="space-y-6 mt-4">
-          {/* 主要KPI */}
-          <SaasKeyMetrics metrics={saasData.keyMetrics} />
-          <MetricsRelationMap data={saasData.metricsRelation as any} />
-          {/* チャーン・成長シミュレーション */}
-          <ChurnSimulation data={saasData.churnSimulation as any} />
-          {/* 財務概念 */}
-          <SaasFinancialConcepts data={saasData.financialConcepts as any} />
-          <SaasAdvancedMetrics metrics={saasData.advancedMetrics as any} />
-          {/* 財務諸表の読み方 */}
-          <SaasFinancialStatements data={(saasData as any).financialStatements} />
+          <SectionNav sections={[
+            { id: "kpi-metrics",    label: "主要KPI" },
+            { id: "kpi-relation",   label: "指標関係図" },
+            { id: "kpi-churn",      label: "Churnシミュ" },
+            { id: "kpi-concepts",   label: "財務概念" },
+            { id: "kpi-advanced",   label: "上級指標" },
+            { id: "kpi-statements", label: "財務諸表" },
+          ]} />
+          <section id="kpi-metrics">
+            <SaasKeyMetrics metrics={saasData.keyMetrics} />
+          </section>
+          <section id="kpi-relation">
+            <MetricsRelationMap data={saasData.metricsRelation as any} />
+          </section>
+          <section id="kpi-churn">
+            <ChurnSimulation data={saasData.churnSimulation as any} />
+          </section>
+          <section id="kpi-concepts">
+            <SaasFinancialConcepts data={saasData.financialConcepts as any} />
+          </section>
+          <section id="kpi-advanced">
+            <SaasAdvancedMetrics metrics={saasData.advancedMetrics as any} />
+          </section>
+          <section id="kpi-statements">
+            <SaasFinancialStatements data={(saasData as any).financialStatements} />
+          </section>
           {/* SMS財務データへの導線 */}
           <SmsCta
             href="/timeline"

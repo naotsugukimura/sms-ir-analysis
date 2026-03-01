@@ -37,6 +37,36 @@ export default function CaseStudiesPage() {
         description="グローバル5社＋日本5社のSaaS企業を徹底分析。創業からPMF、成長、現在までの戦略と指標を学ぶ。"
       />
 
+      {/* SMS指標ポジション */}
+      <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/5 p-4">
+        <p className="mb-3 text-[11px] font-bold uppercase tracking-wider text-emerald-400">
+          SMS（カイポケ）の指標ポジション — 10社との比較軸
+        </p>
+        <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+          {[
+            { label: "全社売上成長",     value: "+5.3%",  note: "成熟SaaS水準",   color: "#3B82F6" },
+            { label: "Care-SaaS成長",   value: "+17%",   note: "高成長継続中",   color: "#10B981" },
+            { label: "営業利益率",       value: "11.5%",  note: "黒字SaaS水準",   color: "#F59E0B" },
+            { label: "Rule of 40",      value: "〜17",   note: "成長余地あり",   color: "#8B5CF6" },
+          ].map((item) => (
+            <div
+              key={item.label}
+              className="rounded-lg border bg-background/50 p-3"
+              style={{ borderColor: item.color + "20" }}
+            >
+              <p className="text-[10px] text-muted-foreground">{item.label}</p>
+              <p className="mt-1 font-mono text-lg font-bold" style={{ color: item.color }}>
+                {item.value}
+              </p>
+              <p className="text-[9px] text-muted-foreground">{item.note}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-3 text-[10px] text-muted-foreground">
+          ※ Rule of 40 = 売上成長率（+5.3%）+ 営業利益率（11.5%）≒ 17。Care-SaaS単体では成長性が高く、全社Rule of 40の改善余地がある。各社との比較で「SMSはどこに位置するか」を意識しながら読んでください。
+        </p>
+      </div>
+
       {/* Filter */}
       <div className="flex gap-2">
         {[
