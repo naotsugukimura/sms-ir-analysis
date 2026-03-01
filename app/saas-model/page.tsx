@@ -14,6 +14,12 @@ import { SaasCategories } from "@/components/saas-model/SaasCategories";
 import { SmsKaipokeApplied } from "@/components/saas-model/SmsKaipokeApplied";
 import { SaasStageBenchmarks } from "@/components/saas-model/SaasStageBenchmarks";
 import { SaasAdvancedMetrics } from "@/components/saas-model/SaasAdvancedMetrics";
+import { SaasPricing } from "@/components/saas-model/SaasPricing";
+import { SaasPlg } from "@/components/saas-model/SaasPlg";
+import { SaasCustomerSuccess } from "@/components/saas-model/SaasCustomerSuccess";
+import { SaasGtm } from "@/components/saas-model/SaasGtm";
+import { SaasCompetitiveStrategy } from "@/components/saas-model/SaasCompetitiveStrategy";
+import { SaasFinancialStatements } from "@/components/saas-model/SaasFinancialStatements";
 
 import saasData from "@/data/saas-model.json";
 
@@ -24,6 +30,12 @@ const TAB_ITEMS = [
   { value: "categories", label: "分類" },
   { value: "stages", label: "ステージ別" },
   { value: "advanced", label: "上級指標" },
+  { value: "pricing", label: "プライシング" },
+  { value: "plg", label: "PLG" },
+  { value: "cs", label: "CS深掘り" },
+  { value: "gtm", label: "GTM戦略" },
+  { value: "moat", label: "競争戦略" },
+  { value: "financial", label: "財務諸表" },
 ];
 
 export default function SaasModelPage() {
@@ -79,6 +91,36 @@ export default function SaasModelPage() {
         {/* Tab 5: 上級指標 */}
         <TabsContent value="advanced" className="space-y-6 mt-4">
           <SaasAdvancedMetrics metrics={saasData.advancedMetrics as any} />
+        </TabsContent>
+
+        {/* Tab 6: プライシング */}
+        <TabsContent value="pricing" className="space-y-6 mt-4">
+          <SaasPricing data={saasData.pricing as any} />
+        </TabsContent>
+
+        {/* Tab 7: PLG */}
+        <TabsContent value="plg" className="space-y-6 mt-4">
+          <SaasPlg data={saasData.plg as any} />
+        </TabsContent>
+
+        {/* Tab 8: CS深掘り */}
+        <TabsContent value="cs" className="space-y-6 mt-4">
+          <SaasCustomerSuccess data={saasData.customerSuccess as any} />
+        </TabsContent>
+
+        {/* Tab 9: GTM戦略 */}
+        <TabsContent value="gtm" className="space-y-6 mt-4">
+          <SaasGtm data={saasData.gtm as any} />
+        </TabsContent>
+
+        {/* Tab 10: 競争戦略 */}
+        <TabsContent value="moat" className="space-y-6 mt-4">
+          <SaasCompetitiveStrategy data={(saasData as any).competitiveStrategy} />
+        </TabsContent>
+
+        {/* Tab 11: 財務諸表 */}
+        <TabsContent value="financial" className="space-y-6 mt-4">
+          <SaasFinancialStatements data={(saasData as any).financialStatements} />
         </TabsContent>
       </Tabs>
     </div>

@@ -1,0 +1,488 @@
+{
+  "title": "SaaS用語集",
+  "subtitle": "SaaSビジネスを理解するための50+用語。各用語に計算式、ベンチマーク、アクションティップ付き。",
+  "categories": [
+    {
+      "key": "revenue",
+      "name": "収益指標",
+      "color": "#10B981",
+      "icon": "DollarSign"
+    },
+    {
+      "key": "efficiency",
+      "name": "効率指標",
+      "color": "#3B82F6",
+      "icon": "Target"
+    },
+    {
+      "key": "growth",
+      "name": "成長指標",
+      "color": "#8B5CF6",
+      "icon": "TrendingUp"
+    },
+    {
+      "key": "product",
+      "name": "プロダクト指標",
+      "color": "#F59E0B",
+      "icon": "BarChart3"
+    },
+    {
+      "key": "financial",
+      "name": "財務指標",
+      "color": "#EF4444",
+      "icon": "Briefcase"
+    }
+  ],
+  "terms": [
+    {
+      "term": "MRR（月次経常収益）",
+      "termEn": "Monthly Recurring Revenue",
+      "category": "revenue",
+      "description": "毎月繰り返し発生する収益。SaaSの基本単位。新規MRR + Expansion MRR - Contraction MRR - Churn MRRで計算。一時収益や導入費は含めない。",
+      "formula": "∑（各顧客の月額サブスクリプション料）",
+      "benchmark": "成長期: MoM 10-15% 成長 / 安定期: MoM 2-5% 成長",
+      "actionTip": "MRRの内訳（New/Expansion/Contraction/Churn）を毎月トラッキング。成長のドライバーが新規なのか拡張なのかを見極める。"
+    },
+    {
+      "term": "ARR（年間経常収益）",
+      "termEn": "Annual Recurring Revenue",
+      "category": "revenue",
+      "description": "MRRを12倍した年間ベースの経常収益。投資家との会話やバリュエーションで最も使われる指標。年間契約の場合はそのまま合算。",
+      "formula": "MRR × 12",
+      "benchmark": "シリーズA: $1-3M ARR / シリーズB: $5-15M ARR / シリーズC: $20M+ ARR",
+      "actionTip": "ARRマイルストーンを四半期ごとに設定し、達成に必要な月次新規MRRを逆算してセールスチームのKPIに落とし込む。"
+    },
+    {
+      "term": "ARPA（顧客あたり平均収益）",
+      "termEn": "Average Revenue Per Account",
+      "category": "revenue",
+      "description": "1顧客あたりの平均月間収益。プライシング戦略の効果測定やセグメント別分析に活用。ARPUとほぼ同義だが、B2BではARPAが一般的。",
+      "formula": "MRR ÷ 有料顧客数",
+      "benchmark": "SMB: $50-500/月 / Mid-Market: $500-5,000/月 / Enterprise: $5,000+/月",
+      "actionTip": "ARPAの推移を月次で追跡。上昇トレンドならアップセル施策が奏功している証拠。低下ならプライシング見直しを検討。"
+    },
+    {
+      "term": "NRR（売上維持率）",
+      "termEn": "Net Revenue Retention",
+      "category": "revenue",
+      "description": "既存顧客からの収益がどれだけ維持・拡大されたかを示す。100%超ならアップセル・クロスセルが解約を上回っている。SaaS最重要指標の一つ。",
+      "formula": "（期首MRR + Expansion - Contraction - Churn）÷ 期首MRR × 100",
+      "benchmark": "優秀: 130%+ / 良好: 110-130% / 改善必要: 100%未満",
+      "actionTip": "NRRが100%未満ならチャーン対策を最優先に。110%超を維持できればセールス無しでも成長する基盤ができる。"
+    },
+    {
+      "term": "GRR（総収益維持率）",
+      "termEn": "Gross Revenue Retention",
+      "category": "revenue",
+      "description": "既存顧客の収益維持率からExpansionを除外した純粋な維持力。解約・ダウングレードの影響だけを測定。100%を超えることはない。",
+      "formula": "（期首MRR - Contraction - Churn）÷ 期首MRR × 100",
+      "benchmark": "優秀: 95%+ / 良好: 90-95% / 改善必要: 85%未満",
+      "actionTip": "GRRが90%未満ならプロダクトのコアバリュー提供に問題あり。カスタマーサクセスのオンボーディングプロセスを見直す。"
+    },
+    {
+      "term": "Expansion MRR（拡張MRR）",
+      "termEn": "Expansion MRR",
+      "category": "revenue",
+      "description": "既存顧客のアップグレード・アドオン追加・シート増加などによるMRR増加分。ネガティブチャーンの原動力であり、持続的成長の要。",
+      "formula": "∑（既存顧客のMRR増加額）",
+      "benchmark": "Expansion MRRがNew MRRの30%以上なら健全 / 50%以上なら優秀",
+      "actionTip": "プランの上位移行パスを明確に設計し、利用量ベースのプライシング要素を組み込んで自然なExpansionを促進する。"
+    },
+    {
+      "term": "New MRR（新規MRR）",
+      "termEn": "New MRR",
+      "category": "revenue",
+      "description": "新規顧客の獲得によって追加されたMRR。マーケティング・セールス活動の直接的な成果指標。成長の基盤となる最も分かりやすい指標。",
+      "formula": "∑（当月新規顧客の月額サブスクリプション料）",
+      "benchmark": "Net New MRR全体の40-60%が新規からが理想的バランス",
+      "actionTip": "新規MRRの獲得チャネル別内訳を分析し、最もROIの高いチャネルにリソースを集中投下する。"
+    },
+    {
+      "term": "Churn MRR（解約MRR）",
+      "termEn": "Churn MRR",
+      "category": "revenue",
+      "description": "顧客の解約・退会によって失われたMRR。ロゴチャーン（顧客数ベース）と区別して金額ベースで管理すること。大口解約の影響が可視化できる。",
+      "formula": "∑（当月解約顧客の解約前月額料金）",
+      "benchmark": "月次チャーンMRR率: 優秀 1%未満 / 良好 1-2% / 改善必要 3%以上",
+      "actionTip": "解約理由を必ず記録・分類し、上位3つの理由に対する改善アクションを毎月実行する。解約予兆スコアの導入も有効。"
+    },
+    {
+      "term": "Net New MRR（純新規MRR）",
+      "termEn": "Net New MRR",
+      "category": "revenue",
+      "description": "月次のMRR純増分。New + Expansion - Contraction - Churnの合計。この数値がプラスである限り事業は成長している。最もシンプルな成長指標。",
+      "formula": "New MRR + Expansion MRR - Contraction MRR - Churn MRR",
+      "benchmark": "前月比で安定的にプラスを維持。3ヶ月連続マイナスなら緊急対策が必要",
+      "actionTip": "Net New MRRの4要素を毎月ウォーターフォールチャートで可視化し、経営会議でドライバーの変化を議論する。"
+    },
+    {
+      "term": "ACV（年間契約額）",
+      "termEn": "Annual Contract Value",
+      "category": "revenue",
+      "description": "1契約あたりの年間金額。複数年契約の場合は年割りで算出。セールスの案件サイズ分析やセグメント分類に使う。初期費用は通常含まない。",
+      "formula": "契約総額 ÷ 契約年数",
+      "benchmark": "SMB: $5K-25K / Mid-Market: $25K-100K / Enterprise: $100K+",
+      "actionTip": "ACVの上昇トレンドを目指す。アップマーケット戦略の成果はACVの変化で測定。四半期ごとにACVの分布を分析する。"
+    },
+    {
+      "term": "TCV（総契約額）",
+      "termEn": "Total Contract Value",
+      "category": "revenue",
+      "description": "契約期間全体の総額。初期費用、導入費用、専門サービス費用を含む。セールスチームのインセンティブ設計やキャッシュフロー予測に重要。",
+      "formula": "月額料金 × 契約月数 + 初期費用 + その他一時費用",
+      "benchmark": "TCV/ACV比率が1.5以上なら長期契約の獲得が順調",
+      "actionTip": "複数年契約を促進する割引制度を設計し、キャッシュフローの前倒しと解約リスク低減を同時に実現する。"
+    },
+    {
+      "term": "Bookings（受注額）",
+      "termEn": "Bookings",
+      "category": "revenue",
+      "description": "一定期間内に締結した全契約の合計金額。まだ収益認識されていないものも含む。セールスパイプラインの成果を測る先行指標。ARRとは異なる。",
+      "formula": "∑（期間内の新規契約額 + 更新契約額 + 追加契約額）",
+      "benchmark": "Bookings/ARR比率が年間で1.2以上なら成長フェーズとして健全",
+      "actionTip": "BookingsとARRのギャップを定期的にモニタリング。乖離が大きい場合は収益認識タイミングやサービス比率を確認する。"
+    },
+    {
+      "term": "LTV（顧客生涯価値）",
+      "termEn": "Lifetime Value",
+      "category": "efficiency",
+      "description": "1顧客が生涯にわたってもたらす総収益。獲得コスト（CAC）との比率で投資判断に使う。SaaSの収益性を判断する最も基本的な効率指標。",
+      "formula": "ARPA × 粗利率 ÷ 月次チャーンレート",
+      "benchmark": "LTVがCACの3倍以上で健全 / 5倍以上で優秀",
+      "actionTip": "LTV向上にはチャーン率改善が最もレバレッジが高い。1%の改善がLTVに与える影響をシミュレーションして優先度を判断する。"
+    },
+    {
+      "term": "CAC（顧客獲得コスト）",
+      "termEn": "Customer Acquisition Cost",
+      "category": "efficiency",
+      "description": "新規顧客1社を獲得するのにかかった総コスト。S&M費用の総額を新規顧客数で割る。チャネル別CACを計算して最適なリソース配分を決める。",
+      "formula": "（セールス費用 + マーケティング費用）÷ 新規顧客獲得数",
+      "benchmark": "SMB: $500-2,000 / Mid-Market: $5,000-20,000 / Enterprise: $20,000+",
+      "actionTip": "Blended CACだけでなくチャネル別CACを計算。オーガニック経由のCACが最も低いため、コンテンツマーケへの投資を検討する。"
+    },
+    {
+      "term": "LTV/CAC比率",
+      "termEn": "LTV to CAC Ratio",
+      "category": "efficiency",
+      "description": "顧客生涯価値を獲得コストで割った投資効率指標。SaaSビジネスの経済性を一目で判断できる。低すぎると赤字、高すぎると投資不足の可能性。",
+      "formula": "LTV ÷ CAC",
+      "benchmark": "優秀: 5x以上 / 良好: 3x-5x / 改善必要: 3x未満 / 投資不足: 7x以上",
+      "actionTip": "3x未満ならCACの削減またはLTV向上が急務。7x以上なら成長に投資できる余地がある。セグメント別に計算して判断する。"
+    },
+    {
+      "term": "CAC回収期間",
+      "termEn": "CAC Payback Period",
+      "category": "efficiency",
+      "description": "CACを回収するまでに要する月数。キャッシュフロー観点で最も重要な効率指標。粗利ベースで計算するのが正確。短いほど再投資サイクルが早い。",
+      "formula": "CAC ÷（ARPA × 粗利率）",
+      "benchmark": "優秀: 6ヶ月未満 / 良好: 6-12ヶ月 / 改善必要: 18ヶ月以上",
+      "actionTip": "12ヶ月以上かかる場合はプライシングの見直しかセールス効率化が必要。年間前払い割引でキャッシュ回収を早める施策も有効。"
+    },
+    {
+      "term": "マジックナンバー",
+      "termEn": "Magic Number",
+      "category": "efficiency",
+      "description": "S&M投資の効率性を測る指標。1ドルのS&M投資が何ドルのARR増加を生んだかを示す。四半期ベースで計算し、投資判断のトリガーにする。",
+      "formula": "（当四半期ARR - 前四半期ARR）÷ 前四半期S&M費用",
+      "benchmark": "1.0以上: 投資を加速 / 0.75-1.0: 現状維持 / 0.75未満: 効率改善が必要",
+      "actionTip": "0.75を下回ったらS&M投資の内訳を精査。チャネル別・セグメント別に分解して非効率な投資を特定する。"
+    },
+    {
+      "term": "バーンマルチプル",
+      "termEn": "Burn Multiple",
+      "category": "efficiency",
+      "description": "ARR純増1ドルを得るために何ドルのキャッシュを燃やしたかを示す。キャッシュ効率の直感的な指標。低いほど効率的。David Sacks提唱。",
+      "formula": "ネットバーン（キャッシュ減少額）÷ Net New ARR",
+      "benchmark": "優秀: 1x未満 / 良好: 1-1.5x / 改善必要: 2x以上 / 危険: 3x以上",
+      "actionTip": "バーンマルチプルが2xを超えたらコスト構造の見直しが急務。固定費の変動費化とセールス効率の改善を同時に進める。"
+    },
+    {
+      "term": "Rule of 40（40%ルール）",
+      "termEn": "Rule of 40",
+      "category": "efficiency",
+      "description": "収益成長率と利益率の合計が40%以上なら健全という経験則。成長と収益性のバランスを一つの数値で評価できる。上場SaaSの評価基準として定着。",
+      "formula": "ARR成長率（%） + FCFマージン（%）",
+      "benchmark": "優秀: 60%以上 / 良好: 40-60% / 改善必要: 40%未満",
+      "actionTip": "成長鈍化時は利益率でカバーし、常にRule of 40以上を維持する戦略を立てる。四半期ごとにこの数値を経営KPIとしてレビュー。"
+    },
+    {
+      "term": "SaaSクイックレシオ",
+      "termEn": "SaaS Quick Ratio",
+      "category": "efficiency",
+      "description": "MRR増加要因と減少要因の比率。成長の質と効率を測る。高いほど「漏れの少ないバケツ」で成長している。Mamoon Hamid提唱。",
+      "formula": "（New MRR + Expansion MRR）÷（Churn MRR + Contraction MRR）",
+      "benchmark": "優秀: 4x以上 / 良好: 2-4x / 改善必要: 2x未満",
+      "actionTip": "4x未満ならチャーンが成長を大きく阻害している。分母の削減（チャーン対策）が最もインパクトの大きい施策になる。"
+    },
+    {
+      "term": "粗利率",
+      "termEn": "Gross Margin",
+      "category": "efficiency",
+      "description": "売上からサービス提供の直接コスト（ホスティング、サポート、CS人件費等）を引いた利益率。SaaSは70%以上が一般的。低いとスケーラビリティに問題あり。",
+      "formula": "（売上 - 売上原価）÷ 売上 × 100",
+      "benchmark": "優秀: 80%以上 / 良好: 70-80% / 改善必要: 60%未満",
+      "actionTip": "粗利率70%未満ならインフラコスト最適化とサポート効率化を優先。セルフサービス化とナレッジベース拡充で人的コストを削減する。"
+    },
+    {
+      "term": "S&M費用比率",
+      "termEn": "Sales & Marketing Ratio",
+      "category": "efficiency",
+      "description": "売上に対するセールス・マーケティング費用の割合。投資フェーズでは高く、成熟期には低下する。同業他社比較で自社の投資水準を把握する。",
+      "formula": "（セールス費用 + マーケティング費用）÷ 売上 × 100",
+      "benchmark": "成長期: 40-60% / 安定期: 20-30% / 上場企業平均: 30-40%",
+      "actionTip": "S&M比率が50%を超えたらチャネルミックスの最適化が必要。PLG要素の導入やコンテンツマーケでCACを構造的に下げる施策を検討。"
+    },
+    {
+      "term": "T2D3",
+      "termEn": "Triple Triple Double Double Double",
+      "category": "growth",
+      "description": "理想的なSaaS成長軌道。ARR $2Mから3倍→3倍→2倍→2倍→2倍で5年後に$100M超を目指すフレームワーク。VCが期待するトップティアの成長速度。",
+      "formula": "Year1: 3x → Year2: 3x → Year3: 2x → Year4: 2x → Year5: 2x",
+      "benchmark": "$2M → $6M → $18M → $36M → $72M → $144M（5年間）",
+      "actionTip": "T2D3達成にはPMF後の迅速なスケーリングが不可欠。各フェーズで必要なARR純増額を逆算し、チーム拡大計画に反映する。"
+    },
+    {
+      "term": "ARR成長率",
+      "termEn": "ARR Growth Rate",
+      "category": "growth",
+      "description": "年間経常収益の前年比成長率。SaaS企業の評価で最も注目される指標。ステージによって期待水準が異なる。100%超なら「トリプルディジット」と呼ばれる。",
+      "formula": "（当期末ARR - 前期末ARR）÷ 前期末ARR × 100",
+      "benchmark": "$1-10M ARR: 200%+ / $10-50M: 100%+ / $50-100M: 60%+ / $100M+: 40%+",
+      "actionTip": "成長率鈍化が見えたら新セグメント開拓やプロダクトライン拡張を検討。成長率と利益率のバランスをRule of 40で管理する。"
+    },
+    {
+      "term": "MoM成長率",
+      "termEn": "Month-over-Month Growth",
+      "category": "growth",
+      "description": "月次の成長率。日々の施策の効果が最も早く反映される指標。短期的な変動が大きいため、3ヶ月移動平均で傾向を把握するのが効果的。",
+      "formula": "（当月MRR - 前月MRR）÷ 前月MRR × 100",
+      "benchmark": "アーリーステージ: 15-20% / グロースステージ: 5-10% / レイターステージ: 2-5%",
+      "actionTip": "MoM成長率は3ヶ月移動平均でトレンドを見る。単月の変動に一喜一憂せず、構造的な成長ドライバーにフォーカスする。"
+    },
+    {
+      "term": "QoQ成長率",
+      "termEn": "Quarter-over-Quarter Growth",
+      "category": "growth",
+      "description": "四半期ベースの成長率。月次より季節変動を吸収し、年次より機動的に状況を把握できる。取締役会や投資家報告で頻繁に使われる時間軸。",
+      "formula": "（当四半期末MRR - 前四半期末MRR）÷ 前四半期末MRR × 100",
+      "benchmark": "優秀: 25%+（QoQ）/ 良好: 15-25% / 改善必要: 10%未満",
+      "actionTip": "QoQ成長率に季節性がある場合はYoY比較も併用する。四半期末の駆け込み受注に依存しない持続的パイプラインを構築する。"
+    },
+    {
+      "term": "ロゴリテンション率",
+      "termEn": "Logo Retention Rate",
+      "category": "growth",
+      "description": "顧客数ベースの維持率。金額ベース（NRR）とは異なり、全ての顧客を同等に扱う。SMB中心のビジネスでは特に重要な指標。",
+      "formula": "（期首顧客数 - 解約顧客数）÷ 期首顧客数 × 100",
+      "benchmark": "優秀: 95%+（月次）/ 良好: 90-95% / 改善必要: 85%未満",
+      "actionTip": "ロゴリテンションが低い場合はオンボーディングプロセスの改善が最優先。最初の30日間のエンゲージメントが解約率を大きく左右する。"
+    },
+    {
+      "term": "レベニューリテンション率",
+      "termEn": "Revenue Retention Rate",
+      "category": "growth",
+      "description": "金額ベースの収益維持率。NRRと同義で使われることが多い。ロゴリテンションと比較することで大口・小口顧客の解約傾向の違いが見える。",
+      "formula": "（期首MRR + Expansion - Contraction - Churn）÷ 期首MRR × 100",
+      "benchmark": "優秀: 120%+（年次）/ 良好: 100-120% / 改善必要: 100%未満",
+      "actionTip": "ロゴリテンションより高い場合は小口顧客が多く解約。逆なら大口顧客の解約が問題。セグメント別に対策を立てる。"
+    },
+    {
+      "term": "エクスパンション率",
+      "termEn": "Expansion Rate",
+      "category": "growth",
+      "description": "既存顧客の収益拡大率。アップセル・クロスセル・シート追加による増収の割合。高いExpansion率はプロダクトの価値実証とプライシング戦略の成功を示す。",
+      "formula": "Expansion MRR ÷ 期首MRR × 100",
+      "benchmark": "優秀: 5%+（月次）/ 良好: 2-5% / 改善必要: 1%未満",
+      "actionTip": "利用量ベースのプライシングを導入し、顧客の成長に連動した自然なExpansionを実現する。CSチームにExpansion目標を設定する。"
+    },
+    {
+      "term": "バイラリティ係数（K-factor）",
+      "termEn": "Virality Coefficient (K-factor)",
+      "category": "growth",
+      "description": "既存ユーザーが何人の新規ユーザーを連れてくるかを示す係数。1を超えると指数関数的に成長する。プロダクト内の招待・共有機能の効果測定に使う。",
+      "formula": "ユーザーあたり招待数 × 招待からの転換率",
+      "benchmark": "優秀: 1.0以上（バイラルループ成立）/ 良好: 0.5-1.0 / 改善必要: 0.3未満",
+      "actionTip": "K-factorを上げるにはプロダクト内の共有・招待体験を磨く。招待するインセンティブより、招待される側の初期体験の質が重要。"
+    },
+    {
+      "term": "DAU/MAU比率",
+      "termEn": "DAU/MAU Ratio",
+      "category": "product",
+      "description": "日次アクティブユーザーを月次で割った比率。プロダクトの日常的な利用頻度を示す。高いほどユーザーの習慣に組み込まれている証拠。",
+      "formula": "日次アクティブユーザー数 ÷ 月次アクティブユーザー数 × 100",
+      "benchmark": "優秀: 40%以上（毎日使うツール）/ 良好: 20-40% / 改善必要: 10%未満",
+      "actionTip": "DAU/MAUが低い場合は日次で使う理由を作る。通知・ダイジェスト・デイリータスク機能で毎日開く習慣を形成させる。"
+    },
+    {
+      "term": "アクティベーション率",
+      "termEn": "Activation Rate",
+      "category": "product",
+      "description": "サインアップしたユーザーが「Aha Moment」に到達した割合。初期体験の質を示す最重要プロダクト指標。この率がLTV全体を大きく左右する。",
+      "formula": "Aha Momentに到達したユーザー数 ÷ サインアップ数 × 100",
+      "benchmark": "優秀: 40%以上 / 良好: 25-40% / 改善必要: 15%未満",
+      "actionTip": "まずAha Momentを定義する（例：初回レポート作成、チームメンバー招待等）。その到達までのステップを最小化するUX改善を行う。"
+    },
+    {
+      "term": "Time-to-Value（価値実感までの時間）",
+      "termEn": "Time-to-Value",
+      "category": "product",
+      "description": "ユーザーがサインアップしてから初めて価値を実感するまでの時間。短いほどアクティベーション率と定着率が向上。オンボーディング設計の核心指標。",
+      "formula": "サインアップ日時 - 初回価値実感イベント日時の中央値",
+      "benchmark": "優秀: 5分以内 / 良好: 1時間以内 / 改善必要: 24時間以上",
+      "actionTip": "テンプレート・サンプルデータ・ガイドツアーを提供して最短で価値体験させる。ユーザーに設定作業をさせず、すぐ使える状態を目指す。"
+    },
+    {
+      "term": "機能採用率",
+      "termEn": "Feature Adoption Rate",
+      "category": "product",
+      "description": "特定機能をアクティブに利用しているユーザーの割合。新機能のローンチ成否判定やプロダクトロードマップの優先順位付けに活用する。",
+      "formula": "機能を利用したMAU ÷ 全MAU × 100",
+      "benchmark": "コア機能: 70%以上 / 補助機能: 20-40% / 新機能初月: 10%以上",
+      "actionTip": "採用率が低い機能は導線の改善かUI配置の見直しを実施。それでも上がらないならその機能自体の価値仮説を検証し直す。"
+    },
+    {
+      "term": "NPS（ネットプロモータースコア）",
+      "termEn": "Net Promoter Score",
+      "category": "product",
+      "description": "「この製品を他者に推薦するか」の11段階評価から算出。推奨者（9-10）から批判者（0-6）の割合を引いた値。顧客ロイヤルティの定番指標。",
+      "formula": "推奨者の割合（%） - 批判者の割合（%）",
+      "benchmark": "優秀: 50以上 / 良好: 30-50 / 改善必要: 0未満",
+      "actionTip": "スコアだけでなく自由記述コメントを分析し、推奨者の理由を強化・批判者の理由を解消する具体的アクションに落とし込む。"
+    },
+    {
+      "term": "CSAT（顧客満足度）",
+      "termEn": "Customer Satisfaction Score",
+      "category": "product",
+      "description": "特定のインタラクション後の満足度を測る指標。サポート対応後やオンボーディング後に計測。NPSよりピンポイントな改善点を特定しやすい。",
+      "formula": "「満足」「非常に満足」回答数 ÷ 全回答数 × 100",
+      "benchmark": "優秀: 90%以上 / 良好: 75-90% / 改善必要: 70%未満",
+      "actionTip": "サポートチケットのクローズ時に必ずCSATを取得。低スコアのケースは48時間以内にフォローアップし根本原因を特定する。"
+    },
+    {
+      "term": "CES（カスタマーエフォートスコア）",
+      "termEn": "Customer Effort Score",
+      "category": "product",
+      "description": "顧客が目的達成にどれだけ労力を要したかを測る指標。「簡単だった」の度合いを7段階で評価。低労力の体験は高いリテンションと相関がある。",
+      "formula": "「簡単だった」回答（5-7）の割合 - 「難しかった」回答（1-3）の割合",
+      "benchmark": "優秀: スコア6以上 / 良好: 5-6 / 改善必要: 5未満（7段階中）",
+      "actionTip": "CESが低いタッチポイントはUX改善の最優先対象。ユーザーの操作ログを分析し、不要なステップを特定して削減する。"
+    },
+    {
+      "term": "PQL（プロダクト適格リード）",
+      "termEn": "Product Qualified Lead",
+      "category": "product",
+      "description": "プロダクトの利用行動に基づき購買意欲が高いと判定されたリード。従来のMQLより精度が高い。PLG戦略の核となるセールスパイプラインの入口。",
+      "formula": "特定の利用行動閾値を超えたフリーユーザー数（企業ごとに定義）",
+      "benchmark": "PQLからの有料転換率: 優秀 25%以上 / 良好 15-25% / 改善必要 10%未満",
+      "actionTip": "PQLスコアリングモデルを構築し、利用頻度・機能使用・チームサイズ等をシグナルとして設定。セールスが最適なタイミングで介入する。"
+    },
+    {
+      "term": "スティッキネス比率",
+      "termEn": "Stickiness Ratio",
+      "category": "product",
+      "description": "ユーザーがプロダクトに「粘着」している度合い。DAU/MAUと同義で使われることが多い。高いスティッキネスは低いチャーン率の先行指標となる。",
+      "formula": "DAU ÷ MAU × 100（またはWAU ÷ MAU × 100）",
+      "benchmark": "優秀: 40%+（日次ベース）/ 良好: 20-40% / B2Bツール平均: 15-25%",
+      "actionTip": "スティッキネス向上にはワークフローへの組み込みが鍵。API連携やSlack通知など、ユーザーの日常業務に自然に溶け込む設計を目指す。"
+    },
+    {
+      "term": "プロダクトエンゲージメントスコア",
+      "termEn": "Product Engagement Score",
+      "category": "product",
+      "description": "複数のプロダクト利用指標を統合した総合スコア。アクティベーション、スティッキネス、機能採用などを加重平均して算出。ヘルススコアの基盤となる。",
+      "formula": "（アクティベーション率 + スティッキネス + 機能採用率）÷ 3 × 100（加重平均で調整）",
+      "benchmark": "優秀: 70以上 / 良好: 50-70 / 改善必要: 30未満（100点満点）",
+      "actionTip": "PESの構成要素ごとに改善施策を設定。スコアが低い顧客にはCSが自動アラートで介入し、チャーン防止を図る。"
+    },
+    {
+      "term": "PSR（株価売上高倍率）",
+      "termEn": "Price-to-Sales Ratio",
+      "category": "financial",
+      "description": "時価総額を年間売上で割った倍率。SaaS企業のバリュエーションで最も基本的な指標。成長率が高い企業ほど高いPSRが正当化される。",
+      "formula": "時価総額 ÷ 年間売上高（直近12ヶ月またはNTM）",
+      "benchmark": "高成長SaaS: 15-30x / 中成長: 8-15x / 低成長: 3-8x",
+      "actionTip": "自社のPSRを同業他社と比較して相対評価を把握する。資金調達時はNTM（来期予測）ベースの倍率で交渉するのが一般的。"
+    },
+    {
+      "term": "EV/Revenue倍率",
+      "termEn": "EV/Revenue Multiple",
+      "category": "financial",
+      "description": "企業価値（時価総額＋有利子負債−現金）を売上で割った倍率。PSRより正確なバリュエーション指標。ネットキャッシュの多い企業ではPSRと乖離する。",
+      "formula": "（時価総額 + 有利子負債 - 現金・現金同等物）÷ 年間売上高",
+      "benchmark": "上場SaaS中央値: 8-12x / トップティア: 20x以上 / 成熟企業: 4-8x",
+      "actionTip": "EV/Revenueが同業より低い場合は成長性か収益性に課題がある。Rule of 40の改善がバリュエーション向上の最短経路。"
+    },
+    {
+      "term": "ARRマルチプル",
+      "termEn": "ARR Multiple",
+      "category": "financial",
+      "description": "企業価値をARRで割った倍率。未上場SaaSの資金調達ラウンドで最も使われるバリュエーション指標。経常収益のみを分母に使う点がPSRとの違い。",
+      "formula": "企業価値（またはポストマネーバリュエーション）÷ ARR",
+      "benchmark": "シード: 20-50x / シリーズA: 15-30x / シリーズB以降: 10-20x（市況により変動）",
+      "actionTip": "ARRマルチプルはARR成長率と高い相関がある。成長率が2倍になるとマルチプルも大幅に上昇する関係を理解して成長に投資する。"
+    },
+    {
+      "term": "FCFマージン（フリーキャッシュフロー利益率）",
+      "termEn": "Free Cash Flow Margin",
+      "category": "financial",
+      "description": "売上に対するフリーキャッシュフローの比率。事業が生み出す実質的なキャッシュの効率を示す。Non-GAAPのEBITDAよりもキャッシュの実態に近い。",
+      "formula": "（営業キャッシュフロー - 設備投資）÷ 売上 × 100",
+      "benchmark": "優秀: 25%以上 / 良好: 10-25% / 損益分岐: 0% / 改善必要: マイナス",
+      "actionTip": "FCFマージンをRule of 40の利益率側に使うのがベストプラクティス。年間前払い促進でキャッシュフローを構造的に改善する。"
+    },
+    {
+      "term": "営業利益率",
+      "termEn": "Operating Margin",
+      "category": "financial",
+      "description": "売上から全営業費用を引いた利益の比率。事業運営の収益性を示す。SaaSはスケール後に営業レバレッジが効き、利益率が急改善するのが特徴。",
+      "formula": "（売上 - 売上原価 - 営業費用）÷ 売上 × 100",
+      "benchmark": "成長期: -20〜0% / 安定期: 10-20% / 優秀な上場SaaS: 20%以上",
+      "actionTip": "営業利益率の改善は粗利率→S&M比率→R&D比率→G&A比率の順で改善余地を分析。スケールメリットが出る項目から着手する。"
+    },
+    {
+      "term": "繰延収益",
+      "termEn": "Deferred Revenue",
+      "category": "financial",
+      "description": "前受けした代金のうち未だサービス提供していない部分。負債として計上されるが実際はポジティブなシグナル。年間前払いが多いSaaSで大きくなる。",
+      "formula": "前受金額 - 当期認識済み収益",
+      "benchmark": "繰延収益の前年比成長がARR成長を上回っていれば将来の成長が加速するシグナル",
+      "actionTip": "繰延収益の増減をARR成長と比較する。繰延収益の成長がARR成長を上回っていれば来期の収益成長が加速する先行指標となる。"
+    },
+    {
+      "term": "SBC（株式報酬費用）",
+      "termEn": "Stock-Based Compensation",
+      "category": "financial",
+      "description": "ストックオプションやRSU等の株式報酬にかかる費用。Non-GAAPでは除外されるがキャッシュの代替コスト。過大なSBCは株式希薄化を招く。",
+      "formula": "付与日のオプション公正価値 × 付与数（ブラック・ショールズモデル等で算出）",
+      "benchmark": "売上比: 健全 10-15% / 高い 20%以上 / テック企業平均 15%前後",
+      "actionTip": "SBCが売上の20%を超えたら株式希薄化の影響を精査する。Non-GAAP利益だけでなくGAAPベースの利益も必ず確認する習慣をつける。"
+    },
+    {
+      "term": "Non-GAAP指標",
+      "termEn": "Non-GAAP Metrics",
+      "category": "financial",
+      "description": "GAAP（会計基準）から一時的費用やSBC等を除外した調整後指標。SaaS企業が好んで使う。便利だが除外項目の恣意性に注意が必要。",
+      "formula": "GAAP指標 + SBC + 一時的費用（リストラ費用等）+ 無形資産償却費",
+      "benchmark": "Non-GAAP営業利益率がGAAPより15-25ポイント高いのが一般的",
+      "actionTip": "Non-GAAP指標を見る際は必ずGAAP指標と並べて比較する。調整項目の内訳と金額を確認し、恒常的な費用が除外されていないか注意する。"
+    },
+    {
+      "term": "収益認識",
+      "termEn": "Revenue Recognition",
+      "category": "financial",
+      "description": "いつ・いくら売上として計上するかのルール。ASC 606基準に準拠。SaaSは通常サービス提供期間に按分して認識。前受金≠売上であることが重要。",
+      "formula": "契約金額 ÷ サービス提供期間 × 経過月数（按分認識）",
+      "benchmark": "年間契約は12ヶ月で均等按分が基本。初期費用は提供完了時に一括認識",
+      "actionTip": "セールスチームにBookingsと収益認識の違いを教育する。受注≠売上の理解が正確な業績管理の第一歩。監査対応の観点でも重要。"
+    },
+    {
+      "term": "バーンレート",
+      "termEn": "Burn Rate",
+      "category": "financial",
+      "description": "月次のキャッシュ消費額。グロスバーン（総支出）とネットバーン（収入差引後）がある。ランウェイ（残存月数）の算出に使う。スタートアップの生命線。",
+      "formula": "ネットバーンレート = 月間総支出 - 月間総収入",
+      "benchmark": "ランウェイ18ヶ月以上: 安全 / 12-18ヶ月: 注意 / 12ヶ月未満: 危険",
+      "actionTip": "ランウェイが12ヶ月を切る前に資金調達またはコスト削減を実行する。月次でバーンレートの推移を確認し、想定外の増加に早期に対応する。"
+    }
+  ]
+}

@@ -953,5 +953,1088 @@
         ]
       }
     ]
+  },
+
+  "pricing": {
+    "title": "プライシング & パッケージング",
+    "subtitle": "SaaSの収益を決定づける価格戦略。料金モデル選択、フリーミアム設計、値上げ戦略までを体系的に理解する。",
+    "pricingModels": {
+      "title": "4つの料金モデル",
+      "models": [
+        {
+          "key": "flatRate",
+          "name": "月額固定",
+          "nameEn": "Flat Rate",
+          "color": "#3B82F6",
+          "description": "プラン別に固定月額を課金。機能やストレージ容量でプランを分ける。予測可能性が高く、顧客にとってわかりやすい。",
+          "pros": ["売上予測が容易", "顧客の理解コストが低い", "請求処理がシンプル"],
+          "cons": ["アップセル余地が限定的", "使わない顧客の不満", "大企業にはフィットしにくい"],
+          "examples": ["Basecamp", "Notion", "カイポケ"],
+          "bestFor": "SMB向け、プロダクトがシンプルで機能差が少ないSaaS"
+        },
+        {
+          "key": "perSeat",
+          "name": "席数課金",
+          "nameEn": "Per Seat / Per User",
+          "color": "#8B5CF6",
+          "description": "利用ユーザー数に応じて課金。組織の成長とともに自然にExpansionが発生する。最も一般的なSaaS課金モデル。",
+          "pros": ["自然なExpansion", "価格設定が直感的", "利用量と連動"],
+          "cons": ["シート共有の不正", "導入障壁が高くなりがち", "利用率の低いシートの不満"],
+          "examples": ["Salesforce", "Slack", "SmartHR"],
+          "bestFor": "コラボレーションツール、CRM、人事系SaaS。利用者数と価値が比例する場合"
+        },
+        {
+          "key": "usage",
+          "name": "従量課金",
+          "nameEn": "Usage-Based / Consumption",
+          "color": "#10B981",
+          "description": "API呼び出し数、データ量、トランザクション数など実際の利用量に応じて課金。使った分だけ支払うため導入障壁が低い。",
+          "pros": ["導入障壁が極めて低い", "利用と価値が完全に連動", "大口顧客の単価が自然に上がる"],
+          "cons": ["売上予測が困難", "月次変動が大きい", "請求処理が複雑"],
+          "examples": ["AWS", "Twilio", "Stripe", "OpenAI API"],
+          "bestFor": "インフラ系、API系、AI系SaaS。利用量のバラつきが大きい場合"
+        },
+        {
+          "key": "hybrid",
+          "name": "ハイブリッド",
+          "nameEn": "Hybrid (Base + Usage)",
+          "color": "#F59E0B",
+          "description": "基本料金（プラットフォームフィー）＋従量課金の組み合わせ。最低売上を確保しつつ、利用拡大に応じたアップサイドも獲得できる。",
+          "pros": ["最低売上の安定確保", "アップサイドも取れる", "柔軟な価格設計が可能"],
+          "cons": ["価格体系が複雑化", "顧客への説明コスト", "請求書が読みにくい"],
+          "examples": ["HubSpot", "Snowflake", "Datadog"],
+          "bestFor": "プラットフォーム型SaaS。基本機能＋利用量連動の付加価値がある場合"
+        }
+      ],
+      "kaipokeContext": "カイポケは「月額固定＋オプション従量」のハイブリッドモデル。基本の請求ソフトは月額固定で、BPO（給与計算代行）やファクタリングは従量課金。福祉事業所は月商が限られるため、予測可能な固定料金が重視される。"
+    },
+    "acquisitionModels": {
+      "title": "フリーミアム vs 無料トライアル vs デモ",
+      "models": [
+        {
+          "key": "freemium",
+          "name": "フリーミアム",
+          "color": "#10B981",
+          "description": "基本機能を永久無料で提供し、上位機能で課金。大量のユーザー獲得が可能だが、有料転換率は低い。PLGの中核モデル。",
+          "conversionRate": "2〜5%",
+          "bestAcvRange": "〜50万円/年",
+          "examples": ["Slack", "Notion", "Dropbox", "Zoom"]
+        },
+        {
+          "key": "freeTrial",
+          "name": "無料トライアル",
+          "color": "#3B82F6",
+          "description": "全機能を期間限定（7-30日）で無料提供。トライアル中に価値を体感させ、有料転換を狙う。SaaSで最も一般的。",
+          "conversionRate": "15〜30%",
+          "bestAcvRange": "10万〜300万円/年",
+          "examples": ["Salesforce", "HubSpot", "freee", "カイポケ"]
+        },
+        {
+          "key": "demo",
+          "name": "デモ / POC",
+          "color": "#8B5CF6",
+          "description": "営業担当がデモを実施し、POC（概念実証）を経て契約。エンタープライズ向けで、高単価・長期契約を獲得。",
+          "conversionRate": "25〜40%（商談化後）",
+          "bestAcvRange": "300万円〜/年",
+          "examples": ["Workday", "ServiceNow", "SAP"]
+        }
+      ]
+    },
+    "packaging": {
+      "title": "Good / Better / Best パッケージング",
+      "description": "3段階プランの設計は、顧客セグメントごとの価値提供を最適化し、自然なアップセル導線を作る基本戦略。",
+      "tiers": [
+        {
+          "name": "Good（Starter）",
+          "nameJa": "エントリープラン",
+          "purpose": "導入障壁を下げ、ユーザー獲得を最大化。コア機能のみ提供し、価値を体感させる。",
+          "features": ["コア機能のみ", "利用制限あり（人数・容量）", "セルフサービスサポート", "コミュニティアクセス"],
+          "target": "個人・小規模チーム"
+        },
+        {
+          "name": "Better（Professional）",
+          "nameJa": "スタンダードプラン",
+          "purpose": "最も売れるべきプラン。80%の顧客がここを選ぶよう設計。十分な機能と適切な価格のバランス。",
+          "features": ["拡張機能", "チーム管理機能", "インテグレーション", "メールサポート", "レポート機能"],
+          "target": "成長中の中小企業"
+        },
+        {
+          "name": "Best（Enterprise）",
+          "nameJa": "エンタープライズプラン",
+          "purpose": "大企業のニーズに対応。セキュリティ、管理、SLA、カスタマイズ。高単価で利益率も最高。",
+          "features": ["全機能", "SSO/SAML", "カスタムSLA", "専任CSM", "監査ログ", "API上限拡張", "オンプレミス対応"],
+          "target": "大企業・エンタープライズ"
+        }
+      ],
+      "principles": [
+        "Goodは無料or低価格で「体験」させ、Betterへの移行動機を作る（ゲート機能の設計が鍵）",
+        "Betterに「最も人気」バッジを付けてアンカリング。80%のユーザーがBetterを選ぶのが理想",
+        "Best は問い合わせ制（Contact Sales）にして営業介入のトリガーにする。価格非公開も有効"
+      ]
+    },
+    "priceIncrease": {
+      "title": "値上げ戦略",
+      "strategies": [
+        {
+          "name": "直接値上げ",
+          "description": "既存プランの価格を直接引き上げ。シンプルだが顧客反発リスクが最も高い。年1回、5-10%程度が相場。",
+          "risk": "高",
+          "nrrImpact": "短期的にNRR向上するが、Churn増加リスク。既存顧客のGrandfathering期間設定が重要。",
+          "example": "Netflix: 年1回の$1-2値上げ。事前通知＋コンテンツ投資のコミュニケーションで解約率を最小化。"
+        },
+        {
+          "name": "新プラン移行",
+          "description": "新しいプラン体系を導入し、旧プランを段階的に廃止。機能追加とセットにすることで値上げ感を軽減。",
+          "risk": "中",
+          "nrrImpact": "新機能の価値次第でNRRが大幅改善。旧プランからの移行でARPU向上。",
+          "example": "HubSpot: 2020年にStarter/Pro/Enterpriseの3段階に整理。旧ユーザーは2年間の移行猶予。"
+        },
+        {
+          "name": "従量上限変更",
+          "description": "各プランの利用上限（席数、API数、ストレージ）を引き下げ、実質的な値上げを行う。表面上の価格は変えない。",
+          "risk": "低",
+          "nrrImpact": "上限超過ユーザーが上位プランに移行し、NRR向上。ただし過度な制限はChurn原因になる。",
+          "example": "Slack: 無料プランのメッセージ履歴を10K→90日に変更。フリーミアムから有料への転換率が向上。"
+        }
+      ],
+      "grandfathering": "既存顧客を旧価格で一定期間据え置く施策。通常6-12ヶ月の猶予期間を設ける。LTV計算に基づき、値上げによるChurn増が売上増を上回らないか検証が必要。目安: 値上げ率10%でChurn増加が3%以内なら実行推奨。"
+    },
+    "methodology": {
+      "title": "価格設定の方法論",
+      "methods": [
+        {
+          "name": "Value-Based Pricing",
+          "nameJa": "価値基準型",
+          "color": "#10B981",
+          "description": "顧客が得る価値（ROI）を基に価格を設定。最も高い利益率を実現できるが、価値の定量化が必要。",
+          "formula": "価格 = 顧客が得る価値 × 10〜25%",
+          "advantage": "利益率最大化。顧客の支払い意思額（WTP）に近い価格設定が可能。",
+          "caveat": "価値の定量化が困難。顧客セグメントごとにWTPが異なるため、複数プラン設計が必要。"
+        },
+        {
+          "name": "Competitor-Based Pricing",
+          "nameJa": "競合基準型",
+          "color": "#3B82F6",
+          "description": "競合製品の価格を参考に設定。市場参入時や差別化が難しい場合に有効。ただし価格競争に陥るリスクがある。",
+          "formula": "価格 = 競合平均 × 0.8〜1.2（差別化度合い）",
+          "advantage": "市場に受け入れられやすい。価格設定の根拠が明確で説明しやすい。",
+          "caveat": "利益率が制約される。競合が不合理な価格設定をしている場合に引きずられる。"
+        },
+        {
+          "name": "Cost-Plus Pricing",
+          "nameJa": "コスト積上型",
+          "color": "#F59E0B",
+          "description": "原価に一定のマージンを上乗せして価格を設定。SaaSでは粗利率70-85%を目標に設定することが多い。",
+          "formula": "価格 = (インフラ費 + 人件費 + 間接費) ÷ (1 - 目標粗利率)",
+          "advantage": "確実に利益を確保。原価構造が明確なら計算が容易。",
+          "caveat": "顧客の価値認識と乖離しやすい。SaaSでは限界費用が低いため、コストベースだと安くなりすぎる。"
+        }
+      ],
+      "kaipokeContext": "カイポケの価格戦略は「競合基準＋価値基準」のハイブリッド。福祉事業所の月商（50-200万円）に対して1-3%程度の月額（月額5,000-40,000円）に設定。競合（ほのぼのNEXT、ワイズマン）と同水準を維持しつつ、請求→記録→BPOの一気通貫の価値で差別化。"
+    }
+  },
+
+  "plg": {
+    "title": "PLG（Product-Led Growth）",
+    "subtitle": "プロダクトそのものが成長エンジン。セルフサービスでユーザーが価値を体感し、自然に拡散・有料転換する成長戦略。",
+    "comparison": {
+      "title": "PLG vs SLG vs CLG 比較",
+      "models": [
+        {
+          "key": "plg",
+          "name": "Product-Led Growth",
+          "nameJa": "プロダクト主導型成長",
+          "color": "#10B981",
+          "definition": "プロダクト体験が顧客獲得・転換・拡張のすべてを駆動する。セルフサービスで価値を体感し、口コミで拡散する。",
+          "characteristics": [
+            "無料プランorトライアルで即座に利用開始",
+            "プロダクト内でアップセル・拡張が完結",
+            "ユーザーデータから自動でPQLを生成",
+            "営業はPQLにのみアプローチ（効率最大化）"
+          ],
+          "orgStructure": "Growth Team（PM + エンジニア + デザイナー + データ）が中核。営業は少数精鋭でPQL対応。",
+          "funnelShape": "逆三角形 → 大量Signup → 絞り込み → 少数が高額転換",
+          "acvRange": "〜100万円/年",
+          "examples": ["Slack", "Notion", "Zoom", "Dropbox", "Figma", "Canva"]
+        },
+        {
+          "key": "slg",
+          "name": "Sales-Led Growth",
+          "nameJa": "セールス主導型成長",
+          "color": "#3B82F6",
+          "definition": "営業組織が成長を牽引する従来型モデル。Marketing→IS→FS→CSのThe Modelで分業し、組織力で売上を積み上げる。",
+          "characteristics": [
+            "デモ・商談を経て契約（高単価）",
+            "The Model型の分業体制",
+            "年間契約・複数年契約が中心",
+            "カスタマイズ・導入支援が必要"
+          ],
+          "orgStructure": "Marketing / IS / FS / CS の4部門体制。人件費が最大コスト。",
+          "funnelShape": "正三角形 → 少数リード → 高確度で大型契約",
+          "acvRange": "100万〜数千万円/年",
+          "examples": ["Salesforce", "ServiceNow", "Workday", "カイポケ", "SAP"]
+        },
+        {
+          "key": "clg",
+          "name": "Community-Led Growth",
+          "nameJa": "コミュニティ主導型成長",
+          "color": "#8B5CF6",
+          "definition": "ユーザーコミュニティが成長を促進。ナレッジ共有、UGC（ユーザー生成コンテンツ）、エバンジェリストが新規獲得を支援。",
+          "characteristics": [
+            "ユーザーイベント・ミートアップが活発",
+            "コミュニティフォーラムでの相互支援",
+            "認定資格・エコシステムパートナー制度",
+            "プロダクトの改善にユーザーが直接参加"
+          ],
+          "orgStructure": "DevRel / Community Manager / Ecosystem Team が中核。マーケティング費用は低い。",
+          "funnelShape": "円形 → コミュニティが新規を呼び込む循環構造",
+          "acvRange": "幅広い（開発者ツール〜エンタープライズ）",
+          "examples": ["Atlassian", "HashiCorp", "dbt", "Twilio"]
+        }
+      ]
+    },
+    "plgFunnel": {
+      "title": "PLGファネル",
+      "stages": [
+        {
+          "stage": "Signup（獲得）",
+          "description": "ユーザーが自力でサインアップ。SSO、ソーシャルログイン、メール認証の3ステップ以内で完了させる。",
+          "benchmark": "サイト訪問→Signup: 2-5%",
+          "bestPractices": [
+            "登録フォームは3項目以下（名前・メール・パスワード）",
+            "クレジットカード不要で開始可能に",
+            "Google/Microsoft SSOでワンクリック登録"
+          ],
+          "antiPatterns": [
+            "営業への問い合わせが必要",
+            "会社名・電話番号の必須入力",
+            "メール認証に3日かかる"
+          ]
+        },
+        {
+          "stage": "Activate（活性化）",
+          "description": "初回のAha Moment（価値体感）に到達。プロダクト固有の「成功体験」を最短で提供する設計が鍵。",
+          "benchmark": "Signup→Activation: 20-40%",
+          "bestPractices": [
+            "オンボーディングチェックリストで次のステップを明示",
+            "テンプレート/サンプルデータで即座に価値体感",
+            "プログレスバーで完了感を演出"
+          ],
+          "antiPatterns": [
+            "空っぽのダッシュボードが表示される",
+            "初期設定に30分以上かかる",
+            "マニュアルを読まないと使えない"
+          ]
+        },
+        {
+          "stage": "Convert（転換）",
+          "description": "無料ユーザーが有料プランに転換。利用上限への到達、チーム利用の開始、高度な機能ニーズが転換トリガー。",
+          "benchmark": "Free→Paid: 2-5%（フリーミアム）/ 15-30%（トライアル）",
+          "bestPractices": [
+            "有料機能のプレビューを無料ユーザーに見せる",
+            "利用上限の80%到達時にアップグレード提案",
+            "年額割引でLTV最大化"
+          ],
+          "antiPatterns": [
+            "無料プランが十分すぎて有料転換の動機がない",
+            "アップグレード導線が見つけにくい",
+            "決済プロセスが複雑（5クリック以上）"
+          ]
+        },
+        {
+          "stage": "Expand（拡大）",
+          "description": "既存顧客の利用拡大。席数増加、上位プラン移行、他部署への展開。NRR100%超の源泉。",
+          "benchmark": "NRR: 110-130%",
+          "bestPractices": [
+            "利用状況ダッシュボードで成長を可視化",
+            "チーム招待機能のプロダクト内訴求",
+            "利用量増加に応じた自動プラン提案"
+          ],
+          "antiPatterns": [
+            "管理者以外がユーザー追加できない",
+            "部署間のデータ共有ができない",
+            "請求が複雑で予算取りしにくい"
+          ]
+        }
+      ]
+    },
+    "plgMetrics": {
+      "title": "PLG固有指標",
+      "metrics": [
+        {
+          "key": "pql",
+          "name": "PQL（Product Qualified Lead）",
+          "formula": "一定のプロダクト利用行動を達成したユーザー",
+          "description": "MQL（マーケティング起点のリード）に対し、PQLはプロダクト利用データから特定される。Activationを完了し、有料転換の可能性が高いユーザーをスコアリング。",
+          "benchmark": "PQL→有料転換率: 25-30%（MQLの5-10倍）",
+          "actionTip": "Activation完了 + 週3回以上利用 + チームメンバー招待 の3条件を満たすユーザーをPQLとして営業に渡す。"
+        },
+        {
+          "key": "timeToValue",
+          "name": "Time-to-Value（TTV）",
+          "formula": "サインアップからAha Momentまでの所要時間",
+          "description": "ユーザーが初めて価値を体感するまでの時間。短いほどActivation率が高く、解約率が低い。PLGの最重要指標。",
+          "benchmark": "理想: 5分以内（Canva）、許容: 1日以内、危険: 1週間以上",
+          "actionTip": "TTVを30秒短縮するだけでActivation率が5-10%向上する事例あり。テンプレート、サンプルデータ、ガイドツアーで短縮を図る。"
+        },
+        {
+          "key": "activationRate",
+          "name": "Activation Rate",
+          "formula": "Aha Moment到達ユーザー数 ÷ 新規Signup数 × 100",
+          "description": "サインアップしたユーザーのうち、定義された「成功体験」に到達した割合。PLGの健全性を測る最も重要な先行指標。",
+          "benchmark": "優良: 40%+、標準: 20-40%、要改善: 20%未満",
+          "actionTip": "Aha Momentの定義を明確に。Slack: 2000メッセージ送信、Dropbox: 1ファイルアップロード、Zoom: 初回ミーティング完了。"
+        },
+        {
+          "key": "nrg",
+          "name": "Natural Rate of Growth（NRG）",
+          "formula": "新規ARRのうち、営業・マーケティング費用なしで獲得した割合",
+          "description": "PLGの真の成長力を測る指標。オーガニック流入、口コミ、プロダクト内バイラルで獲得した新規ARRの比率。",
+          "benchmark": "優良PLG企業: 50%+、Slack: 80%+",
+          "actionTip": "NRGが30%未満ならPLG化が不十分。プロダクト内の招待・共有機能の改善、オンボーディングの自動化に投資すべき。"
+        }
+      ]
+    },
+    "plgSuccessStories": {
+      "title": "PLG成功企業ストーリー",
+      "companies": [
+        {
+          "name": "Slack",
+          "flywheel": "1人が使う → チームに招待 → 部署に拡大 → 全社導入。メッセージの価値はネットワーク効果で指数関数的に増加。",
+          "ahamoment": "チーム内で2000メッセージが交わされた時点で、メール文化に戻れなくなる",
+          "keyMetric": "NRG 80%+ / Signup→Activation 30%",
+          "lesson": "バイラルループの設計が鍵。Slackは「共有ワークスペース」という仕組み自体が招待を必然にした。"
+        },
+        {
+          "name": "Notion",
+          "flywheel": "テンプレート共有 → 新規ユーザー獲得 → カスタマイズ → コミュニティ拡大。UGCがマーケティングエンジンになる。",
+          "ahamoment": "自分のワークフローをNotionで再構築し、以前のツール3つ分を1つに統合できた瞬間",
+          "keyMetric": "フリーミアム転換率 4% / NRR 125%",
+          "lesson": "テンプレートマーケットプレイスがCLGとPLGを融合。ユーザーが作ったテンプレートが新規獲得の最大チャネルに。"
+        },
+        {
+          "name": "Zoom",
+          "flywheel": "ホストが招待 → 参加者が品質を体感 → 自分も有料登録。ミーティングの「参加者」がすべて見込み客になる。",
+          "ahamoment": "初回のミーティングで、他ツールとの品質差を体感。ワンクリック参加の簡便さに驚く",
+          "keyMetric": "無料→有料: 5.5% / 40分制限がConversionトリガー",
+          "lesson": "フリーミアムの制限設計が秀逸。40分の時間制限が「もう少し使いたい」を絶妙に刺激。"
+        }
+      ]
+    },
+    "plgPlusSales": {
+      "title": "PLG + Sales ハイブリッド",
+      "description": "成熟期のPLG企業はPLGだけでは成長限界に達する。エンタープライズ顧客の獲得には営業組織が不可欠。PLGで効率的にリード獲得し、営業がクロージングする「PLG + Sales」がベストプラクティス。",
+      "stages": [
+        {
+          "stage": "Phase 1: Pure PLG",
+          "arrRange": "ARR 0〜$10M",
+          "description": "プロダクトのみで成長。セルフサービスSignup、フリーミアム/トライアルで小規模チームを獲得。営業ゼロ。",
+          "focus": "Activation率の最大化、Time-to-Value短縮、バイラルループ構築"
+        },
+        {
+          "stage": "Phase 2: PLG + Inside Sales",
+          "arrRange": "ARR $10M〜$50M",
+          "description": "PQLベースの営業開始。プロダクトデータから高確度リードを自動抽出し、IS/AEが商談化。",
+          "focus": "PQLスコアリング精度の向上、営業の効率化（PQLは通常のリードの5倍の転換率）"
+        },
+        {
+          "stage": "Phase 3: PLG + Enterprise Sales",
+          "arrRange": "ARR $50M+",
+          "description": "エンタープライズ営業チームを組成。PLGで入った部署から全社展開を営業が推進。ABM戦略を併用。",
+          "focus": "Land & Expand戦略の体系化、エンタープライズ向け機能（SSO、監査ログ、SLA）の開発"
+        }
+      ]
+    },
+    "plgInVerticalSaas": {
+      "title": "バーティカルSaaSでのPLG",
+      "description": "バーティカルSaaS（業界特化型）は、ホリゾンタルSaaS（汎用型）に比べてPLGの適用が難しい。市場規模、ユーザーのITリテラシー、規制、業界慣習がPLGの障壁となる。",
+      "challenges": [
+        "市場規模が限定的 — TAMが小さく、フリーミアムのユニットエコノミクスが成立しにくい",
+        "ITリテラシーが低い — セルフサービスでのオンボーディングが困難（例: 福祉業界のPC利用率）",
+        "規制・認証が必要 — 医療・金融・福祉分野では導入に法的手続きが伴う",
+        "既存の業務慣習が強い — 紙・FAX・電話文化からの移行ハードルが高い",
+        "ネットワーク効果が働きにくい — 事業所間の連携ニーズが限定的"
+      ],
+      "adaptableElements": [
+        "無料トライアル（1ヶ月の全機能開放）で導入障壁を下げる",
+        "テンプレート提供（申請書、計画書の雛形）でTime-to-Valueを短縮",
+        "プロダクト内のガイドツアー（ステップバイステップの操作案内）",
+        "コミュニティ運営（事業所間のナレッジ共有、勉強会）",
+        "デジタルマーケティング（業界メディアへの寄稿、SEO、ウェビナー）"
+      ],
+      "conclusion": "カイポケがSLG中心（IS→FS→CS）である理由は合理的。福祉業界はITリテラシーの壁、法制度の複雑さ、FAX文化が根強く、Pure PLGは困難。ただし、PLGの要素（無料トライアル、テンプレート、ガイドツアー）を部分的に導入することで、CACの削減とActivation率の向上は可能。"
+    }
+  },
+
+  "customerSuccess": {
+    "title": "カスタマーサクセス深掘り",
+    "subtitle": "SaaSの売上の80%は契約後に生まれる。ヘルススコア設計、オンボーディング、Expansion戦略、解約防止を体系化。",
+    "touchModel": {
+      "title": "CS組織の3層モデル",
+      "tiers": [
+        {
+          "key": "tech",
+          "name": "Tech Touch",
+          "nameJa": "テックタッチ",
+          "color": "#3B82F6",
+          "description": "自動化されたCS施策。メール、アプリ内通知、ヘルプセンター、動画チュートリアルで1:多のサポート。人的コスト最小で大量顧客に対応。",
+          "arrRange": "〜5万円/月",
+          "csmRatio": "CSM 1名: 顧客 1,000社+",
+          "tactics": ["オンボーディングメール自動配信（Day1/3/7/14/30）", "プロダクト内ガイドツアー", "ヘルプセンター・FAQ整備", "利用状況ダッシュボードの提供", "NPS/CSATサーベイの自動配信"],
+          "tools": ["Intercom", "Pendo", "Gainsight PX", "Zendesk"]
+        },
+        {
+          "key": "low",
+          "name": "Low Touch",
+          "nameJa": "ロータッチ",
+          "color": "#8B5CF6",
+          "description": "定期的な人的接点＋自動化のハイブリッド。四半期レビュー、ウェビナー、1:少のグループ対応。効率とカスタマイゼーションのバランス。",
+          "arrRange": "5万〜50万円/月",
+          "csmRatio": "CSM 1名: 顧客 50-200社",
+          "tactics": ["四半期ビジネスレビュー（QBR）", "ウェビナー型トレーニング", "ヘルススコアベースのアラート対応", "アップセル/クロスセル提案", "チャットサポート"],
+          "tools": ["Gainsight", "ChurnZero", "Totango", "HubSpot Service Hub"]
+        },
+        {
+          "key": "high",
+          "name": "High Touch",
+          "nameJa": "ハイタッチ",
+          "color": "#F59E0B",
+          "description": "専任CSMによる1:1のハンズオン支援。戦略的パートナーとして顧客の成功にコミット。最高コストだが最高のリテンションとExpansion。",
+          "arrRange": "50万円+/月",
+          "csmRatio": "CSM 1名: 顧客 5-20社",
+          "tactics": ["専任CSMのアサイン", "月次ビジネスレビュー", "カスタム導入計画の策定", "エグゼクティブスポンサーとの定期面談", "プロダクトロードマップの共有", "解約リスクの早期検知・介入"],
+          "tools": ["Gainsight", "Salesforce", "Vitally", "Catalyst"]
+        }
+      ],
+      "kaipokeContext": "カイポケはLow Touch中心（ARPA約4万円）。事業所ごとにCSMが担当し、導入支援→初回請求→定着の流れをサポート。Tech Touch要素として請求ナビ（ステップバイステップガイド）を実装済み。"
+    },
+    "healthScore": {
+      "title": "ヘルススコア設計",
+      "description": "顧客の健康状態を数値化し、Churnリスクの早期発見とCS施策の最適化に活用。5-7個の要素をウェイト付けしてスコアリング。",
+      "factors": [
+        {
+          "name": "ログイン頻度",
+          "weight": "25%",
+          "green": "週5回以上",
+          "yellow": "週2-4回",
+          "red": "週1回以下"
+        },
+        {
+          "name": "コア機能利用率",
+          "weight": "25%",
+          "green": "主要機能の80%+を利用",
+          "yellow": "50-80%",
+          "red": "50%未満"
+        },
+        {
+          "name": "サポート問い合わせ",
+          "weight": "15%",
+          "green": "月1件以下（自己解決）",
+          "yellow": "月2-5件",
+          "red": "月6件以上（不満蓄積）"
+        },
+        {
+          "name": "NPS回答",
+          "weight": "15%",
+          "green": "9-10（推奨者）",
+          "yellow": "7-8（中立者）",
+          "red": "0-6（批判者）"
+        },
+        {
+          "name": "契約更新日までの距離",
+          "weight": "10%",
+          "green": "3ヶ月以上",
+          "yellow": "1-3ヶ月",
+          "red": "1ヶ月以内"
+        },
+        {
+          "name": "チャンピオン（推進者）の在籍",
+          "weight": "10%",
+          "green": "チャンピオン活動的",
+          "yellow": "チャンピオン異動",
+          "red": "チャンピオン退職"
+        }
+      ],
+      "actions": [
+        {
+          "level": "green",
+          "items": ["アップセル・クロスセルの提案", "事例紹介・リファラルの依頼", "NPS推奨者としてのコミュニティ参加促進", "ベータ機能の先行提供"]
+        },
+        {
+          "level": "yellow",
+          "items": ["CSMから1on1ミーティングを設定", "利用されていない機能のトレーニング提供", "ROI可視化レポートの送付", "経営層へのエスカレーション検討"]
+        },
+        {
+          "level": "red",
+          "items": ["即座にCSMが訪問/電話", "エグゼクティブスポンサーからの連絡", "カスタム改善プランの提示", "短期間の無料アップグレード提供", "解約原因のヒアリングと対策"]
+        }
+      ]
+    },
+    "onboarding": {
+      "title": "オンボーディングプレイブック",
+      "milestones": [
+        {
+          "phase": "Day 1",
+          "name": "ウェルカム & 初期設定",
+          "goal": "アカウント作成、基本設定の完了、最初の成功体験（Aha Moment）の提供",
+          "actions": ["ウェルカムメール + 動画チュートリアル送信", "キックオフコール（High Touch）or ガイドツアー（Tech Touch）", "基本設定ウィザードの完了サポート", "テンプレート/サンプルデータの投入"],
+          "kpi": "初期設定完了率 80%+"
+        },
+        {
+          "phase": "Week 1",
+          "name": "コア機能の習熟",
+          "goal": "主要機能を実業務で使い始める。チームメンバーの招待・トレーニング。",
+          "actions": ["コア機能の操作トレーニング（ウェビナー or 個別）", "チームメンバーの招待と権限設定", "初回の実業務での利用（テスト請求、レポート作成等）", "よくある質問のプロアクティブな回答"],
+          "kpi": "コア機能利用開始率 60%+"
+        },
+        {
+          "phase": "Month 1",
+          "name": "定着 & 業務統合",
+          "goal": "日常業務にSaaSが完全に組み込まれる。旧ツール/旧プロセスからの完全移行。",
+          "actions": ["月次レビュー（利用状況の振り返り）", "旧ツールからのデータ移行完了", "ワークフロー自動化の設定", "KPIダッシュボードの構築"],
+          "kpi": "DAU/MAU 30%+（毎日使うユーザーが3割以上）"
+        },
+        {
+          "phase": "Month 3",
+          "name": "拡大 & 最適化",
+          "goal": "利用範囲の拡大。追加機能の導入、他部署への展開、ROIの実証。",
+          "actions": ["QBR（四半期ビジネスレビュー）の実施", "ROI算出と経営層への報告書作成", "追加機能・上位プランの提案", "他部署/拠点への展開計画の策定"],
+          "kpi": "NPS 8+、Expansion検討開始"
+        }
+      ],
+      "kaipokeContext": "カイポケのオンボーディング: 契約→初期設定（事業所情報、利用者マスタ）→テスト請求→初回月次請求の完了が「Aha Moment」。平均オンボーディング期間は2-3週間。請求機能は毎月の締め日に向けた逆算スケジュールで進行。"
+    },
+    "expansion": {
+      "title": "Expansion戦略",
+      "strategies": [
+        {
+          "name": "アップセル",
+          "color": "#10B981",
+          "description": "上位プランへの移行。より多くの機能、高い利用上限、優先サポートを提供。NRR向上の最も直接的な手段。",
+          "tactics": ["利用量が上限の80%に達したらプロダクト内で上位プラン提案", "プレミアム機能のプレビュー/ティーザーを無料ユーザーに表示", "年次レビュー時にROIと追加投資の提案"],
+          "nrrContribution": "+5-15%"
+        },
+        {
+          "name": "クロスセル",
+          "color": "#3B82F6",
+          "description": "関連プロダクト/アドオンの追加販売。プラットフォーム化により顧客のスイッチングコストが上がり、リテンションも強化。",
+          "tactics": ["利用パターンから関連プロダクトをレコメンド", "バンドル割引の提供", "無料トライアルでの体験提供"],
+          "nrrContribution": "+3-10%"
+        },
+        {
+          "name": "席数拡大",
+          "color": "#8B5CF6",
+          "description": "同一組織内でのユーザー数増加。部署展開、グループ企業展開。Per Seat課金モデルで最も効果的。",
+          "tactics": ["チーム招待機能のプロダクト内訴求", "部署別ダッシュボードの提供", "ボリュームディスカウント（10席以上で10%OFF）"],
+          "nrrContribution": "+5-20%"
+        }
+      ],
+      "kaipokeContext": "カイポケのExpansionパス: 請求ソフト（コア）→ 記録ソフト（クロスセル）→ BPO給与計算（アドオン）→ ファクタリング（金融）。1事業所→法人内の他事業所（席数拡大）→グループ法人への展開。目標NRR: 110%+。"
+    },
+    "churnPrevention": {
+      "title": "解約防止フレームワーク",
+      "signals": [
+        {
+          "name": "利用率の急低下",
+          "detection": "DAU/MAUが前月比30%以上減少",
+          "intervention": "CSMから「最近の利用状況」を確認するメール/電話",
+          "timing": "検知後48時間以内"
+        },
+        {
+          "name": "サポート問い合わせ急増",
+          "detection": "月間チケット数が平均の2倍以上",
+          "intervention": "エスカレーション + 専任サポート担当のアサイン",
+          "timing": "3件目の問い合わせ時点"
+        },
+        {
+          "name": "NPS低下",
+          "detection": "NPS回答が前回比3ポイント以上低下",
+          "intervention": "CSMが1on1でフィードバックヒアリング",
+          "timing": "サーベイ回答後1週間以内"
+        },
+        {
+          "name": "チャンピオンの退職",
+          "detection": "主要利用者のログインが2週間以上停止",
+          "intervention": "新しいチャンピオン候補の特定 + 引き継ぎサポート",
+          "timing": "検知後即日"
+        },
+        {
+          "name": "契約更新90日前",
+          "detection": "契約更新日のカレンダーアラート",
+          "intervention": "QBR実施 + ROIレポート + 更新提案書の送付",
+          "timing": "更新90日前"
+        }
+      ],
+      "winBack": "解約済み顧客の復帰施策。解約後30日/90日/180日のタイミングで、新機能リリース情報、特別割引、成功事例を送付。Win-Back率の目安は5-10%。解約理由別にセグメントし、対応済みの課題がある顧客から優先アプローチ。"
+    },
+    "csMetrics": {
+      "title": "CS指標一覧",
+      "metrics": [
+        {
+          "key": "nps",
+          "name": "NPS（Net Promoter Score）",
+          "formula": "推奨者(9-10)% - 批判者(0-6)%",
+          "description": "顧客の推奨度合い。SaaS企業の平均は30-40。50以上で優良、70以上で世界クラス。",
+          "benchmark": "SaaS平均: 30-40"
+        },
+        {
+          "key": "csat",
+          "name": "CSAT（Customer Satisfaction Score）",
+          "formula": "満足回答数 ÷ 全回答数 × 100",
+          "description": "特定のインタラクション（サポート対応、機能利用）後の満足度。NPSより粒度が細かい。",
+          "benchmark": "良好: 80%+、優良: 90%+"
+        },
+        {
+          "key": "ces",
+          "name": "CES（Customer Effort Score）",
+          "formula": "「簡単だった」回答数 ÷ 全回答数",
+          "description": "顧客が目的を達成するのにかかった労力。CESが低いほどリテンション率が高い（Harvard Business Review調査）。",
+          "benchmark": "良好: 5.5+/7、優良: 6+/7"
+        },
+        {
+          "key": "grr",
+          "name": "GRR（Gross Revenue Retention）",
+          "formula": "(期初MRR - Contraction - Churn) ÷ 期初MRR × 100",
+          "description": "Expansionを除いた純粋な維持率。既存顧客をどれだけ守れているかの指標。100%が上限。",
+          "benchmark": "優良: 95%+、良好: 90-95%、要改善: 90%未満"
+        },
+        {
+          "key": "nrr",
+          "name": "NRR（Net Revenue Retention）",
+          "formula": "(期初MRR + Expansion - Contraction - Churn) ÷ 期初MRR × 100",
+          "description": "Expansion込みの維持率。100%超なら新規ゼロでも成長。SaaSの最重要指標の一つ。",
+          "benchmark": "優良: 120%+、良好: 110-120%、最低ライン: 100%"
+        },
+        {
+          "key": "ttv",
+          "name": "Time-to-Value",
+          "formula": "サインアップ → 初回成功体験までの日数",
+          "description": "オンボーディング効率の指標。短いほどActivation率・リテンション率が向上。",
+          "benchmark": "理想: 1日以内、許容: 1週間、危険: 1ヶ月以上"
+        }
+      ]
+    }
+  },
+
+  "gtm": {
+    "title": "GTM（Go-To-Market）戦略",
+    "subtitle": "プロダクトを市場に届ける方法論。4つのGTMモーション、Land & Expand、チャネル戦略、ABMまでを網羅。",
+    "motions": {
+      "title": "4つのGTMモーション",
+      "items": [
+        {
+          "key": "selfServe",
+          "name": "Self-Serve",
+          "nameJa": "セルフサービス",
+          "color": "#10B981",
+          "description": "ユーザーが自力でサインアップ→利用→課金まで完結。営業介入なし。PLGモデルと同義。最も低CACだが、高ACVには不向き。",
+          "acvRange": "〜50万円/年",
+          "salesCycle": "即日〜1週間",
+          "cacPayback": "1-3ヶ月",
+          "bestFor": ["プロダクトがシンプルで直感的", "個人〜小規模チームがターゲット", "バイラル性がある（招待、共有機能）"],
+          "examples": ["Slack", "Notion", "Canva", "Dropbox"]
+        },
+        {
+          "key": "insideSales",
+          "name": "Inside Sales",
+          "nameJa": "インサイドセールス",
+          "color": "#3B82F6",
+          "description": "電話・メール・オンライン商談でリモート営業。The Model型の分業体制（Marketing→IS→AE→CS）で効率化。日本のSaaSで最も一般的。",
+          "acvRange": "50万〜300万円/年",
+          "salesCycle": "1-3ヶ月",
+          "cacPayback": "6-12ヶ月",
+          "bestFor": ["中小〜中堅企業がターゲット", "デモ/説明が必要な複雑なプロダクト", "日本の商慣習（対面要望）に対応"],
+          "examples": ["freee", "Sansan", "カイポケ", "SmartHR"]
+        },
+        {
+          "key": "fieldSales",
+          "name": "Field Sales",
+          "nameJa": "フィールドセールス",
+          "color": "#F59E0B",
+          "description": "対面訪問を中心としたエンタープライズ営業。長期の関係構築、複数ステークホルダーの合意形成、カスタム提案が必要。",
+          "acvRange": "300万円+/年",
+          "salesCycle": "3-12ヶ月",
+          "cacPayback": "12-18ヶ月",
+          "bestFor": ["大企業がターゲット", "カスタマイズ・導入支援が必須", "複数部門の意思決定が必要"],
+          "examples": ["Salesforce", "ServiceNow", "Workday", "SAP"]
+        },
+        {
+          "key": "channel",
+          "name": "Channel Sales",
+          "nameJa": "チャネルセールス（代理店）",
+          "color": "#8B5CF6",
+          "description": "パートナー企業を通じた間接販売。自社営業リソースなしで市場カバレッジを拡大。業界知識を持つパートナーが信頼性を補完。",
+          "acvRange": "幅広い",
+          "salesCycle": "パートナー次第",
+          "cacPayback": "パートナー構築に先行投資が必要",
+          "bestFor": ["特定業界への参入", "地方市場のカバレッジ", "自社営業の人員制約がある"],
+          "examples": ["Intuit（税理士チャネル）", "AWS（SIerチャネル）", "カイポケ（社労士/コンサルチャネル）"]
+        }
+      ]
+    },
+    "gtmFit": {
+      "title": "GTM Fitフレームワーク",
+      "description": "PMFを達成した後、どのGTMモーションが最適かを4段階で判定する。各段階を順にクリアすることで、スケーラブルなGTMが完成する。",
+      "stages": [
+        {
+          "name": "Market Fit",
+          "description": "十分な市場規模と成長性がある市場を選択する。TAM/SAM/SOMの推定。",
+          "criteria": ["TAMが100億円以上", "年成長率10%以上の市場", "明確なペインポイントが存在", "既存の代替手段が不十分"]
+        },
+        {
+          "name": "Product Fit",
+          "description": "市場のニーズに対してプロダクトが十分な価値を提供できているか。PMFの確認。",
+          "criteria": ["NPS 40以上", "有料顧客の月次Churn 3%以下", "オーガニックの口コミが発生", "競合からの乗り換えが増加"]
+        },
+        {
+          "name": "Channel Fit",
+          "description": "ターゲット顧客に最も効率的にリーチできるチャネルの選定と検証。",
+          "criteria": ["CACが目標LTV/CACの3:1以内", "CAC Paybackが18ヶ月以内", "チャネルがスケーラブル", "チャネル間のカニバリゼーションがない"]
+        },
+        {
+          "name": "Model Fit",
+          "description": "営業モデル（Self-Serve/IS/FS/Channel）とプライシングの組み合わせが収益性を確保できているか。",
+          "criteria": ["ユニットエコノミクスが成立", "売上成長率がS&M費用を上回る", "Magic Number 0.75以上", "一人当たり売上が業界水準以上"]
+        }
+      ]
+    },
+    "landAndExpand": {
+      "title": "Land & Expand戦略",
+      "description": "小さく入って大きく育てる戦略。初期導入（Land）で価値を証明し、段階的に利用を拡大（Expand）する。エンタープライズSaaSの王道。",
+      "phases": [
+        {
+          "name": "Land（着地）",
+          "description": "1部署・少人数・限定機能で初期導入。導入のハードルを下げ、社内に「実績」を作る。",
+          "playbook": ["1部署（5-10名）でPOC/パイロット開始", "60-90日の無料or低価格トライアル", "明確なKPIと成功基準の設定", "チャンピオン（推進者）の発見・育成"]
+        },
+        {
+          "name": "Expand（拡大）",
+          "description": "成功事例を社内で横展開。利用部署・人数・機能の拡大。Land部署のROIを可視化し、他部署の導入を推進。",
+          "playbook": ["利用状況のROIレポートを経営層に提出", "成功事例の社内プレゼンテーション", "他部署への無料トライアル提供", "ボリュームディスカウントの提示", "専任CSMのアサイン"]
+        },
+        {
+          "name": "Transform（変革）",
+          "description": "企業全体のプラットフォームとして定着。全社契約、複数年契約、カスタム開発。スイッチングコストが最大化。",
+          "playbook": ["エグゼクティブスポンサーとの戦略MTG", "全社ロールアウトの計画策定", "既存システムとのインテグレーション", "SLA/セキュリティ要件の対応", "複数年契約の締結"]
+        }
+      ],
+      "kaipokeContext": "カイポケのLand & Expand: 1事業所（Land）→ 法人内の他事業所に展開（Expand）→ グループ法人全体への導入（Transform）。福祉業界は法人が複数事業所を運営するケースが多く、1事業所での成功が法人全体への横展開につながりやすい。"
+    },
+    "channelPartnership": {
+      "title": "チャネルパートナーシップ",
+      "types": [
+        {
+          "name": "ISV（独立系ソフトウェアベンダー）",
+          "nameJa": "技術連携パートナー",
+          "color": "#3B82F6",
+          "description": "APIやマーケットプレイスを通じた技術連携。相互にプロダクトの価値を高め合う。",
+          "examples": ["Salesforce AppExchange", "Shopify App Store", "HubSpot Marketplace"]
+        },
+        {
+          "name": "Referral（紹介）",
+          "nameJa": "紹介パートナー",
+          "color": "#10B981",
+          "description": "見込み客を紹介し、成約時にリファラルフィー（10-20%）を受け取る。最も導入が簡単なパートナーモデル。",
+          "examples": ["会計事務所 → freee紹介", "社労士 → SmartHR紹介", "コンサル → Salesforce紹介"]
+        },
+        {
+          "name": "Reseller（再販）",
+          "nameJa": "再販パートナー",
+          "color": "#F59E0B",
+          "description": "パートナーが自社ブランドで再販（or 共同ブランド）。導入支援・サポートもパートナーが担当。卸値（30-40% OFF）で仕入れ。",
+          "examples": ["大塚商会 → Microsoft 365", "NTTデータ → SAP", "SIer → AWS"]
+        },
+        {
+          "name": "OEM",
+          "nameJa": "OEMパートナー",
+          "color": "#8B5CF6",
+          "description": "パートナーのプロダクトに自社機能を組み込んで提供。ホワイトラベルでエンドユーザーからは見えない。",
+          "examples": ["Stripe（決済をSaaSに組み込み）", "Twilio（通信をアプリに組み込み）", "Auth0（認証をSaaSに組み込み）"]
+        }
+      ],
+      "welfareChannels": [
+        { "name": "税理士・会計事務所", "role": "経営支援の延長で福祉SaaSを紹介。顧問先への影響力が大きい。" },
+        { "name": "社会保険労務士", "role": "給与計算・労務管理の専門家。BPOサービスとの親和性が高い。" },
+        { "name": "福祉コンサルタント", "role": "新規開業・運営改善の支援。事業所の立ち上げ段階での導入を推進。" },
+        { "name": "行政（自治体）", "role": "指定申請・実地指導の窓口。行政システムとの連携が参入障壁にもなる。" }
+      ]
+    },
+    "abm": {
+      "title": "ABM（Account Based Marketing）",
+      "description": "エンタープライズSaaSの必須戦略。ターゲット企業を絞り込み、1社ごとにカスタマイズしたマーケティング・営業活動を展開する。スプレー型MKTの逆アプローチ。",
+      "steps": [
+        {
+          "name": "ターゲット選定",
+          "description": "ICP（Ideal Customer Profile）に基づき、最も価値の高いアカウントを100-500社リスト化。",
+          "tactics": ["ICP定義（業種、規模、テクノロジースタック、課題）", "Intent Dataの活用（検索行動、コンテンツ消費）", "既存顧客のLook-alikeモデル"]
+        },
+        {
+          "name": "コンテンツ制作",
+          "description": "ターゲット企業の課題に合わせたカスタムコンテンツを制作。業界レポート、ケーススタディ、ROI計算ツールなど。",
+          "tactics": ["業界別のペインポイント分析", "カスタムランディングページ（社名入り）", "パーソナライズドメール/DM"]
+        },
+        {
+          "name": "エンゲージメント",
+          "description": "複数チャネル（メール、広告、イベント、紹介）で接点を作り、関係を構築。複数ステークホルダーへの同時アプローチ。",
+          "tactics": ["LinkedIn Adsでターゲット企業の社員にリーチ", "業界カンファレンスでのサイドミーティング", "既存顧客からのリファラル", "エグゼクティブディナー/ラウンドテーブル"]
+        },
+        {
+          "name": "商談・契約",
+          "description": "営業がABMの温めたリードを引き継ぎ、クロージング。POC→パイロット→全社契約のステップを踏む。",
+          "tactics": ["カスタムデモ（ターゲット企業のデータで実演）", "ROI試算の共同作成", "経営層向けエグゼクティブプレゼン", "段階的な契約プラン（POC→年契→複数年）"]
+        }
+      ]
+    },
+    "failurePatterns": {
+      "title": "GTMの失敗パターン",
+      "patterns": [
+        {
+          "name": "Premature Scaling",
+          "description": "PMF達成前に営業人員を大量採用。CAC回収できず資金ショート。PMFの証拠（NPS 40+、Churn 3%以下）なしにS&M投資するのは最大のリスク。",
+          "remedy": "PMFの明確な指標を設定し、達成後に段階的に営業投資。初期は創業者セールスで検証。"
+        },
+        {
+          "name": "Channel Mismatch",
+          "description": "プロダクトのACVに合わないGTMモーションを選択。低ACV商材にField Salesを投入してCAC破綻、または高ACV商材をSelf-Serveで売ろうとして転換率が極低。",
+          "remedy": "ACV帯に合ったGTMモーションを選択。50万以下ならSelf-Serve/IS、300万以上ならFS。"
+        },
+        {
+          "name": "Single Channel Dependency",
+          "description": "1つのチャネルに依存し、そのチャネルが枯渇or高騰した時に成長が止まる。Google広告のCPC高騰、紹介パートナーの離脱など。",
+          "remedy": "最低3つのチャネルを並行育成。オーガニック（SEO/コンテンツ）＋ペイド＋パートナーの3本柱。"
+        },
+        {
+          "name": "Marketing-Sales Misalignment",
+          "description": "マーケティングが生成するリードの質が低く、営業が追わない。MQLの定義が曖昧で、数だけ追ってQuality無視。",
+          "remedy": "MQLからSQLへの変換率を共通KPIに。月次のMarketing-Salesアライメントミーティングを実施。"
+        },
+        {
+          "name": "Ignoring Existing Customers",
+          "description": "新規獲得に注力しすぎて既存顧客のChurnが増加。NRRが100%を割り込み、新規で埋め合わせる「穴の開いたバケツ」状態。",
+          "remedy": "CS組織への投資。GRR 90%以上を維持した上で、Expansion施策でNRR 110%+を目指す。"
+        }
+      ]
+    }
+  },
+  "competitiveStrategy": {
+    "title": "競争戦略 & Moat",
+    "subtitle": "SaaS企業が持続的な競争優位を築くための5つのMoat（堀）。ネットワーク効果、スイッチングコスト、データ優位性、エコシステム、ブランド信頼。",
+    "moats": [
+      {
+        "name": "Network Effects",
+        "nameJa": "ネットワーク効果",
+        "color": "#3B82F6",
+        "strength": 5,
+        "description": "ユーザーが増えるほど全ユーザーの価値が増す。最も強力なMoatだが構築が最も困難。メトカーフの法則（価値∝ユーザー数²）。",
+        "types": ["直接型: ユーザー同士が直接つながる（Slack、Teams）", "間接型: 利用者増→開発者増→アプリ増→利用者増（Salesforce AppExchange）", "データ型: 利用者増→データ増→AI精度向上→利用者増（Waze、Netflix）"],
+        "examples": ["Slack（チーム内コミュニケーション）", "Salesforce（AppExchangeエコシステム）", "LinkedIn（プロフェッショナルネットワーク）"],
+        "buildMethod": "初期はニッチ市場でクリティカルマス達成 → 隣接市場に展開。PLGとの相性が良い。",
+        "kaipokeRelevance": "低〜中。福祉事業所間のネットワーク効果は限定的だが、紹介会社-事業所間のマッチングや、事業所コミュニティの構築で間接効果を狙える。"
+      },
+      {
+        "name": "Switching Costs",
+        "nameJa": "スイッチングコスト",
+        "color": "#8B5CF6",
+        "strength": 4,
+        "description": "他製品への乗り換えにかかる金銭的・時間的・心理的コスト。データ移行、再トレーニング、業務プロセスの再構築が障壁に。",
+        "types": ["手続き的: データ移行、設定やり直し、API連携の再構築", "財務的: 解約違約金、新ツールの導入費用、二重支払い期間", "関係的: CSMとの信頼関係、カスタマイズの蓄積、社内チャンピオンの存在"],
+        "examples": ["カイポケ（請求データ・利用者データの蓄積）", "SAP（10年分の業務データ）", "Salesforce（カスタムオブジェクト・ワークフロー）"],
+        "buildMethod": "データ蓄積 → ワークフロー統合 → カスタマイズ深化。プラットフォーム化が最も効果的。",
+        "kaipokeRelevance": "高。福祉事業所は請求データ、利用者記録、計画書を蓄積。移行コストが高く、一度導入すると切り替えが困難。これがカイポケの最大のMoat。"
+      },
+      {
+        "name": "Data Moats",
+        "nameJa": "データ優位性",
+        "color": "#10B981",
+        "strength": 4,
+        "description": "蓄積したデータが競争優位の源泉。データ→AI/ML→プロダクト改善→データ増の好循環（データフライホイール）。",
+        "types": ["量のMoat: 他社が短期間では追いつけないデータ量", "質のMoat: 独自のデータ収集チャネル、クレンジングされた高品質データ", "ネットワークMoat: ユーザー行動データが相互にプロダクトを改善"],
+        "examples": ["JMDC（医療データ）", "Palantir（政府・企業の機密データ）", "Google（検索データ→広告精度）"],
+        "buildMethod": "独自データ収集→AI/ML活用→プロダクト差別化→さらなるデータ蓄積のサイクルを回す。",
+        "kaipokeRelevance": "中〜高。介護・障害福祉の請求データ、利用者データ、事業所データの蓄積。AI活用（記録自動化、請求チェック）でデータフライホイールを構築可能。"
+      },
+      {
+        "name": "Ecosystem Lock-in",
+        "nameJa": "エコシステム",
+        "color": "#F59E0B",
+        "strength": 5,
+        "description": "自社プラットフォーム上にサードパーティのアプリ・連携が構築される。エコシステムが充実するほどユーザーの離脱コストが増大。",
+        "types": ["マーケットプレイス: サードパーティアプリの売買（Shopify App Store）", "API Platform: 外部開発者がAPIで拡張（Twilio、Stripe）", "データプラットフォーム: データの集約・連携基盤（Snowflake）"],
+        "examples": ["Shopify（8000+アプリ）", "HubSpot（1500+連携）", "Salesforce（7000+アプリ、AppExchange）"],
+        "buildMethod": "APIファースト設計 → 開発者コミュニティ育成 → マーケットプレイス構築 → パートナーエコシステム拡大。",
+        "kaipokeRelevance": "中。福祉業界のエコシステムは発展途上。税理士ソフト、勤怠管理、グループホームセンサー等との連携がエコシステムの芽。"
+      },
+      {
+        "name": "Brand & Trust",
+        "nameJa": "ブランド信頼",
+        "color": "#EF4444",
+        "strength": 3,
+        "description": "長年の実績と信頼によるブランドMoat。特に規制産業（金融、医療、福祉）では信頼性が最重要の購買基準。",
+        "types": ["実績型: 導入社数、継続年数、大手顧客のロゴ", "認証型: SOC2、ISO27001、業界固有の認証", "コミュニティ型: ユーザーコミュニティの活発さ、NPS"],
+        "examples": ["Workday（Fortune 500の50%が利用）", "ServiceNow（IT部門の信頼ブランド）", "カイポケ（SMS＝東証プライム上場の信頼）"],
+        "buildMethod": "導入実績の蓄積 → 認証取得 → コミュニティ構築 → 業界でのカテゴリーリーダーシップ確立。",
+        "kaipokeRelevance": "高。福祉業界は保守的で、「大手が使っている」「上場企業が運営」が強い訴求力。SMSの上場企業としてのブランドはカイポケの重要な差別化要素。"
+      }
+    ],
+    "platformStrategy": {
+      "title": "プラットフォーム戦略",
+      "description": "単一プロダクトからプラットフォームへの進化。APIファースト→マーケットプレイス→エコシステムの3段階。",
+      "stages": [
+        {
+          "name": "Stage 1: APIファースト",
+          "description": "プロダクトの全機能をAPIで公開。外部開発者やパートナーが自由に連携・拡張できる基盤を構築。",
+          "examples": ["Stripe（決済API）", "Twilio（通信API）"],
+          "kpi": "API呼び出し数、開発者登録数"
+        },
+        {
+          "name": "Stage 2: マーケットプレイス",
+          "description": "サードパーティアプリの売買プラットフォームを構築。開発者がアプリを公開し、ユーザーがインストール。",
+          "examples": ["Shopify App Store", "Salesforce AppExchange"],
+          "kpi": "アプリ数、開発者収益、ユーザーのアプリインストール率"
+        },
+        {
+          "name": "Stage 3: エコシステム",
+          "description": "パートナー企業、開発者、ユーザーが相互に価値を創造する生態系。プラットフォーム運営者はルール設計に専念。",
+          "examples": ["AWS（クラウドエコシステム）", "Apple App Store"],
+          "kpi": "エコシステムGMV、パートナー企業数、ユーザーの平均利用アプリ数"
+        }
+      ]
+    },
+    "multiProduct": {
+      "title": "Multi-Product戦略（Compound Startup）",
+      "description": "単一プロダクトから複数プロダクトへの拡張。Rippling CEO Parker Conradが提唱した「Compound Startup」戦略。",
+      "benefits": [
+        "クロスセルによるNRR向上（120%+を目指せる）",
+        "スイッチングコストの増大（複数プロダクト依存）",
+        "共通データ基盤の活用（1つのデータで複数プロダクトを改善）",
+        "LTV向上（1顧客あたりの利用プロダクト数 × 各プロダクトの単価）",
+        "CAC効率化（既存顧客へのクロスセルはCAC $0に近い）"
+      ],
+      "examples": [
+        {
+          "name": "HubSpot",
+          "evolution": "Marketing Hub → Sales Hub → Service Hub → CMS Hub → Operations Hub",
+          "result": "5プロダクトで平均利用プロダクト数3.2。NRR 110%+。"
+        },
+        {
+          "name": "freee",
+          "evolution": "会計 → 人事労務 → プロジェクト管理 → 申告 → 販売管理",
+          "result": "複数プロダクト利用率の向上でARPU増加。Churn率の低下に寄与。"
+        },
+        {
+          "name": "カイポケ（SMS）",
+          "evolution": "請求ソフト → 記録ソフト → BPO → ファクタリング → 採用支援",
+          "result": "Compound Startup戦略の福祉版。請求を起点にバリューチェーン全体をカバー。"
+        }
+      ],
+      "risks": [
+        "各プロダクトの品質低下（リソース分散）",
+        "組織の複雑化（プロダクトチーム間の調整コスト）",
+        "顧客混乱（プラン体系の複雑化）"
+      ]
+    }
+  },
+  "financialStatements": {
+    "title": "SaaS財務諸表の読み方",
+    "subtitle": "SaaS企業のP&L構造、GAAP vs Non-GAAP、繰延収益、FCFを理解する。投資家がSaaSの財務をどう評価するか。",
+    "plStructure": {
+      "title": "SaaS P&Lの特徴",
+      "description": "SaaS企業のP&L（損益計算書）は従来のソフトウェア企業と大きく異なる。高粗利率、重いS&M費用、赤字でも成長を優先するJ-Curveが特徴。",
+      "waterfall": [
+        { "item": "売上高（Revenue）", "typical": "100%", "description": "サブスクリプション収益 + プロフェッショナルサービス。サブスク比率80%+が健全。" },
+        { "item": "売上原価（COGS）", "typical": "15-30%", "description": "ホスティング費用、カスタマーサポート、オンボーディング。SaaS粗利率70-85%。" },
+        { "item": "粗利益（Gross Profit）", "typical": "70-85%", "description": "SaaSの競争力の源泉。粗利率70%未満はSaaSとして課題あり。" },
+        { "item": "R&D費", "typical": "15-25%", "description": "プロダクト開発。成長期は25%+、成熟期は15-20%。" },
+        { "item": "S&M費", "typical": "30-50%", "description": "営業・マーケティング。SaaS最大のコスト。成長期は50%+、成熟期は30%程度。" },
+        { "item": "G&A費", "typical": "8-15%", "description": "管理部門。上場準備中は15%+、成熟企業は8-10%。" },
+        { "item": "営業利益", "typical": "-20%〜+20%", "description": "成長期は赤字（J-Curve）が一般的。Rule of 40を満たすことが重要。" }
+      ],
+      "phases": [
+        {
+          "name": "赤字成長期",
+          "color": "#EF4444",
+          "revenue": "ARR $10M〜$100M",
+          "margin": "-30%〜-10%",
+          "description": "S&Mに大量投資し、ARR成長率80-150%を狙う。Rule of 40を成長率側で満たす。投資家は成長率を最重視。"
+        },
+        {
+          "name": "損益分岐点",
+          "color": "#F59E0B",
+          "revenue": "ARR $100M〜$300M",
+          "margin": "-5%〜+5%",
+          "description": "S&M効率が改善し始め、営業利益が損益分岐に近づく。成長率は鈍化（30-60%）するが、利益率が改善。"
+        },
+        {
+          "name": "利益拡大期",
+          "color": "#10B981",
+          "revenue": "ARR $300M+",
+          "margin": "+10%〜+30%",
+          "description": "規模の経済が効き始め、S&M比率が低下。営業利益率10-30%。Rule of 40を利益率側でも満たす。"
+        }
+      ]
+    },
+    "gaapVsNonGaap": {
+      "title": "GAAP vs Non-GAAP",
+      "description": "GAAP（一般に認められた会計原則）とNon-GAAP（調整後指標）の違い。投資家がNon-GAAPを重視する理由。",
+      "differences": [
+        {
+          "item": "SBC（株式報酬費用）",
+          "gaap": "費用に計上（P&Lの営業利益を押し下げ）",
+          "nonGaap": "除外（現金支出を伴わないため）",
+          "impact": "SaaS企業のSBCは売上高の15-30%に達することも。Non-GAAPでは大幅な黒字でもGAAPでは赤字の場合がある。"
+        },
+        {
+          "item": "無形資産償却",
+          "gaap": "M&A取得の無形資産を定期償却",
+          "nonGaap": "除外（M&A戦略の評価には不適切）",
+          "impact": "M&Aが多い企業（Salesforce等）ではGAAP営業利益が大きく低下。"
+        },
+        {
+          "item": "リストラ費用",
+          "gaap": "発生時に費用計上",
+          "nonGaap": "一時的な費用として除外",
+          "impact": "テック業界のレイオフ時にGAAP利益が大きく低下。"
+        }
+      ],
+      "investorView": "投資家はNon-GAAP営業利益率とFCF Marginを重視。GAAPは法的な開示義務として確認。SBC調整額が売上の20%を超える企業は要注意（実質的な株式希薄化）。"
+    },
+    "deferredRevenue": {
+      "title": "繰延収益（Deferred Revenue）",
+      "description": "年額課金のSaaSで重要な会計処理。前受金として受け取り、サービス提供に応じて毎月収益認識。",
+      "explanation": "例: 年額120万円の契約を4月に一括受領した場合、4月の収益は10万円（120万÷12ヶ月）。残り110万円はバランスシートの「繰延収益（前受金）」に計上。毎月10万円ずつ取り崩す。",
+      "significance": [
+        "繰延収益の増加は将来の確定売上を意味し、ポジティブなシグナル",
+        "繰延収益残高 ÷ 四半期売上 = 売上の先行指標（Deferred Revenue Ratio）",
+        "年額課金→月額課金へのシフトは繰延収益を減少させるが、キャッシュフローには中立",
+        "RPO（Remaining Performance Obligations）= 繰延収益 + 未請求の契約残高。より包括的な先行指標。"
+      ]
+    },
+    "fcf": {
+      "title": "FCF（Free Cash Flow）",
+      "description": "フリーキャッシュフロー。SaaS企業が最終的に生み出す現金収益力。営業利益よりも実態を反映。",
+      "formula": "FCF = 営業キャッシュフロー - 設備投資（CapEx）",
+      "whyImportant": [
+        "SaaSは前受金（年額課金の一括受領）によりFCFが営業利益を上回ることが多い",
+        "SBC（株式報酬）は非現金費用のためFCFに影響しない（GAAPとの乖離の主因）",
+        "FCF Marginが高い企業は自己資金で成長でき、希薄化リスクが低い",
+        "投資家はFCF Marginを「SaaSの真の収益性」として最重視する傾向"
+      ],
+      "benchmarks": [
+        { "stage": "成長期（ARR <$100M）", "fcfMargin": "-20%〜0%", "note": "成長投資でFCFは赤字でも許容" },
+        { "stage": "スケール期（$100M-$500M）", "fcfMargin": "0%〜15%", "note": "FCF黒字化が株価のカタリスト" },
+        { "stage": "成熟期（$500M+）", "fcfMargin": "15%〜35%", "note": "FCF Margin 20%+が優良SaaSの水準" }
+      ]
+    },
+    "revenueRecognition": {
+      "title": "収益認識（ASC 606 / IFRS 15）",
+      "description": "SaaSの収益認識は5ステップモデルに基づく。複数要素アレンジメント（ソフト＋導入支援＋トレーニング）の按分が論点。",
+      "steps": [
+        { "step": 1, "name": "契約の識別", "description": "顧客との契約が存在し、権利義務が明確であることを確認。" },
+        { "step": 2, "name": "履行義務の識別", "description": "契約内の各要素（ソフトウェア、導入支援、トレーニング）を個別の履行義務として識別。" },
+        { "step": 3, "name": "取引価格の算定", "description": "固定対価、変動対価（従量課金部分）、割引の影響を考慮して総額を算定。" },
+        { "step": 4, "name": "取引価格の配分", "description": "各履行義務に独立販売価格に基づいて取引価格を按分。" },
+        { "step": 5, "name": "収益の認識", "description": "履行義務の充足に応じて収益を認識。SaaSは通常「一定期間にわたる充足」で月次按分。" }
+      ]
+    }
   }
 }

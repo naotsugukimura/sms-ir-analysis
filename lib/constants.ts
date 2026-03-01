@@ -62,6 +62,30 @@ export const NAV_ITEMS: NavItem[] = [
       { href: "/sales/glossary", label: "マーケティング用語集" },
     ],
   },
+
+  // --- ケーススタディ ---
+  {
+    href: "/case-studies",
+    label: "ケーススタディ",
+    icon: "Building2",
+    section: "分析",
+  },
+
+  // --- AI × SaaS ---
+  {
+    href: "/ai-saas",
+    label: "AI × SaaS",
+    icon: "Brain",
+    section: "分析",
+  },
+
+  // --- SaaS用語集 ---
+  {
+    href: "/glossary",
+    label: "SaaS用語集",
+    icon: "BookOpen",
+    section: "リファレンス",
+  },
 ];
 
 export const SEGMENT_CONFIG: Record<SegmentId, { name: string; nameEn: string; color: string; icon: string }> = {

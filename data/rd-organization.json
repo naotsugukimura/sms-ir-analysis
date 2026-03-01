@@ -706,5 +706,167 @@
       { "layer": "認証・認可", "measures": ["OAuth 2.0 / OIDC", "MFA", "RBAC", "JWTトークン管理"] },
       { "layer": "監査", "measures": ["CloudTrail", "アクセスログ", "変更履歴", "SOC2対応"] }
     ]
+  },
+  "techArchitecture": {
+    "title": "SaaS技術アーキテクチャ",
+    "subtitle": "SaaSを支える技術基盤。マルチテナンシー、API設計、セキュリティ認証、インフラ、CI/CDを網羅。",
+    "multiTenancy": {
+      "title": "マルチテナンシー",
+      "description": "1つのアプリケーションインスタンスで複数の顧客（テナント）にサービスを提供する設計パターン。SaaSのコスト効率の源泉。",
+      "patterns": [
+        {
+          "name": "共有DB・共有スキーマ",
+          "nameEn": "Shared Database, Shared Schema",
+          "color": "#3B82F6",
+          "description": "全テナントが1つのDBの同じテーブルを共有。tenant_idカラムでデータを分離。最もコスト効率が高いが、データ分離が弱い。",
+          "pros": ["最もコスト効率が高い（DB1つ）", "スキーマ変更が容易", "テナント数のスケールが容易"],
+          "cons": ["データ分離が弱い（漏洩リスク）", "大規模テナントがDBパフォーマンスに影響", "テナント別のバックアップが困難"],
+          "bestFor": "SMB向け、テナント数が多い、データ量が少ないSaaS",
+          "examples": ["Slack", "HubSpot", "カイポケ"]
+        },
+        {
+          "name": "共有DB・分離スキーマ",
+          "nameEn": "Shared Database, Separate Schema",
+          "color": "#8B5CF6",
+          "description": "1つのDBサーバー内でテナントごとにスキーマを分離。PostgreSQLのスキーマ機能等を活用。中間的なバランス。",
+          "pros": ["データ分離が強い", "テナント別のカスタマイズが可能", "バックアップ・復元が容易"],
+          "cons": ["スキーマ変更の影響範囲が大きい", "テナント数が増えると管理が複雑", "DBサーバーのリソース制約"],
+          "bestFor": "中規模テナント、カスタマイズ要求がある場合",
+          "examples": ["Salesforce（一部）", "ServiceNow"]
+        },
+        {
+          "name": "分離DB",
+          "nameEn": "Separate Database per Tenant",
+          "color": "#F59E0B",
+          "description": "テナントごとに独立したDBを持つ。データ分離が最も強い。エンタープライズ顧客のコンプライアンス要件に対応。",
+          "pros": ["完全なデータ分離", "テナント別の性能保証", "規制対応（データ居住地要件）が容易"],
+          "cons": ["コストが最も高い", "運用管理が複雑", "スケーリングが困難"],
+          "bestFor": "エンタープライズ向け、金融・医療等の規制産業",
+          "examples": ["Workday", "SAP（一部）"]
+        }
+      ]
+    },
+    "apiEconomy": {
+      "title": "API & インテグレーション経済圏",
+      "description": "APIはSaaSの拡張性とエコシステムの基盤。REST、GraphQL、Webhookの使い分けと、iPaaS連携の戦略。",
+      "apiTypes": [
+        {
+          "name": "REST API",
+          "color": "#3B82F6",
+          "description": "最も標準的なAPI設計。HTTPメソッド（GET/POST/PUT/DELETE）でリソースを操作。シンプルで広く普及。",
+          "bestFor": "標準的なCRUD操作、外部連携、モバイルアプリ",
+          "benchmark": "SaaS標準。99.9% SLAが一般的。レイテンシ目標: 200ms以下。"
+        },
+        {
+          "name": "GraphQL",
+          "color": "#E10098",
+          "description": "クライアントが必要なデータだけを指定して取得。オーバーフェッチを防ぎ、複雑なデータ構造を効率的に扱える。",
+          "bestFor": "複雑なデータ構造、フロントエンド主導の開発、モバイル帯域の最適化",
+          "benchmark": "GitHub、Shopify等が採用。学習コストが高いが、フロントエンドの生産性が向上。"
+        },
+        {
+          "name": "Webhook",
+          "color": "#10B981",
+          "description": "イベント駆動型の通知メカニズム。SaaS側でイベントが発生した際にHTTP POSTで外部URLに通知。リアルタイム連携の基盤。",
+          "bestFor": "リアルタイム通知、イベント駆動連携、ワークフロー自動化",
+          "benchmark": "配信成功率99.9%+、リトライ機構必須（指数バックオフ）。"
+        },
+        {
+          "name": "iPaaS連携",
+          "color": "#8B5CF6",
+          "description": "Zapier、Make（旧Integromat）、Workato等のiPaaSプラットフォーム経由での連携。ノーコードで外部サービスと接続。",
+          "bestFor": "非エンジニアユーザー向け連携、標準的な業務自動化",
+          "benchmark": "Zapier連携はSaaSのテーブルステークス化。1000+のSaaSが対応。"
+        }
+      ]
+    },
+    "security": {
+      "title": "セキュリティ認証",
+      "description": "SaaSの信頼性を証明するセキュリティ認証。取得難易度、コスト、顧客への訴求効果を比較。",
+      "certifications": [
+        {
+          "name": "SOC 2 Type II",
+          "color": "#3B82F6",
+          "description": "米国発のセキュリティ監査基準。Trust Service Criteria（セキュリティ、可用性、処理の完全性、機密性、プライバシー）に基づく。SaaS企業のグローバルスタンダード。",
+          "difficulty": "高",
+          "cost": "500万〜2000万円",
+          "duration": "6-12ヶ月",
+          "impact": "米国エンタープライズ顧客の必須要件。取得済みが営業の前提条件。"
+        },
+        {
+          "name": "ISO 27001",
+          "color": "#8B5CF6",
+          "description": "情報セキュリティマネジメントシステム（ISMS）の国際規格。日本・欧州で重視される。PDCAサイクルでセキュリティを継続的に改善。",
+          "difficulty": "中〜高",
+          "cost": "300万〜1000万円",
+          "duration": "6-12ヶ月",
+          "impact": "日本の大企業・官公庁向けに必須。SOC2と併用が望ましい。"
+        },
+        {
+          "name": "ISMS（日本）",
+          "color": "#10B981",
+          "description": "ISO 27001の日本版認証。情報処理推進機構（IPA）が認定。日本国内の取引で信頼性を担保。",
+          "difficulty": "中",
+          "cost": "200万〜500万円",
+          "duration": "3-6ヶ月",
+          "impact": "日本市場向けの最低限の認証。中小企業との取引で信頼獲得に有効。"
+        },
+        {
+          "name": "HIPAA",
+          "color": "#EF4444",
+          "description": "米国の医療情報保護法。Protected Health Information（PHI）を扱うSaaSに必須。違反時の罰金は最大$1.5M/年。",
+          "difficulty": "極高",
+          "cost": "1000万〜5000万円",
+          "duration": "12-18ヶ月",
+          "impact": "米国ヘルスケアSaaSの参入障壁。BAA（Business Associate Agreement）の締結が必要。"
+        }
+      ]
+    },
+    "infrastructure": {
+      "title": "インフラ選択",
+      "description": "SaaSのインフラ基盤。3大クラウド（AWS/GCP/Azure）の特徴比較と、SaaSに最適な構成パターン。",
+      "providers": [
+        {
+          "name": "AWS",
+          "color": "#FF9900",
+          "share": "31%（最大シェア）",
+          "strength": "サービス数最多（200+）、エンタープライズ実績、日本リージョン充実（東京・大阪）",
+          "bestFor": "大規模SaaS、金融・医療等の規制産業、日本市場向け",
+          "saasStack": "ECS/EKS + RDS/Aurora + ElastiCache + CloudFront + Lambda"
+        },
+        {
+          "name": "GCP",
+          "color": "#4285F4",
+          "share": "11%",
+          "strength": "BigQuery/AI・ML基盤が強い、Kubernetes(GKE)の完成度、データ分析に強み",
+          "bestFor": "AI/MLを活用するSaaS、データ分析系、スタートアップ",
+          "saasStack": "GKE + Cloud SQL + Memorystore + Cloud CDN + Cloud Functions"
+        },
+        {
+          "name": "Azure",
+          "color": "#0078D4",
+          "share": "25%",
+          "strength": "Microsoft 365/Teams連携、Active Directory統合、エンタープライズ顧客の親和性",
+          "bestFor": "Microsoft連携が重要なSaaS、エンタープライズ向け、官公庁向け",
+          "saasStack": "AKS + Azure SQL + Azure Cache + Azure CDN + Azure Functions"
+        }
+      ]
+    },
+    "cicd": {
+      "title": "CI/CD & DevOps",
+      "description": "SaaS開発のデプロイ頻度とリリースサイクルの業界水準。CI/CDパイプラインの設計とDevOps文化。",
+      "benchmarks": [
+        { "metric": "デプロイ頻度", "elite": "1日複数回", "high": "週1回〜日1回", "medium": "月1回〜週1回", "low": "月1回未満" },
+        { "metric": "リードタイム", "elite": "1時間以内", "high": "1日〜1週間", "medium": "1週間〜1ヶ月", "low": "1ヶ月以上" },
+        { "metric": "変更失敗率", "elite": "0-15%", "high": "16-30%", "medium": "16-30%", "low": "46-60%" },
+        { "metric": "復旧時間", "elite": "1時間以内", "high": "1日以内", "medium": "1日〜1週間", "low": "1週間以上" }
+      ],
+      "tools": [
+        { "name": "GitHub Actions", "usage": "最も普及。GitHub統合でCI/CDをYAMLで定義。" },
+        { "name": "CircleCI", "usage": "高速ビルド。Docker対応。日本のスタートアップで人気。" },
+        { "name": "ArgoCD", "usage": "GitOps型CD。Kubernetesのデプロイ管理に特化。" },
+        { "name": "Datadog / New Relic", "usage": "APM（Application Performance Monitoring）。SaaSの可観測性の基盤。" }
+      ]
+    }
   }
 }
