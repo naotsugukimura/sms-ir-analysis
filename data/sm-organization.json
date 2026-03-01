@@ -1,0 +1,970 @@
+{
+  "overview": {
+    "title": "S&M（Sales & Marketing）",
+    "subtitle": "営業・マーケティング組織の全体像",
+    "description": "SaaS企業のS&M組織は、見込み客の創出から受注、そして既存顧客の維持・拡大までを一貫して担う収益エンジンである。The Model（マーケティング→IS→FS→CS）の分業体制により、各ファネルの専門性を高め、再現可能な売上成長を実現する。CAC回収期間とLTVの最大化がS&M組織の最重要課題であり、効率的な組織設計がSaaS企業の成長速度を決定づける。",
+    "headcountRatio": "SaaS企業全体の30-40%がS&M人員",
+    "costStructure": {
+      "label": "S&Mコスト構成",
+      "items": [
+        { "category": "人件費", "ratio": "60-70%", "detail": "営業・マーケ・CS人員の給与・インセンティブ" },
+        { "category": "広告・マーケ費", "ratio": "15-25%", "detail": "リスティング広告、展示会、コンテンツ制作" },
+        { "category": "ツール・ライセンス", "ratio": "5-10%", "detail": "CRM、MA、IS/SDRツール、BI等" },
+        { "category": "外注・業務委託", "ratio": "3-5%", "detail": "広告代理店、コンテンツ外注、コンサル" }
+      ]
+    },
+    "keyMetrics": [
+      { "name": "CAC（顧客獲得コスト）", "target": "LTV/CACが3倍以上", "elite": "LTV/CACが5倍以上" },
+      { "name": "CAC回収期間", "target": "12ヶ月以内", "elite": "6ヶ月以内" },
+      { "name": "Magic Number", "target": "0.75以上", "elite": "1.0以上" },
+      { "name": "NRR（売上維持率）", "target": "100%以上", "elite": "120%以上" },
+      { "name": "Gross Churn Rate", "target": "月次1.5%以下", "elite": "月次0.5%以下" },
+      { "name": "S&M費用対売上比率", "target": "30-50%（成長期）", "elite": "20%以下（成熟期）" }
+    ]
+  },
+  "roles": {
+    "title": "S&M職種一覧",
+    "description": "SaaS企業のS&M組織を構成する主要職種。The Modelの各ステージに専門人材を配置し、分業と連携により効率的な収益成長を実現する。",
+    "positions": [
+      {
+        "title": "CMO / VP of Marketing",
+        "category": "マーケティング",
+        "icon": "Target",
+        "color": "#3B82F6",
+        "description": "マーケティング戦略の統括責任者。ブランド構築、デマンドジェネレーション、リード創出からMQL供給までを管掌する。CEOと共に市場ポジショニングとGTM（Go-to-Market）戦略を策定し、営業組織へ質の高い商談機会を安定供給する。",
+        "responsibilities": [
+          "マーケティング戦略・年間計画の策定と予算管理",
+          "GTM（Go-to-Market）戦略の設計・実行",
+          "ブランドポジショニング・メッセージング戦略の策定",
+          "デマンドジェネレーション施策の統括（広告、コンテンツ、イベント等）",
+          "MQL創出目標の設定とパイプライン貢献の最大化",
+          "マーケティングROIの計測と最適化",
+          "マーケティングチームの採用・育成・マネジメント",
+          "プロダクトマーケティング（PMM）の推進"
+        ],
+        "skillset": [
+          "SaaSマーケティング戦略立案（3年以上の実務経験）",
+          "デジタルマーケティング全般（SEO/SEM、MA、コンテンツ）",
+          "データドリブンな意思決定（GA4、BIツール活用）",
+          "ブランディング・コーポレートコミュニケーション",
+          "予算管理・P&L責任の経験",
+          "チームマネジメント（10名以上）",
+          "経営陣へのレポーティング・プレゼンテーション"
+        ],
+        "kpis": [
+          "MQL数・MQL→SQL転換率",
+          "マーケティング起点パイプライン金額",
+          "CAC（マーケティングコスト含む）",
+          "マーケティングROI（ROMI）",
+          "ブランド認知度（指名検索数等）",
+          "Webサイトトラフィック・CVR"
+        ],
+        "tools": [
+          "Marketo / HubSpot（MA）",
+          "Google Analytics 4",
+          "Salesforce（CRMレポート）",
+          "Looker / Tableau（BI）",
+          "SEMrush / Ahrefs（SEO）"
+        ],
+        "headcountGuide": "Series A: 1名（VP or Director）, Series B: VP + 3-5名チーム, Growth: CMO + 10-20名組織",
+        "salaryRange": {
+          "junior": null,
+          "mid": null,
+          "senior": "1,200-2,000万円（VP）",
+          "executive": "1,500-3,000万円+SO（CMO）"
+        }
+      },
+      {
+        "title": "マーケター（コンテンツ / デジタル / イベント）",
+        "category": "マーケティング",
+        "icon": "Megaphone",
+        "color": "#6366F1",
+        "description": "マーケティング施策の企画・実行を担う実務担当者。コンテンツマーケティング、デジタル広告運用、イベント企画の3領域があり、Series A〜Bではジェネラリストとして複数領域をカバーし、組織拡大に伴い専門化する。",
+        "responsibilities": [
+          "コンテンツ制作（ブログ、ホワイトペーパー、導入事例、メルマガ）",
+          "デジタル広告の運用・最適化（リスティング、ディスプレイ、SNS広告）",
+          "SEO施策の企画・実行（キーワード戦略、テクニカルSEO）",
+          "ウェビナー・セミナー・展示会の企画・運営",
+          "LP（ランディングページ）の企画・A/Bテスト",
+          "メールマーケティング（ナーチャリングシナリオ設計）",
+          "マーケティングオートメーション（MA）の設定・運用",
+          "効果測定とレポーティング"
+        ],
+        "skillset": [
+          "Webマーケティングの実務経験（2年以上）",
+          "コンテンツライティング・編集スキル",
+          "広告運用（Google Ads、Meta Ads）の実務経験",
+          "MA（Marketo / HubSpot）の操作スキル",
+          "HTML/CSS基礎（LP修正レベル）",
+          "データ分析（GA4、広告管理画面の数値分析）",
+          "SEOの基本知識と実践経験"
+        ],
+        "kpis": [
+          "リード獲得数（MQL数）",
+          "コンテンツ公開本数・PV・CVR",
+          "広告CPA・ROAS",
+          "オーガニック流入数・検索順位",
+          "イベント集客数・商談化率",
+          "メール開封率・クリック率"
+        ],
+        "tools": [
+          "WordPress / Notion（コンテンツCMS）",
+          "Canva / Figma（デザイン）",
+          "Google Ads / Meta Ads Manager",
+          "Marketo / HubSpot（MA）",
+          "Google Analytics 4 / Google Search Console",
+          "SEMrush / Ahrefs（SEO分析）",
+          "Zoom（ウェビナー配信）"
+        ],
+        "headcountGuide": "Series A: 1-2名（ジェネラリスト）, Series B: 3-5名（領域別専任）, Growth: 8-15名（チーム化）",
+        "salaryRange": {
+          "junior": "350-450万円",
+          "mid": "450-650万円",
+          "senior": "650-900万円（マネージャー）",
+          "executive": null
+        }
+      },
+      {
+        "title": "SDR / BDR（IS：インサイドセールス）",
+        "category": "インサイドセールス",
+        "icon": "Phone",
+        "color": "#F59E0B",
+        "description": "リードの精査・ナーチャリングを行い、FSへ質の高い商談をトスアップするThe Modelの要。SDR（Sales Development Representative）はインバウンドリードの対応、BDR（Business Development Representative）はアウトバウンド開拓を担当する。非対面での初期接点からSQLを創出する。",
+        "responsibilities": [
+          "インバウンドリードへの初回架電（5分以内の即架電が理想）",
+          "リードのBANT確認（Budget, Authority, Need, Timing）",
+          "アウトバウンドでのターゲット企業開拓（BDR）",
+          "電話・メール・SNSによるマルチチャネルアプローチ",
+          "商談設定・FSへのトスアップ（SQLの創出）",
+          "CRMへの活動記録・リード情報の整備",
+          "ナーチャリング（長期フォローアップ）",
+          "商談獲得後のFSとの情報引き継ぎ"
+        ],
+        "skillset": [
+          "電話営業スキル（架電に対する抵抗がないこと）",
+          "ヒアリング力（課題の引き出し、BANT確認）",
+          "メール・テキストコミュニケーション力",
+          "CRM（Salesforce / HubSpot）の操作スキル",
+          "業界知識（SaaSが提供する業界への理解）",
+          "行動量を維持する自己管理力",
+          "リジェクション耐性と粘り強さ"
+        ],
+        "kpis": [
+          "SQL（有効商談）創出数",
+          "架電数 / 接続率 / 商談化率",
+          "リード→SQL転換率",
+          "SQL→受注の最終転換率（品質指標）",
+          "初回架電までの応答時間（5分以内目標）",
+          "パイプライン貢献金額"
+        ],
+        "tools": [
+          "Salesforce / HubSpot（CRM）",
+          "Outreach / SalesLoft（セールスエンゲージメント）",
+          "dialpad / MiiTel（IP電話・通話分析）",
+          "LinkedIn Sales Navigator（BDR向け）",
+          "Zoom / Teams（オンライン商談設定）",
+          "Slack（社内コミュニケーション）"
+        ],
+        "headcountGuide": "Series A: 1-3名, Series B: 5-10名, Growth: 15-30名（チームリーダー含む）",
+        "salaryRange": {
+          "junior": "300-400万円",
+          "mid": "400-550万円+インセンティブ",
+          "senior": "550-750万円（チームリーダー）",
+          "executive": null
+        },
+        "activityBenchmarks": {
+          "dailyCalls": "50-80件/日",
+          "dailyEmails": "30-50件/日",
+          "monthlySQL": "8-15件/月（担当者あたり）",
+          "connectRate": "15-25%",
+          "sqlConversion": "20-30%（接続ベース）"
+        }
+      },
+      {
+        "title": "AE / FS（Field Sales：フィールドセールス）",
+        "category": "フィールドセールス",
+        "icon": "Handshake",
+        "color": "#10B981",
+        "description": "ISがトスアップしたSQLに対し、提案・クロージングを行い受注に導くThe Modelの主砲。顧客課題の深掘り、ソリューション提案、ROI提示、社内稟議支援まで一気通貫で担当する。SMB向けはオンライン完結、エンタープライズ向けは対面訪問も含む。",
+        "responsibilities": [
+          "ISからの商談引き継ぎ・初回商談の実施",
+          "顧客課題のヒアリングとSPIN型質問によるニーズ深掘り",
+          "デモ・プレゼンテーション（製品紹介・ソリューション提案）",
+          "提案書・見積書の作成",
+          "ROI試算・導入効果の定量提示",
+          "社内稟議の支援（比較表、費用対効果資料の提供）",
+          "契約交渉・クロージング",
+          "受注後のCSへのハンドオフ（引き継ぎ）",
+          "パイプライン管理・フォーキャスト報告"
+        ],
+        "skillset": [
+          "法人営業経験（3年以上）",
+          "SPIN / MEDDIC / Challenger等のセールスメソドロジー",
+          "プレゼンテーション・デモスキル",
+          "提案書作成・ストーリーテリング",
+          "ROI / ビジネスケース構築",
+          "ネゴシエーション・クロージングスキル",
+          "CRMでのパイプライン管理",
+          "業界・競合への深い理解"
+        ],
+        "kpis": [
+          "受注件数・受注金額（MRR / ARR）",
+          "受注率（SQL→Won）",
+          "平均商談期間（セールスサイクル）",
+          "平均契約単価（ARPA）",
+          "パイプライン総額・カバレッジ率（3倍以上）",
+          "フォーキャスト精度"
+        ],
+        "tools": [
+          "Salesforce / HubSpot（CRM・パイプライン管理）",
+          "Zoom / Teams（オンライン商談）",
+          "Google Slides / PowerPoint（提案書）",
+          "DocuSign / クラウドサイン（電子契約）",
+          "Notion / Google Docs（提案資料）",
+          "Gong / amptalk（商談録画・分析）"
+        ],
+        "headcountGuide": "Series A: 1-3名（創業者含む）, Series B: 5-10名, Growth: 15-40名（チーム・マネージャー含む）",
+        "salaryRange": {
+          "junior": "400-500万円+インセンティブ",
+          "mid": "500-750万円+インセンティブ",
+          "senior": "750-1,200万円+インセンティブ（マネージャー）",
+          "executive": null
+        },
+        "dealBenchmarks": {
+          "smb": {
+            "salesCycle": "14-30日",
+            "avgDealSize": "月額3-10万円",
+            "winRate": "25-40%",
+            "dealsPerRep": "5-10件/月"
+          },
+          "midMarket": {
+            "salesCycle": "30-90日",
+            "avgDealSize": "月額10-50万円",
+            "winRate": "20-30%",
+            "dealsPerRep": "2-5件/月"
+          },
+          "enterprise": {
+            "salesCycle": "90-180日",
+            "avgDealSize": "月額50-300万円",
+            "winRate": "15-25%",
+            "dealsPerRep": "1-2件/月"
+          }
+        }
+      },
+      {
+        "title": "SE（Sales Engineer / プリセールス）",
+        "category": "フィールドセールス",
+        "icon": "Wrench",
+        "color": "#EC4899",
+        "description": "営業活動における技術的な専門支援を提供するプリセールスエンジニア。FSと連携して技術デモの実施、顧客環境へのフィット分析、API連携の技術検証、セキュリティチェックシートへの回答などを担当する。エンタープライズ案件において受注率を大幅に向上させる鍵となる存在。",
+        "responsibilities": [
+          "技術デモの設計・実施（顧客環境に合わせたカスタマイズデモ）",
+          "PoC（Proof of Concept）の企画・実行・報告",
+          "技術要件のヒアリング・フィットギャップ分析",
+          "API連携・インテグレーションの技術検証",
+          "セキュリティチェックシート・技術アンケートへの回答",
+          "RFI / RFP（提案依頼書）への技術面での回答作成",
+          "顧客のIT部門との技術折衝",
+          "製品ロードマップへのフィードバック（顧客ニーズの反映）"
+        ],
+        "skillset": [
+          "SaaS / Webアプリケーションの技術的理解",
+          "API（REST / GraphQL）の基礎知識",
+          "セキュリティ・コンプライアンスの知識（SOC2, ISMS等）",
+          "プレゼンテーション・デモスキル",
+          "技術的な内容をビジネス言語に翻訳する能力",
+          "SQL / データベースの基礎知識",
+          "ネットワーク・インフラの基礎知識",
+          "プロジェクトマネジメント（PoC推進）"
+        ],
+        "kpis": [
+          "SE関与案件の受注率（非関与案件との比較）",
+          "PoC実施件数・PoC→受注転換率",
+          "技術デモ実施件数",
+          "RFP回答完了件数・通過率",
+          "FSからの技術支援リクエスト対応時間",
+          "顧客技術満足度スコア"
+        ],
+        "tools": [
+          "Postman（API検証）",
+          "Salesforce（案件管理・SE活動記録）",
+          "Notion / Confluence（技術資料・FAQ管理）",
+          "Zoom / Teams（技術デモ）",
+          "draw.io / Lucidchart（構成図作成）",
+          "GitHub（サンプルコード・連携テンプレート）"
+        ],
+        "headcountGuide": "Series A: 0-1名（エンジニアが兼務）, Series B: 1-3名, Growth: 5-10名",
+        "salaryRange": {
+          "junior": "450-600万円",
+          "mid": "600-850万円",
+          "senior": "850-1,200万円",
+          "executive": null
+        }
+      },
+      {
+        "title": "CS（Customer Success Manager）",
+        "category": "カスタマーサクセス",
+        "icon": "Heart",
+        "color": "#8B5CF6",
+        "description": "受注後の顧客に対し、オンボーディングから活用支援、契約更新、アップセル/クロスセルまでを担当するThe Modelの最終段かつ最重要ポジション。SaaSのサブスクリプションモデルにおいて、LTVの最大化とチャーン防止が事業存続の鍵であり、CSはその最前線を担う。",
+        "responsibilities": [
+          "オンボーディング（初期設定支援、操作トレーニング）",
+          "顧客のサクセスプラン策定・KGI/KPI設定支援",
+          "定期的なヘルスチェック・ビジネスレビュー（QBR）",
+          "利用状況モニタリング・ヘルススコア管理",
+          "チャーンリスクの早期検知と予防アクション",
+          "契約更新の推進・更新率の維持向上",
+          "アップセル / クロスセル機会の創出・FS連携",
+          "顧客の声（VoC）の収集・プロダクトフィードバック",
+          "顧客コミュニティの企画・運営"
+        ],
+        "skillset": [
+          "カスタマーサクセスまたはアカウントマネジメントの経験",
+          "顧客の業界・業務プロセスへの深い理解",
+          "データ分析（利用状況データからの示唆出し）",
+          "プロジェクトマネジメント（オンボーディング推進）",
+          "コンサルティングスキル（課題整理・提案）",
+          "プレゼンテーション（QBR実施）",
+          "チャーン兆候を見抜く洞察力",
+          "共感力・ホスピタリティ"
+        ],
+        "kpis": [
+          "Gross Churn Rate（月次・年次）",
+          "NRR（Net Revenue Retention）",
+          "更新率（Renewal Rate）",
+          "NPS / CSAT（顧客満足度）",
+          "オンボーディング完了率・完了までの日数",
+          "アップセル / クロスセル金額",
+          "ヘルススコア分布（Green / Yellow / Red）",
+          "タイム・トゥ・バリュー（TTV）"
+        ],
+        "tools": [
+          "Gainsight / HiCustomer（CS専用プラットフォーム）",
+          "Salesforce / HubSpot（CRM・更新管理）",
+          "Zoom / Teams（顧客ミーティング）",
+          "Pendo / Mixpanel（プロダクト利用分析）",
+          "Intercom / Zendesk（サポート連携）",
+          "Notion（サクセスプラン・議事録）",
+          "Slack Connect（顧客チャンネル）"
+        ],
+        "headcountGuide": "Series A: 1-2名（FSが兼務の場合も）, Series B: 3-8名, Growth: 10-30名（ハイタッチ/テック/ロータッチ体制）",
+        "salaryRange": {
+          "junior": "350-450万円",
+          "mid": "450-700万円",
+          "senior": "700-1,000万円（マネージャー）",
+          "executive": null
+        },
+        "touchModel": {
+          "highTouch": {
+            "target": "エンタープライズ（ARPA 50万円+）",
+            "ratio": "CS1名:顧客10-20社",
+            "activities": ["専任CS", "QBR", "オンサイト訪問", "経営層アクセス"]
+          },
+          "lowTouch": {
+            "target": "ミッドマーケット（ARPA 10-50万円）",
+            "ratio": "CS1名:顧客30-50社",
+            "activities": ["定期チェックイン", "メール中心", "グループセミナー"]
+          },
+          "techTouch": {
+            "target": "SMB（ARPA 10万円以下）",
+            "ratio": "CS1名:顧客100-300社",
+            "activities": ["自動メール", "ヘルプセンター", "In-appガイド", "コミュニティ"]
+          }
+        }
+      },
+      {
+        "title": "CRO / VP of Sales",
+        "category": "経営・統括",
+        "icon": "TrendingUp",
+        "color": "#EF4444",
+        "description": "売上目標の達成に全責任を持つ収益統括責任者。CRO（Chief Revenue Officer）はマーケティング・IS・FS・CSを横断して収益全体を統括し、VP of Salesは主にIS・FS組織のマネジメントに特化する。SaaSのARR成長を牽引し、営業組織のスケーリングと営業プロセスの最適化を推進する。",
+        "responsibilities": [
+          "ARR目標の設定・達成責任（取締役会へのコミット）",
+          "営業戦略・GTM戦略の策定と実行",
+          "S&M組織全体（またはSales組織）の設計・採用・育成",
+          "フォーキャスト管理・パイプラインレビュー",
+          "セールスプロセスの標準化・メソドロジー導入",
+          "セグメント戦略（SMB / Mid / Enterprise）の設計",
+          "価格戦略・パッケージング戦略の策定",
+          "重要商談への同行・エグゼクティブスポンサー",
+          "取締役会・投資家への業績報告"
+        ],
+        "skillset": [
+          "SaaS営業組織のマネジメント経験（5年以上）",
+          "P&L責任・売上目標達成の実績",
+          "営業組織のスケーリング経験（10名→50名以上）",
+          "セールスメソドロジー（MEDDIC, Challenger等）の深い理解",
+          "データドリブンな経営判断（BI、CRMデータ活用）",
+          "採用・コーチング・ピープルマネジメント",
+          "経営陣・投資家とのコミュニケーション",
+          "戦略的思考と実行力のバランス"
+        ],
+        "kpis": [
+          "ARR / MRR（年次・月次経常収益）",
+          "ARR成長率（YoY）",
+          "達成率（Attainment %）",
+          "LTV/CAC比率",
+          "NRR（売上維持率）",
+          "営業人員あたり売上（Sales Productivity）",
+          "営業人員のランプアップ期間",
+          "フォーキャスト精度（±10%以内）"
+        ],
+        "tools": [
+          "Salesforce（CRM・フォーキャスト）",
+          "Looker / Tableau（BI・ダッシュボード）",
+          "Gong / Chorus（商談分析・コーチング）",
+          "Clari（フォーキャスト管理）",
+          "Excel / Google Sheets（財務モデリング）",
+          "Notion（OKR・戦略ドキュメント）"
+        ],
+        "headcountGuide": "Series A: VP of Sales 1名, Series B: VP of Sales + Sales Mgr, Growth: CRO + VP Sales + VP CS + 複数マネージャー",
+        "salaryRange": {
+          "junior": null,
+          "mid": null,
+          "senior": "1,200-2,000万円+インセンティブ（VP）",
+          "executive": "1,800-3,500万円+SO（CRO）"
+        }
+      },
+      {
+        "title": "Sales Ops / Revenue Ops",
+        "category": "オペレーション",
+        "icon": "Settings",
+        "color": "#14B8A6",
+        "description": "S&M組織の生産性を最大化する営業企画・オペレーション部門。CRM設計、データ整備、KPIダッシュボード構築、プロセス設計、ツール導入・運用を担い、営業の『型化』と『データドリブン経営』を推進する。Revenue Opsはマーケ・セールス・CSを横断する統合的なオペレーション機能。",
+        "responsibilities": [
+          "CRM（Salesforce / HubSpot）の設計・管理・カスタマイズ",
+          "営業プロセスの設計・標準化・ドキュメント化",
+          "KPIダッシュボード・レポートの構築と運用",
+          "テリトリー設計・クォータ設定の支援",
+          "インセンティブ制度の設計・計算",
+          "営業ツールの選定・導入・トレーニング",
+          "データクレンジング・データガバナンス",
+          "フォーキャスト精度向上の仕組み構築",
+          "営業研修・オンボーディングプログラムの設計"
+        ],
+        "skillset": [
+          "CRM管理者スキル（Salesforce Admin認定等）",
+          "データ分析・SQLクエリ",
+          "BIツール（Looker / Tableau）でのダッシュボード構築",
+          "営業プロセス設計の知識",
+          "Excel / Google Sheets上級（関数、ピボット、マクロ）",
+          "プロジェクトマネジメント（ツール導入推進）",
+          "SaaS KPIへの深い理解（CAC, LTV, NRR等）",
+          "ステークホルダーマネジメント"
+        ],
+        "kpis": [
+          "CRMデータ精度（入力率・正確性）",
+          "フォーキャスト精度（予実差±10%以内）",
+          "営業生産性（Rep1人あたりSQL数・受注金額）",
+          "ツール活用率・定着率",
+          "レポート・ダッシュボード利用頻度",
+          "営業オンボーディング完了日数",
+          "プロセス遵守率"
+        ],
+        "tools": [
+          "Salesforce / HubSpot（CRM管理）",
+          "Looker / Tableau（BI・レポート）",
+          "Excel / Google Sheets（分析・モデリング）",
+          "Zapier / Workato（業務自動化・連携）",
+          "LeanData（リードルーティング）",
+          "Notion（ナレッジ管理・SOP文書）",
+          "SQL（データ抽出・分析）"
+        ],
+        "headcountGuide": "Series A: 0名（VP Salesが兼務）, Series B: 1-2名, Growth: 3-8名（Rev Opsチーム化）",
+        "salaryRange": {
+          "junior": "400-500万円",
+          "mid": "500-750万円",
+          "senior": "750-1,100万円（Director）",
+          "executive": null
+        }
+      }
+    ]
+  },
+  "funnel": {
+    "title": "S&Mファネル（The Model）",
+    "description": "Marketing → IS（Inside Sales） → FS（Field Sales） → CS（Customer Success）の4段階で構成されるSaaS営業モデル。各ステージの専門人材が分業で担当し、ファネル全体のスループットを最大化する。各ステージ間の転換率を改善することが売上成長の鍵となる。",
+    "stages": [
+      {
+        "stage": "Marketing",
+        "goal": "見込み客の創出（リードジェネレーション）",
+        "description": "潜在顧客への認知拡大、興味喚起、リード情報の獲得を行う。量と質のバランスが重要で、SQLに転換しやすいリードを効率よく創出することがマーケティングの腕の見せ所。",
+        "keyActivities": [
+          "コンテンツマーケティング（ブログ、ホワイトペーパー、導入事例）",
+          "デジタル広告（リスティング、ディスプレイ、SNS広告）",
+          "SEO（検索エンジン最適化）",
+          "ウェビナー・セミナー開催",
+          "展示会出展",
+          "メールナーチャリング（MA活用）",
+          "PR・プレスリリース"
+        ],
+        "conversionTarget": "リード→MQL: 20-30%",
+        "typicalKpis": [
+          "リード獲得数（月次）",
+          "MQL（Marketing Qualified Lead）数",
+          "リード→MQL転換率",
+          "チャネル別CPA（顧客獲得単価）",
+          "Webサイト訪問数・CVR",
+          "マーケティング起点パイプライン金額"
+        ],
+        "bestPractices": [
+          "マーケ→ISの引き渡し基準（MQL定義）を明文化する",
+          "リードスコアリングで優先順位を自動化する",
+          "アトリビューション分析でチャネル別ROIを把握する",
+          "コンテンツの再利用・リパーパスで効率化する"
+        ]
+      },
+      {
+        "stage": "IS（Inside Sales）",
+        "goal": "リードの精査と有効商談の創出（SQL化）",
+        "description": "マーケティングが獲得したリード（MQL）に対し、電話・メールで初期接触を行い、課題・ニーズ・予算・決裁権をBANTで確認する。商談に値するリード（SQL）をFSにトスアップする。",
+        "keyActivities": [
+          "MQLへの初回架電（5分以内のスピード対応が理想）",
+          "BANTヒアリング（予算・決裁権・ニーズ・時期の確認）",
+          "アウトバウンド開拓（ターゲットリストへの架電・メール）",
+          "商談日程調整・FSへのトスアップ",
+          "長期フォローアップ（今は不要だが将来見込みあり）",
+          "CRM情報整備（活動履歴・リード情報更新）"
+        ],
+        "conversionTarget": "MQL→SQL: 30-40%",
+        "typicalKpis": [
+          "SQL（Sales Qualified Lead）創出数",
+          "MQL→SQL転換率",
+          "架電数・接続率",
+          "SQL→受注の最終転換率（ISの品質指標）",
+          "パイプライン貢献金額",
+          "応答時間（リード発生→初回架電）"
+        ],
+        "bestPractices": [
+          "MQL→SQLの定義を営業と合意し、定期的に見直す",
+          "初回架電は5分以内を目標（即架電の仕組み化）",
+          "トークスクリプトの標準化とA/Bテスト",
+          "通話録音の活用（コーチング・ベストプラクティス共有）"
+        ]
+      },
+      {
+        "stage": "FS（Field Sales）",
+        "goal": "提案・クロージングによる受注獲得",
+        "description": "ISが創出したSQLに対し、課題深掘り・ソリューション提案・デモ・見積提示・契約交渉を行い、受注まで導く。パイプラインの質と量の管理が重要で、フォーキャスト精度の高さが組織成熟度の指標となる。",
+        "keyActivities": [
+          "初回商談（課題ヒアリング・SPIN質問）",
+          "デモ・プレゼンテーション",
+          "提案書・見積書作成",
+          "ROI試算・ビジネスケース構築",
+          "社内稟議支援（比較表・導入効果資料）",
+          "契約交渉・条件調整",
+          "クロージング・電子契約",
+          "CSへのハンドオフ（顧客情報引き継ぎ）"
+        ],
+        "conversionTarget": "SQL→受注: 20-30%",
+        "typicalKpis": [
+          "受注件数・受注金額（MRR / ARR）",
+          "SQL→受注転換率（Win Rate）",
+          "平均商談期間（セールスサイクル）",
+          "平均契約単価（ARPA）",
+          "パイプライン総額・カバレッジ率",
+          "フォーキャスト精度"
+        ],
+        "bestPractices": [
+          "パイプラインカバレッジは目標の3倍以上を維持する",
+          "MEDDIC等のメソドロジーで商談の質を標準化する",
+          "失注分析を毎月実施し、改善点を特定する",
+          "マルチスレッド（複数意思決定者との関係構築）を意識する"
+        ]
+      },
+      {
+        "stage": "CS（Customer Success）",
+        "goal": "顧客の成功実現と契約維持・拡大",
+        "description": "受注後の顧客に対し、オンボーディング→活用支援→更新→アップセル/クロスセルまでのポストセールス全体を担当する。SaaSはサブスクリプションモデルのため、LTVの最大化がCS組織の最重要ミッション。",
+        "keyActivities": [
+          "オンボーディング（初期設定・操作トレーニング・KGI設定）",
+          "ヘルススコアモニタリング（利用頻度・ログイン率・機能利用率）",
+          "定期ビジネスレビュー（QBR：四半期ビジネスレビュー）",
+          "チャーンリスク検知・予防アクション",
+          "契約更新の推進",
+          "アップセル / クロスセル機会の発掘・FS連携",
+          "顧客の声（VoC）の収集とプロダクトフィードバック",
+          "顧客コミュニティ運営・ユーザー会開催"
+        ],
+        "conversionTarget": "更新率: 90%以上（年次）/ NRR: 100%以上",
+        "typicalKpis": [
+          "Gross Churn Rate（解約率）",
+          "NRR（Net Revenue Retention）",
+          "更新率（Renewal Rate）",
+          "アップセル / クロスセル金額",
+          "NPS / CSAT",
+          "オンボーディング完了率・TTV（Time to Value）",
+          "ヘルススコア分布"
+        ],
+        "bestPractices": [
+          "オンボーディングの標準化（チェックリスト・マイルストーン設定）",
+          "ヘルススコアを定義し、定量的にリスク管理する",
+          "QBRで経営層にROIを提示し、戦略的パートナーとなる",
+          "テックタッチを活用してスケーラブルなCS体制を構築する"
+        ]
+      }
+    ],
+    "funnelMath": {
+      "title": "ファネル試算例（月次）",
+      "description": "各ステージの転換率から逆算して必要なリード数・活動量を算出する。",
+      "example": {
+        "target": "新規MRR 500万円/月",
+        "arpa": "月額5万円",
+        "calculation": [
+          { "stage": "必要受注数", "value": "100件/月", "formula": "500万円 ÷ 5万円" },
+          { "stage": "必要SQL数", "value": "400件/月", "formula": "100件 ÷ 25%（受注率）" },
+          { "stage": "必要MQL数", "value": "1,143件/月", "formula": "400件 ÷ 35%（SQL化率）" },
+          { "stage": "必要リード数", "value": "4,571件/月", "formula": "1,143件 ÷ 25%（MQL化率）" }
+        ],
+        "headcountImplication": {
+          "IS": "27-50名（月8-15SQL/人）",
+          "FS": "10-20名（月5-10受注/人）",
+          "CS": "オンボーディング担当含め5-10名"
+        }
+      }
+    }
+  },
+  "headcountByStage": {
+    "title": "成長フェーズ別のS&M組織規模",
+    "description": "SaaS企業の成長ステージに応じたS&M組織の適正規模と組織設計の指針。採用の順序とタイミングが成長速度に直結する。",
+    "stages": [
+      {
+        "stage": "Seed（0-1億ARR）",
+        "totalHeadcount": "2-5名",
+        "breakdown": {
+          "Marketing": "0-1名（創業者がカバー）",
+          "IS/SDR": "1-2名",
+          "FS": "1-2名（創業者含む）",
+          "CS": "0名（FSが兼務）",
+          "SE": "0名（エンジニアが同行）",
+          "Sales Ops": "0名（VP Sales / 創業者が兼務）"
+        },
+        "focus": "PMF検証。創業者自身が売る。再現可能な獲得チャネルの発見。最初の10-20社の受注パターンを確立する。",
+        "priorities": [
+          "創業者が自ら営業し、顧客の生の声を聞く",
+          "最初のリピータブルな営業プロセスの発見",
+          "初期顧客からのNPS 50以上の獲得",
+          "CAC回収期間12ヶ月以内の達成"
+        ],
+        "mistakes": [
+          "営業人員を増やしすぎる（PMF前に10名以上採用）",
+          "マーケ専任を早期採用しすぎる（コンテンツの前に売るべき）",
+          "高額なMAツールに投資しすぎる（HubSpot無料版で十分）",
+          "創業者が営業から離れるのが早すぎる"
+        ],
+        "keyHire": "最初の営業担当（SDR or AE）。創業者の営業プロセスを再現できる人材。"
+      },
+      {
+        "stage": "Series A（1-5億ARR）",
+        "totalHeadcount": "8-20名",
+        "breakdown": {
+          "Marketing": "1-3名（デジタルマーケ中心）",
+          "IS/SDR": "3-5名",
+          "FS": "3-5名",
+          "CS": "1-3名（専任化）",
+          "SE": "0-1名",
+          "Sales Ops": "0-1名"
+        },
+        "focus": "再現可能な営業プロセスの確立。The Modelの4段階分業を開始。営業マネージャー採用によるチーム化。",
+        "priorities": [
+          "IS→FS→CSの分業体制を構築する",
+          "営業プレイブック（トークスクリプト・提案テンプレート）を作成する",
+          "CRM（Salesforce / HubSpot）を導入し、データ基盤を整備する",
+          "VP of Salesを採用し、営業組織をスケーラブルにする",
+          "マーケティングによるリード供給パイプラインを確立する"
+        ],
+        "mistakes": [
+          "マネージャーなしに営業人員だけ増やす（管理不在のスケール）",
+          "CRM未導入のまま営業組織を拡大する",
+          "IS/FSの引き渡し基準を曖昧にする",
+          "CS専任を置かず、FSが兼務し続ける"
+        ],
+        "keyHire": "VP of Sales（営業組織を10-20名にスケールした経験者）"
+      },
+      {
+        "stage": "Series B（5-20億ARR）",
+        "totalHeadcount": "30-70名",
+        "breakdown": {
+          "Marketing": "5-10名（領域別チーム化）",
+          "IS/SDR": "8-15名（チームリーダー含む）",
+          "FS": "8-20名（セグメント別チーム）",
+          "CS": "5-15名（ハイタッチ/テックタッチ分化）",
+          "SE": "2-5名",
+          "Sales Ops": "2-4名"
+        },
+        "focus": "組織のスケーリングと効率化。セグメント別チーム編成。Revenue Opsの導入。エンタープライズ市場への進出。",
+        "priorities": [
+          "セグメント別営業チーム（SMB / Mid / Enterprise）を編成する",
+          "Revenue Ops機能を立ち上げ、データドリブン経営を実現する",
+          "マーケティングチームを領域別（コンテンツ/デジタル/イベント）に専門化する",
+          "CSをハイタッチ/ロータッチ/テックタッチに分化する",
+          "営業研修・オンボーディングプログラムを体系化する",
+          "エンタープライズ向けにSEチームを立ち上げる"
+        ],
+        "mistakes": [
+          "全セグメントを同じプロセスで営業する（SMBとEntの違い無視）",
+          "Sales Opsを置かず、CRMが汚染される",
+          "マネージャーのコーチング能力不足（プレイヤー昇格だけでは不十分）",
+          "CSのハイタッチ偏重でスケールしない"
+        ],
+        "keyHire": "CRO（マーケ・セールス・CSを統括できる経営人材）"
+      },
+      {
+        "stage": "Growth / Pre-IPO（20-100億ARR）",
+        "totalHeadcount": "100-300名",
+        "breakdown": {
+          "Marketing": "15-40名（PMM、グロース、ブランド等の専門チーム）",
+          "IS/SDR": "20-50名（複数チーム・マネージャー）",
+          "FS": "30-80名（セグメント×リージョン）",
+          "CS": "20-60名（ハイタッチ/テック/Ops分化）",
+          "SE": "5-15名",
+          "Sales Ops / Rev Ops": "5-15名"
+        },
+        "focus": "効率性と成長の両立。IPO準備のためのガバナンス強化。海外展開。マルチプロダクト戦略。",
+        "priorities": [
+          "Rule of 40%の達成（成長率+利益率）",
+          "S&M効率の改善（マジックナンバー1.0以上）",
+          "フォーキャスト精度±10%以内の実現",
+          "マルチプロダクト戦略によるNRR 120%+の達成",
+          "海外市場進出の組織立ち上げ",
+          "IPO準備に耐えうるガバナンス・コンプライアンス体制"
+        ],
+        "mistakes": [
+          "効率無視の人員増（売上成長だけ追い利益率が悪化）",
+          "マネジメント層の育成不足（組織崩壊リスク）",
+          "プロダクト数の拡大に営業体制が追いつかない",
+          "海外進出のタイミングと投資規模の見誤り"
+        ],
+        "keyHire": "CMO（ブランド・PMM・グロース全体を統括できる人材）"
+      }
+    ]
+  },
+  "toolStack": {
+    "title": "S&Mツールスタック",
+    "description": "SaaS企業のS&M組織で標準的に利用されるツール群。成長ステージに応じて段階的に導入する。初期はHubSpot無料版から始め、Series B以降でエンタープライズ向けツールへ移行するのが一般的。",
+    "categories": [
+      {
+        "category": "CRM（顧客関係管理）",
+        "importance": "必須",
+        "adoptionStage": "Seed〜",
+        "tools": [
+          {
+            "name": "Salesforce",
+            "useCase": "顧客管理・パイプライン管理・フォーキャスト",
+            "strengths": "圧倒的なカスタマイズ性、エコシステム、エンタープライズ対応",
+            "weaknesses": "導入コストが高い、専任管理者が必要",
+            "pricing": "月額3,000-36,000円/ユーザー",
+            "bestFor": "Series A以降、営業5名以上"
+          },
+          {
+            "name": "HubSpot",
+            "useCase": "中小向けCRM + MA統合プラットフォーム",
+            "strengths": "UIが直感的、無料プランが充実、MA一体型",
+            "weaknesses": "カスタマイズの限界、大規模組織では機能不足",
+            "pricing": "無料〜月額180,000円/月（Enterprise）",
+            "bestFor": "Seed〜Series A、営業10名以下"
+          }
+        ]
+      },
+      {
+        "category": "MA（マーケティングオートメーション）",
+        "importance": "必須",
+        "adoptionStage": "Series A〜",
+        "tools": [
+          {
+            "name": "Marketo",
+            "useCase": "リードスコアリング、ナーチャリング、キャンペーン管理",
+            "strengths": "高度なスコアリング、Salesforceとの深い連携、ABM対応",
+            "weaknesses": "学習コストが高い、価格が高額",
+            "pricing": "月額150,000-500,000円",
+            "bestFor": "Series B以降、マーケチーム3名以上"
+          },
+          {
+            "name": "Pardot（Account Engagement）",
+            "useCase": "Salesforce統合型MA、B2Bリード管理",
+            "strengths": "Salesforceとのネイティブ統合、B2B特化",
+            "weaknesses": "UIがやや古い、Marketo比でカスタマイズ性が低い",
+            "pricing": "月額150,000-300,000円",
+            "bestFor": "Salesforceを既に利用中の企業"
+          },
+          {
+            "name": "HubSpot Marketing Hub",
+            "useCase": "メール配信、LP作成、リードナーチャリング",
+            "strengths": "CRM一体型、使いやすいUI、コスパが良い",
+            "weaknesses": "高度なスコアリング・ABM機能はMarketo比で弱い",
+            "pricing": "無料〜月額432,000円",
+            "bestFor": "Seed〜Series A、マーケ専任1-2名"
+          }
+        ]
+      },
+      {
+        "category": "IS/SDR（インサイドセールス）",
+        "importance": "推奨",
+        "adoptionStage": "Series A〜",
+        "tools": [
+          {
+            "name": "Outreach",
+            "useCase": "セールスエンゲージメント、シーケンス自動化、メール・電話の統合管理",
+            "strengths": "シーケンス機能が強力、A/Bテスト、AI活用",
+            "weaknesses": "日本語対応がやや弱い、価格が高い",
+            "pricing": "月額$100-150/ユーザー",
+            "bestFor": "SDR 5名以上の組織"
+          },
+          {
+            "name": "SalesLoft",
+            "useCase": "マルチチャネルアウトリーチ、ケイデンス管理",
+            "strengths": "UIが直感的、コーチング機能、Salesforce連携",
+            "weaknesses": "Outreach比でAI機能がやや弱い",
+            "pricing": "月額$75-125/ユーザー",
+            "bestFor": "SDR 3-10名の組織"
+          },
+          {
+            "name": "dialpad",
+            "useCase": "クラウド電話、通話録音、AI文字起こし・分析",
+            "strengths": "AI通話分析、リアルタイムコーチング、CRM連携",
+            "weaknesses": "日本の電話番号対応に制約あり",
+            "pricing": "月額$15-25/ユーザー",
+            "bestFor": "架電量の多いIS/SDRチーム"
+          }
+        ]
+      },
+      {
+        "category": "会議・商談",
+        "importance": "必須",
+        "adoptionStage": "Seed〜",
+        "tools": [
+          {
+            "name": "Zoom",
+            "useCase": "オンライン商談、ウェビナー開催、画面共有デモ",
+            "strengths": "高品質な映像・音声、ウェビナー機能、録画",
+            "weaknesses": "セキュリティ懸念、無料版の40分制限",
+            "pricing": "無料〜月額2,750円/ユーザー",
+            "bestFor": "全フェーズ、特にウェビナー開催時"
+          },
+          {
+            "name": "Microsoft Teams",
+            "useCase": "社内コミュニケーション、顧客との商談、ファイル共同編集",
+            "strengths": "Microsoft 365統合、大企業での導入率が高い",
+            "weaknesses": "UIがやや複雑、Zoom比で軽快さに欠ける",
+            "pricing": "Microsoft 365に含む（月額750-2,170円/ユーザー）",
+            "bestFor": "Microsoft 365導入企業、エンタープライズ顧客対応"
+          }
+        ]
+      },
+      {
+        "category": "BI / Analytics（分析・可視化）",
+        "importance": "推奨",
+        "adoptionStage": "Series A〜",
+        "tools": [
+          {
+            "name": "Looker",
+            "useCase": "SaaS KPIダッシュボード、セールスファネル分析、コホート分析",
+            "strengths": "LookMLによるデータモデリング、Google Cloud統合、埋め込み分析",
+            "weaknesses": "学習コストが高い、エンジニアリングリソースが必要",
+            "pricing": "要問合せ（月額$5,000〜）",
+            "bestFor": "Series B以降、データチームあり"
+          },
+          {
+            "name": "Tableau",
+            "useCase": "営業ダッシュボード、パイプライン可視化、マーケROI分析",
+            "strengths": "ビジュアライゼーション能力が高い、Salesforce買収後の連携強化",
+            "weaknesses": "サーバー管理が必要（Tableau Server）、コストが高い",
+            "pricing": "月額$12-70/ユーザー",
+            "bestFor": "データビジュアライゼーション重視の組織"
+          }
+        ]
+      },
+      {
+        "category": "CS（カスタマーサクセス）",
+        "importance": "推奨",
+        "adoptionStage": "Series A〜B",
+        "tools": [
+          {
+            "name": "Gainsight",
+            "useCase": "ヘルススコア管理、更新管理、アップセル管理、CS Ops",
+            "strengths": "CS専用プラットフォームとして最も包括的、ヘルススコアエンジン",
+            "weaknesses": "導入・設定が複雑、価格が高い",
+            "pricing": "要問合せ（年額$30,000〜）",
+            "bestFor": "CS 5名以上、顧客100社以上"
+          },
+          {
+            "name": "HiCustomer",
+            "useCase": "日本向けCSプラットフォーム、ヘルススコア、顧客管理",
+            "strengths": "日本語ネイティブ、国内SaaS企業の実績が豊富、導入しやすい",
+            "weaknesses": "Gainsight比で機能の深さがやや弱い",
+            "pricing": "要問合せ（月額50,000円〜）",
+            "bestFor": "日本のSaaS企業、CS立ち上げフェーズ"
+          }
+        ]
+      },
+      {
+        "category": "コンテンツ制作",
+        "importance": "推奨",
+        "adoptionStage": "Seed〜",
+        "tools": [
+          {
+            "name": "WordPress",
+            "useCase": "オウンドメディア運営、ブログ、LP制作",
+            "strengths": "プラグインが豊富、SEOに強い、カスタマイズ自由度が高い",
+            "weaknesses": "セキュリティ管理が必要、サーバー運用コスト",
+            "pricing": "無料（OSS）〜月額数千円（ホスティング）",
+            "bestFor": "SEOコンテンツマーケティング重視"
+          },
+          {
+            "name": "Notion",
+            "useCase": "社内ナレッジ管理、営業資料テンプレート、SOP文書管理",
+            "strengths": "柔軟なドキュメント管理、チーム共有、データベース機能",
+            "weaknesses": "Web公開機能はCMS専用ツール比で弱い",
+            "pricing": "無料〜月額$10/ユーザー",
+            "bestFor": "社内ナレッジ・営業プレイブック管理"
+          },
+          {
+            "name": "Canva",
+            "useCase": "提案資料デザイン、SNS画像、ホワイトペーパーレイアウト",
+            "strengths": "非デザイナーでも高品質な資料作成、テンプレート豊富",
+            "weaknesses": "高度なデザインはFigma/Illustratorに劣る",
+            "pricing": "無料〜月額1,500円/ユーザー",
+            "bestFor": "マーケ・営業資料の内製化"
+          }
+        ]
+      }
+    ],
+    "stackRecommendation": {
+      "seed": {
+        "stage": "Seed（最小構成）",
+        "budget": "月額5-10万円",
+        "stack": [
+          { "category": "CRM + MA", "tool": "HubSpot（無料〜Starter）" },
+          { "category": "会議", "tool": "Zoom（無料 or Pro）" },
+          { "category": "コンテンツ", "tool": "Notion + Canva（無料）" },
+          { "category": "電話", "tool": "携帯電話 or dialpad" }
+        ]
+      },
+      "seriesA": {
+        "stage": "Series A（標準構成）",
+        "budget": "月額30-80万円",
+        "stack": [
+          { "category": "CRM", "tool": "Salesforce（Professional）or HubSpot（Pro）" },
+          { "category": "MA", "tool": "HubSpot Marketing Hub or Pardot" },
+          { "category": "IS/SDR", "tool": "SalesLoft + dialpad" },
+          { "category": "会議", "tool": "Zoom（Business）" },
+          { "category": "コンテンツ", "tool": "WordPress + Canva" },
+          { "category": "BI", "tool": "HubSpot Reports or Googleスプレッドシート" }
+        ]
+      },
+      "seriesB": {
+        "stage": "Series B（フル構成）",
+        "budget": "月額100-300万円",
+        "stack": [
+          { "category": "CRM", "tool": "Salesforce（Enterprise）" },
+          { "category": "MA", "tool": "Marketo or Pardot" },
+          { "category": "IS/SDR", "tool": "Outreach + dialpad" },
+          { "category": "会議", "tool": "Zoom（Enterprise）+ Teams" },
+          { "category": "CS", "tool": "Gainsight or HiCustomer" },
+          { "category": "BI", "tool": "Looker or Tableau" },
+          { "category": "コンテンツ", "tool": "WordPress + Notion + Canva" },
+          { "category": "商談分析", "tool": "Gong or amptalk" }
+        ]
+      }
+    }
+  }
+}
