@@ -37,7 +37,7 @@ const LAYERS = [
     layer: "Layer 2",
     title: "SaaS組織",
     subtitle: "S&M / R&D / G&A の役割と連携",
-    href: "/org/rd",
+    href: "/org",
     icon: Cog,
     color: "from-emerald-600 to-green-500",
     bgColor: "bg-emerald-500/10",
@@ -93,9 +93,9 @@ const LAYERS = [
 ];
 
 const QUICK_LINKS = [
-  { href: "/sales/spin-script", label: "SPIN話法（就労B型）", icon: Target },
-  { href: "/sales/spin-script/soudan", label: "SPIN話法（相談支援）", icon: Users },
+  { href: "/sales/spin-script", label: "IS架電 / SPIN商談", icon: Target },
   { href: "/sales/the-model", label: "The Model", icon: BarChart3 },
+  { href: "/org/sm", label: "S&M組織", icon: Users },
   { href: "/org/rd", label: "R&D組織", icon: Rocket },
   { href: "/sales/glossary", label: "用語集", icon: BookOpen },
 ];

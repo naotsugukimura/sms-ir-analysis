@@ -32,7 +32,7 @@ export const NAV_ITEMS: NavItem[] = [
     section: "Layer 2",
     children: [
       { href: "/org", label: "組織全体マップ" },
-      { href: "/sales/the-model", label: "S&M（営業）" },
+      { href: "/org/sm", label: "S&M（営業）" },
       { href: "/org/rd", label: "R&D（開発）" },
       { href: "/org/ga", label: "G&A（管理）" },
     ],
@@ -40,11 +40,12 @@ export const NAV_ITEMS: NavItem[] = [
 
   // --- Layer 3: プロセス・指標 ---
   {
-    href: "/sales/issue-sheet",
+    href: "/sales/the-model",
     label: "プロセス・指標",
     icon: "BarChart3",
     section: "Layer 3",
     children: [
+      { href: "/sales/the-model", label: "The Model（ファネル）" },
       { href: "/sales/issue-sheet", label: "課題整理シート" },
     ],
   },

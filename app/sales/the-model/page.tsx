@@ -1,4 +1,7 @@
+"use client";
+
 import { PageHeader } from "@/components/layout/PageHeader";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ModelOverview } from "@/components/sales/ModelOverview";
 import { MarketingSection } from "@/components/sales/MarketingSection";
 import { InsideSalesSection } from "@/components/sales/InsideSalesSection";
@@ -6,6 +9,13 @@ import { FieldSalesSection } from "@/components/sales/FieldSalesSection";
 import { CustomerSuccessSection } from "@/components/sales/CustomerSuccessSection";
 
 import modelData from "@/data/the-model.json";
+
+const TAB_ITEMS = [
+  { value: "marketing", label: "Marketing" },
+  { value: "is", label: "Inside Sales" },
+  { value: "fs", label: "Field Sales" },
+  { value: "cs", label: "Customer Success" },
+];
 
 export default function TheModelPage() {
   return (
@@ -15,20 +25,35 @@ export default function TheModelPage() {
         description={modelData.description}
       />
 
-      {/* 全体ファネル */}
+      {/* 全体ファネル（常時表示） */}
       <ModelOverview data={modelData.overview} />
 
-      {/* Marketing */}
-      <MarketingSection data={modelData.marketing as any} />
+      {/* タブUI */}
+      <Tabs defaultValue="marketing" className="w-full">
+        <TabsList className="w-full justify-start overflow-x-auto">
+          {TAB_ITEMS.map((tab) => (
+            <TabsTrigger key={tab.value} value={tab.value} className="text-xs">
+              {tab.label}
+            </TabsTrigger>
+          ))}
+        </TabsList>
 
-      {/* Inside Sales */}
-      <InsideSalesSection data={modelData.insideSales as any} />
+        <TabsContent value="marketing" className="space-y-6 mt-4">
+          <MarketingSection data={modelData.marketing as any} />
+        </TabsContent>
 
-      {/* Field Sales */}
-      <FieldSalesSection data={modelData.fieldSales as any} />
+        <TabsContent value="is" className="space-y-6 mt-4">
+          <InsideSalesSection data={modelData.insideSales as any} />
+        </TabsContent>
 
-      {/* Customer Success */}
-      <CustomerSuccessSection data={modelData.customerSuccess as any} />
+        <TabsContent value="fs" className="space-y-6 mt-4">
+          <FieldSalesSection data={modelData.fieldSales as any} />
+        </TabsContent>
+
+        <TabsContent value="cs" className="space-y-6 mt-4">
+          <CustomerSuccessSection data={modelData.customerSuccess as any} />
+        </TabsContent>
+      </Tabs>
     </div>
   );
 }

@@ -2,10 +2,24 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Heart, Bot, Users, ArrowRight } from "lucide-react";
+import {
+  Heart,
+  Bot,
+  Users,
+  Activity,
+  AlertTriangle,
+  TrendingUp,
+  ClipboardList,
+} from "lucide-react";
 
 export function CustomerSuccessSection({ data }: { data: any }) {
   const tm = data.touchModels;
+
+  const signalColors: Record<string, string> = {
+    yellow: "border-l-yellow-500",
+    orange: "border-l-orange-500",
+    red: "border-l-red-500",
+  };
 
   return (
     <div className="space-y-4">
@@ -131,6 +145,193 @@ export function CustomerSuccessSection({ data }: { data: any }) {
           </div>
         </CardContent>
       </Card>
+
+      {/* Health Score Model */}
+      {data.healthScoreModel && (
+        <Card>
+          <CardHeader>
+            <div className="flex items-center gap-2">
+              <Activity className="h-5 w-5 text-purple-400" />
+              <CardTitle className="text-base">{data.healthScoreModel.title}</CardTitle>
+            </div>
+            <p className="text-xs text-muted-foreground">{data.healthScoreModel.description}</p>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="overflow-x-auto">
+              <table className="w-full text-xs">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="text-left p-2 text-muted-foreground">指標</th>
+                    <th className="text-center p-2 text-muted-foreground">重み</th>
+                    <th className="text-left p-2 text-muted-foreground">スコアリング基準</th>
+                    <th className="text-center p-2 text-muted-foreground">データソース</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {data.healthScoreModel.indicators.map((ind: any) => (
+                    <tr key={ind.indicator} className="border-b border-border/50">
+                      <td className="p-2 font-medium">{ind.indicator}</td>
+                      <td className="p-2 text-center text-purple-400 font-bold">{ind.weight}</td>
+                      <td className="p-2 text-muted-foreground">{ind.scoring}</td>
+                      <td className="p-2 text-center">
+                        <Badge variant="secondary" className="text-[10px]">{ind.dataSource}</Badge>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="grid gap-2 sm:grid-cols-3">
+              {Object.entries(data.healthScoreModel.thresholds).map(([key, threshold]: [string, any]) => {
+                const colorMap: Record<string, string> = {
+                  healthy: "border-emerald-500/30 bg-emerald-500/5",
+                  atRisk: "border-orange-500/30 bg-orange-500/5",
+                  critical: "border-red-500/30 bg-red-500/5",
+                };
+                const textColorMap: Record<string, string> = {
+                  healthy: "text-emerald-400",
+                  atRisk: "text-orange-400",
+                  critical: "text-red-400",
+                };
+                return (
+                  <div key={key} className={`rounded-lg border p-3 ${colorMap[key] || ""}`}>
+                    <div className={`text-xs font-bold ${textColorMap[key] || ""}`}>{threshold.range}</div>
+                    <p className="text-[10px] text-muted-foreground mt-1">{threshold.action}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </CardContent>
+        </Card>
+      )}
+
+      {/* Churn Signals */}
+      {data.churnSignals && (
+        <Card>
+          <CardHeader>
+            <div className="flex items-center gap-2">
+              <AlertTriangle className="h-5 w-5 text-red-400" />
+              <CardTitle className="text-base">{data.churnSignals.title}</CardTitle>
+            </div>
+            <p className="text-xs text-muted-foreground">{data.churnSignals.description}</p>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            {data.churnSignals.stages.map((stage: any) => (
+              <div key={stage.stage} className={`rounded-lg border border-l-4 border-border p-3 space-y-2 ${signalColors[stage.color] || ""}`}>
+                <span className="text-xs font-bold">{stage.stage}</span>
+                <ul className="space-y-1">
+                  {stage.signals.map((signal: string, i: number) => (
+                    <li key={i} className="text-[10px] text-muted-foreground flex items-start gap-1">
+                      <span className="text-red-400 shrink-0">!</span>{signal}
+                    </li>
+                  ))}
+                </ul>
+                <div className="rounded bg-muted/30 p-2">
+                  <span className="text-[10px] font-medium text-purple-400">対応: </span>
+                  <span className="text-[10px] text-muted-foreground">{stage.action}</span>
+                </div>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      )}
+
+      {/* Expansion Playbook */}
+      {data.expansionPlaybook && (
+        <Card>
+          <CardHeader>
+            <div className="flex items-center gap-2">
+              <TrendingUp className="h-5 w-5 text-purple-400" />
+              <CardTitle className="text-base">{data.expansionPlaybook.title}</CardTitle>
+            </div>
+            <p className="text-xs text-muted-foreground">{data.expansionPlaybook.description}</p>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            {data.expansionPlaybook.opportunities.map((opp: any) => (
+              <div key={opp.type} className="rounded-lg border border-l-4 border-l-purple-500 border-border p-3 space-y-2">
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-bold">{opp.type}</span>
+                  <Badge className="bg-purple-500/20 text-purple-400 text-[10px]">{opp.expectedArpaLift}</Badge>
+                </div>
+                <div className="grid gap-2 sm:grid-cols-2">
+                  <div>
+                    <span className="text-[10px] font-medium text-muted-foreground">トリガー:</span>
+                    <p className="text-[10px] text-muted-foreground">{opp.trigger}</p>
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-medium text-muted-foreground">タイミング:</span>
+                    <p className="text-[10px] text-muted-foreground">{opp.timing}</p>
+                  </div>
+                </div>
+                <p className="text-[10px] text-muted-foreground">
+                  <span className="font-medium">アプローチ:</span> {opp.approach}
+                </p>
+              </div>
+            ))}
+
+            <div className="rounded-lg bg-purple-500/5 border border-purple-500/20 p-3">
+              <p className="text-xs font-medium text-purple-400 mb-2">ベストプラクティス</p>
+              <ul className="space-y-1">
+                {data.expansionPlaybook.bestPractices.map((bp: string, i: number) => (
+                  <li key={i} className="text-[10px] text-muted-foreground flex items-start gap-1">
+                    <span className="text-purple-400 shrink-0">▸</span>{bp}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </CardContent>
+        </Card>
+      )}
+
+      {/* QBR Template */}
+      {data.qbrTemplate && (
+        <Card>
+          <CardHeader>
+            <div className="flex items-center gap-2">
+              <ClipboardList className="h-5 w-5 text-purple-400" />
+              <CardTitle className="text-base">{data.qbrTemplate.title}</CardTitle>
+            </div>
+            <p className="text-xs text-muted-foreground">{data.qbrTemplate.description}</p>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            {data.qbrTemplate.agenda.map((section: any) => (
+              <div key={section.section} className="rounded-lg border border-border p-3 space-y-2">
+                <span className="text-xs font-bold">{section.section}</span>
+                <ul className="space-y-1">
+                  {section.items.map((item: string, i: number) => (
+                    <li key={i} className="text-[10px] text-muted-foreground flex items-start gap-1">
+                      <span className="text-purple-400 shrink-0">▸</span>{item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      )}
+
+      {/* Common Mistakes */}
+      {data.commonMistakes && (
+        <Card className="border-red-500/20">
+          <CardHeader className="pb-2">
+            <CardTitle className="text-sm flex items-center gap-2">
+              <AlertTriangle className="h-4 w-4 text-red-400" />
+              CSでよくある失敗
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ul className="space-y-1.5">
+              {data.commonMistakes.map((mistake: string, i: number) => (
+                <li key={i} className="text-xs text-muted-foreground flex items-start gap-2">
+                  <span className="shrink-0 mt-1 h-1 w-1 rounded-full bg-red-400/60" />
+                  <span>{mistake}</span>
+                </li>
+              ))}
+            </ul>
+          </CardContent>
+        </Card>
+      )}
     </div>
   );
 }
