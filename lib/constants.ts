@@ -16,70 +16,78 @@ export const NAV_ITEMS: NavItem[] = [
     icon: "LayoutDashboard",
   },
 
-  // --- Layer 1: SaaS概論 ---
+  // --- SaaSを学ぶ ---
   {
     href: "/saas-model",
-    label: "SaaS概論",
+    label: "SaaSとは",
     icon: "Microscope",
-    section: "Layer 1",
+    section: "SaaSを学ぶ",
   },
-
-  // --- Layer 2: SaaS組織 ---
   {
     href: "/org",
-    label: "SaaS組織",
+    label: "組織・実行",
     icon: "Cog",
-    section: "Layer 2",
+    section: "SaaSを学ぶ",
     children: [
       { href: "/org", label: "組織全体マップ" },
       { href: "/org/sm", label: "S&M（営業）" },
       { href: "/org/rd", label: "R&D（開発）" },
       { href: "/org/ga", label: "G&A（管理）" },
-    ],
-  },
-
-  // --- Layer 3: プロセス・指標 ---
-  {
-    href: "/sales/the-model",
-    label: "プロセス・指標",
-    icon: "BarChart3",
-    section: "Layer 3",
-    children: [
       { href: "/sales/the-model", label: "The Model（ファネル）" },
-      { href: "/sales/issue-sheet", label: "課題整理シート" },
     ],
   },
-
-  // --- Layer 4: セールス実践 ---
   {
     href: "/sales/spin-script",
     label: "セールス実践",
     icon: "Briefcase",
-    section: "Layer 4",
+    section: "SaaSを学ぶ",
     children: [
       { href: "/sales/spin-script", label: "IS架電 / SPIN商談" },
       { href: "/sales/is-script", label: "ISスクリプト詳細" },
+      { href: "/sales/issue-sheet", label: "課題整理シート" },
       { href: "/sales/glossary", label: "マーケティング用語集" },
     ],
   },
 
-  // --- ケーススタディ ---
+  // --- SMS実例 ---
+  {
+    href: "/timeline",
+    label: "財務推移",
+    icon: "TrendingUp",
+    section: "SMS実例",
+  },
+  {
+    href: "/segments",
+    label: "セグメント分析",
+    icon: "Layers",
+    section: "SMS実例",
+  },
+  {
+    href: "/market",
+    label: "市場環境",
+    icon: "BarChart3",
+    section: "SMS実例",
+  },
+  {
+    href: "/mission",
+    label: "会社・ミッション",
+    icon: "FileText",
+    section: "SMS実例",
+  },
+
+  // --- リファレンス ---
   {
     href: "/case-studies",
     label: "ケーススタディ",
     icon: "Building2",
-    section: "分析",
+    section: "リファレンス",
   },
-
-  // --- AI × SaaS ---
   {
     href: "/ai-saas",
     label: "AI × SaaS",
     icon: "Brain",
-    section: "分析",
+    section: "リファレンス",
   },
-
-  // --- SaaS用語集 ---
   {
     href: "/glossary",
     label: "SaaS用語集",

@@ -1,296 +1,321 @@
 import Link from "next/link";
 import {
   Microscope,
-  Cog,
   BarChart3,
   Briefcase,
   ArrowRight,
   BookOpen,
   Users,
-  Rocket,
   Target,
   Building2,
   Brain,
-  DollarSign,
   TrendingUp,
-  Shield,
-  FileText,
-  Layers,
-  Heart,
-  Zap,
+  ChevronRight,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
-const LAYERS = [
+// --- SMS 実例企業データ（FY2025 確定値 / FY2026 Q3累計より） ---
+const SMS_KPIS = [
   {
-    layer: "Layer 1",
-    title: "SaaS概論",
-    subtitle: "SaaS事業の全体像を理解する",
-    href: "/saas-model",
-    icon: Microscope,
-    color: "from-blue-600 to-cyan-500",
-    bgColor: "bg-blue-500/10",
-    borderColor: "border-blue-500/30",
-    textColor: "text-blue-400",
-    badge: "12タブ",
-    topics: [
-      "入門",
-      "基本構造",
-      "財務・成長",
-      "分類",
-      "ステージ別",
-      "上級指標",
-      "プライシング",
-      "PLG",
-      "CS深掘り",
-      "GTM戦略",
-      "競争戦略",
-      "財務諸表",
-    ],
-    description:
-      "SaaSの定義から収益構造、プライシング、PLG、カスタマーサクセス、GTM戦略、競争優位（Moat）、財務諸表の読み方まで。12タブで体系的にカバー。",
+    label: "売上高",
+    value: "552億円",
+    meta: "FY2025",
+    delta: "+5.3% YoY",
+    positive: true,
+    color: "text-blue-400",
+    border: "border-blue-500/20",
+    bg: "bg-blue-500/5",
   },
   {
-    layer: "Layer 2",
-    title: "SaaS組織",
-    subtitle: "S&M / R&D / G&A の役割と連携",
-    href: "/org",
-    icon: Cog,
-    color: "from-emerald-600 to-green-500",
-    bgColor: "bg-emerald-500/10",
-    borderColor: "border-emerald-500/30",
-    textColor: "text-emerald-400",
-    topics: [
-      "R&D（開発）",
-      "技術アーキテクチャ",
-      "G&A（管理）",
-      "S&M（営業）",
-    ],
-    description:
-      "SaaS企業を構成する3つの機能組織。R&Dにはマルチテナンシー、API、セキュリティ認証等の技術アーキテクチャも追加。",
+    label: "介護SaaS売上",
+    value: "158億円",
+    meta: "FY2025 / カイポケ",
+    delta: "+17.0% YoY",
+    positive: true,
+    color: "text-emerald-400",
+    border: "border-emerald-500/20",
+    bg: "bg-emerald-500/5",
   },
   {
-    layer: "Layer 3",
-    title: "プロセス・指標",
-    subtitle: "各ユニットが追う指標とプロセス",
-    href: "/sales/the-model",
-    icon: BarChart3,
-    color: "from-amber-600 to-yellow-500",
-    bgColor: "bg-amber-500/10",
-    borderColor: "border-amber-500/30",
-    textColor: "text-amber-400",
-    topics: [
-      "The Model（S&M）",
-      "ファネル設計",
-      "課題整理シート",
-      "KPI設計",
-    ],
-    description:
-      "S&MならThe Model（Marketing→IS→FS→CS）、R&Dならスプリント/アジャイル。各ユニットの指標とプロセスを具体的に。",
+    label: "営業利益率",
+    value: "11.5%",
+    meta: "FY2025",
+    delta: "SaaS水準を維持",
+    positive: true,
+    color: "text-amber-400",
+    border: "border-amber-500/20",
+    bg: "bg-amber-500/5",
   },
   {
-    layer: "Layer 4",
-    title: "セールス実践",
-    subtitle: "日々の営業で使うスクリプト・ツール",
-    href: "/sales/spin-script",
-    icon: Briefcase,
-    color: "from-purple-600 to-pink-500",
-    bgColor: "bg-purple-500/10",
-    borderColor: "border-purple-500/30",
-    textColor: "text-purple-400",
-    topics: [
-      "SPIN話法（就労B型）",
-      "SPIN話法（相談支援）",
-      "ISスクリプト",
-      "マーケティング用語集",
-    ],
-    description:
-      "実際の営業現場で使えるスクリプト。SPIN話法、IS架電スクリプト、マーケティング用語の英日対訳集。",
+    label: "従業員数",
+    value: "4,731名",
+    meta: "FY2026 Q3",
+    delta: "東証プライム上場",
+    positive: true,
+    color: "text-purple-400",
+    border: "border-purple-500/20",
+    bg: "bg-purple-500/5",
   },
 ];
 
-const EXTRA_PAGES = [
+// --- 5章学習マップ ---
+const CHAPTERS = [
+  {
+    num: "01",
+    title: "SaaSとは",
+    subtitle: "定義・収益構造・主要指標",
+    href: "/saas-model",
+    icon: Microscope,
+    gradient: "from-blue-600 to-cyan-500",
+    bg: "bg-blue-500/10",
+    border: "border-blue-500/30",
+    text: "text-blue-400",
+    topics: ["SaaSの定義", "ARR / MRR", "NRR / Churn", "SaaS分類・Moat"],
+    smsLabel: null,
+    smsHref: null,
+  },
+  {
+    num: "02",
+    title: "財務・数字を読む",
+    subtitle: "P&L構造・成長ステージ・Rule of 40",
+    href: "/timeline",
+    icon: BarChart3,
+    gradient: "from-emerald-600 to-green-500",
+    bg: "bg-emerald-500/10",
+    border: "border-emerald-500/30",
+    text: "text-emerald-400",
+    topics: ["SaaS P&Lの見方", "Magic Number", "Rule of 40", "成長ステージ"],
+    smsLabel: "SMS財務推移（FY2021-2025）",
+    smsHref: "/timeline",
+  },
+  {
+    num: "03",
+    title: "戦略・市場",
+    subtitle: "GTM・競争優位・市場環境",
+    href: "/market",
+    icon: Target,
+    gradient: "from-amber-600 to-yellow-500",
+    bg: "bg-amber-500/10",
+    border: "border-amber-500/30",
+    text: "text-amber-400",
+    topics: ["GTM戦略", "Land & Expand", "競争優位・Moat", "市場環境分析"],
+    smsLabel: "介護ICT市場・競合ポジション",
+    smsHref: "/market",
+  },
+  {
+    num: "04",
+    title: "組織・実行",
+    subtitle: "S&M / R&D / CS の構造と指標",
+    href: "/org",
+    icon: Users,
+    gradient: "from-violet-600 to-purple-500",
+    bg: "bg-violet-500/10",
+    border: "border-violet-500/30",
+    text: "text-violet-400",
+    topics: ["S&M組織とKPI", "The Model", "CSとリテンション", "コスト構造"],
+    smsLabel: null,
+    smsHref: null,
+  },
+  {
+    num: "05",
+    title: "セールス実践",
+    subtitle: "現場で使うスクリプト・ツール",
+    href: "/sales/spin-script",
+    icon: Briefcase,
+    gradient: "from-rose-600 to-pink-500",
+    bg: "bg-rose-500/10",
+    border: "border-rose-500/30",
+    text: "text-rose-400",
+    topics: ["SPIN話法", "IS架電スクリプト", "課題整理シート", "商談設計"],
+    smsLabel: "介護SaaS営業シナリオ",
+    smsHref: "/sales/spin-script",
+  },
+];
+
+// --- リファレンス ---
+const REFERENCES = [
   {
     title: "ケーススタディ",
-    subtitle: "グローバル5社＋日本5社の成長ストーリー",
+    subtitle: "グローバル5社＋日本5社",
     href: "/case-studies",
     icon: Building2,
-    color: "from-rose-600 to-orange-500",
-    bgColor: "bg-rose-500/10",
-    borderColor: "border-rose-500/30",
-    textColor: "text-rose-400",
-    detail: "Salesforce, HubSpot, Slack, Shopify, Zoom / freee, Money Forward, Sansan, SmartHR, Rakus",
+    detail:
+      "Salesforce, HubSpot, SmartHR, freee 等 10社の成長ストーリーと財務パターン",
+    gradient: "from-rose-600 to-orange-500",
+    border: "border-rose-500/30",
+    text: "text-rose-400",
   },
   {
     title: "AI × SaaS",
     subtitle: "AIがSaaSを変える",
     href: "/ai-saas",
     icon: Brain,
-    color: "from-violet-600 to-fuchsia-500",
-    bgColor: "bg-violet-500/10",
-    borderColor: "border-violet-500/30",
-    textColor: "text-violet-400",
-    detail: "AI-native vs AI-enhanced、Copilot/Agent/Platform、福祉SaaS×AI",
+    detail:
+      "AI-native vs AI-enhanced、Copilot / Agent / Platform モデル、福祉SaaS×AI",
+    gradient: "from-violet-600 to-fuchsia-500",
+    border: "border-violet-500/30",
+    text: "text-violet-400",
   },
   {
     title: "SaaS用語集",
-    subtitle: "50+の重要指標と用語",
+    subtitle: "50+の重要指標と定義",
     href: "/glossary",
     icon: BookOpen,
-    color: "from-teal-600 to-cyan-500",
-    bgColor: "bg-teal-500/10",
-    borderColor: "border-teal-500/30",
-    textColor: "text-teal-400",
-    detail: "計算式、ベンチマーク、アクションティップ付き。5カテゴリ × 10用語。",
+    detail:
+      "計算式・ベンチマーク・アクションティップ付き。NRR, CAC, LTV, Rule of 40 等",
+    gradient: "from-teal-600 to-cyan-500",
+    border: "border-teal-500/30",
+    text: "text-teal-400",
   },
-];
-
-const QUICK_LINKS = [
-  { href: "/saas-model", label: "SaaS概論（12タブ）", icon: Microscope },
-  { href: "/case-studies", label: "ケーススタディ", icon: Building2 },
-  { href: "/ai-saas", label: "AI × SaaS", icon: Brain },
-  { href: "/glossary", label: "SaaS用語集", icon: BookOpen },
-  { href: "/sales/spin-script", label: "IS架電 / SPIN", icon: Target },
-  { href: "/sales/the-model", label: "The Model", icon: BarChart3 },
-  { href: "/org/sm", label: "S&M組織", icon: Users },
-  { href: "/org/rd", label: "R&D + 技術アーキ", icon: Rocket },
-  { href: "/sales/glossary", label: "MKT用語集", icon: BookOpen },
-];
-
-const STATS = [
-  { label: "テーマ", value: "10+", icon: Layers },
-  { label: "タブ", value: "12", icon: BarChart3 },
-  { label: "用語", value: "50+", icon: BookOpen },
-  { label: "企業分析", value: "10社", icon: Building2 },
 ];
 
 export default function HomePage() {
   return (
-    <div className="space-y-8">
-      {/* Hero Section */}
+    <div className="space-y-10">
+      {/* ── Hero ── */}
       <div className="rounded-2xl bg-gradient-to-br from-blue-950/60 via-purple-950/40 to-background border border-white/5 p-8">
-        <div className="max-w-3xl">
-          <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">
-            SaaS Deep Dive
-          </h1>
-          <p className="mt-2 text-base text-muted-foreground leading-relaxed">
-            SaaS事業を体系的に学ぶ。概論<span className="text-blue-400 font-medium">12タブ</span>、
-            <span className="text-rose-400 font-medium">10社のケーススタディ</span>、
-            <span className="text-violet-400 font-medium">AI×SaaS</span>、
-            <span className="text-teal-400 font-medium">50+用語集</span>まで。
+        <div className="max-w-2xl">
+          <p className="mb-2 text-[11px] font-bold uppercase tracking-widest text-blue-400">
+            SaaS Business Guide
           </p>
-
-          {/* Stats */}
-          <div className="mt-5 flex flex-wrap gap-4">
-            {STATS.map((stat) => {
-              const Icon = stat.icon;
-              return (
-                <div
-                  key={stat.label}
-                  className="flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-1.5"
-                >
-                  <Icon className="h-3.5 w-3.5 text-muted-foreground" />
-                  <span className="font-mono text-sm font-bold">{stat.value}</span>
-                  <span className="text-xs text-muted-foreground">{stat.label}</span>
-                </div>
-              );
-            })}
+          <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">
+            実在企業・SMSで学ぶ
+            <br />
+            <span className="text-muted-foreground">SaaSビジネスの教科書</span>
+          </h1>
+          <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+            福祉×SaaSという日本固有市場で成長する
+            <span className="text-foreground font-medium">
+              SMS（カイポケ）を実例
+            </span>
+            に、SaaSビジネスの本質を体系的に学ぶガイド。
+            概念を覚えたその場で、実際の財務・組織・戦略データで確認できる。
+          </p>
+          <div className="mt-5 flex flex-wrap gap-3">
+            <Link
+              href="/saas-model"
+              className="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-blue-500"
+            >
+              第1章から始める
+              <ChevronRight className="h-4 w-4" />
+            </Link>
+            <Link
+              href="/glossary"
+              className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium transition-colors hover:bg-white/10"
+            >
+              用語を調べる
+            </Link>
           </div>
         </div>
       </div>
 
-      {/* SaaS全体像テーママップ */}
+      {/* ── SMS 実例企業パネル ── */}
       <div>
-        <h3 className="text-sm font-semibold text-muted-foreground mb-3">
-          SaaS全体像テーママップ
-        </h3>
-        <div className="grid gap-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-          {[
-            { label: "定義・入門", href: "/saas-model", color: "#3B82F6", icon: Microscope },
-            { label: "プライシング", href: "/saas-model", color: "#8B5CF6", icon: DollarSign },
-            { label: "GTM戦略", href: "/saas-model", color: "#F97316", icon: Target },
-            { label: "PLG", href: "/saas-model", color: "#10B981", icon: Rocket },
-            { label: "カスタマーサクセス", href: "/saas-model", color: "#EC4899", icon: Heart },
-            { label: "競争戦略 & Moat", href: "/saas-model", color: "#EF4444", icon: Shield },
-            { label: "財務諸表", href: "/saas-model", color: "#6366F1", icon: FileText },
-            { label: "技術アーキテクチャ", href: "/org/rd", color: "#14B8A6", icon: Layers },
-            { label: "ケーススタディ", href: "/case-studies", color: "#F43F5E", icon: Building2 },
-            { label: "AI × SaaS", href: "/ai-saas", color: "#A855F7", icon: Brain },
-            { label: "SaaS用語集", href: "/glossary", color: "#0EA5E9", icon: BookOpen },
-            { label: "組織 & プロセス", href: "/org", color: "#22C55E", icon: Cog },
-          ].map((theme) => {
-            const Icon = theme.icon;
-            return (
-              <Link key={theme.label} href={theme.href}>
-                <div
-                  className="flex items-center gap-2 rounded-lg border p-2.5 transition-all hover:border-white/20 hover:bg-white/5"
-                  style={{ borderColor: theme.color + "30" }}
+        <div className="mb-3 flex items-center justify-between">
+          <h2 className="text-sm font-semibold text-muted-foreground">
+            実例企業：SMS（エス・エム・エス）とは
+          </h2>
+          <Link
+            href="/mission"
+            className="flex items-center gap-1 text-[11px] text-muted-foreground hover:text-foreground"
+          >
+            会社概要 <ArrowRight className="h-3 w-3" />
+          </Link>
+        </div>
+        <p className="mb-4 text-xs text-muted-foreground leading-relaxed">
+          2003年創業。「高齢社会に適した情報インフラを構築する」をミッションに、介護・医療・障害福祉領域でSaaSとBPOを展開する東証プライム上場企業（証券コード：2175）。
+        </p>
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {SMS_KPIS.map((kpi) => (
+            <div
+              key={kpi.label}
+              className={`rounded-xl border ${kpi.border} ${kpi.bg} p-4`}
+            >
+              <p className="text-[11px] text-muted-foreground">{kpi.label}</p>
+              <p className={`mt-1 text-2xl font-bold tabular-nums ${kpi.color}`}>
+                {kpi.value}
+              </p>
+              <div className="mt-1 flex items-center justify-between">
+                <span className="text-[10px] text-muted-foreground/70">
+                  {kpi.meta}
+                </span>
+                <span
+                  className={`text-[10px] font-medium ${kpi.positive ? "text-emerald-400" : "text-red-400"}`}
                 >
-                  <div
-                    className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md"
-                    style={{ backgroundColor: theme.color + "20", color: theme.color }}
-                  >
-                    <Icon className="h-3.5 w-3.5" />
-                  </div>
-                  <span className="text-xs font-medium truncate">{theme.label}</span>
-                </div>
-              </Link>
-            );
-          })}
+                  {kpi.delta}
+                </span>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* 4-Layer Grid */}
+      {/* ── 5章学習マップ ── */}
       <div>
-        <h3 className="text-sm font-semibold text-muted-foreground mb-3">
-          基礎知識 — 4層構造
-        </h3>
-        <div className="grid gap-4 md:grid-cols-2">
-          {LAYERS.map((layer) => {
-            const Icon = layer.icon;
+        <h2 className="mb-1 text-sm font-semibold text-muted-foreground">
+          学習の流れ（全5章）
+        </h2>
+        <p className="mb-4 text-xs text-muted-foreground">
+          第1章から順に読むと、SaaS概念→財務→戦略→組織→実践へと自然に理解が深まる。
+        </p>
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {CHAPTERS.map((ch) => {
+            const Icon = ch.icon;
             return (
-              <Link key={layer.layer} href={layer.href}>
+              <Link key={ch.num} href={ch.href}>
                 <Card
-                  className={`group relative overflow-hidden border ${layer.borderColor} transition-all hover:border-white/20 hover:shadow-lg hover:shadow-black/20 h-full`}
+                  className={`group relative h-full overflow-hidden border ${ch.border} transition-all hover:border-white/20 hover:shadow-lg hover:shadow-black/20`}
                 >
-                  <CardContent className="p-6">
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="flex items-center gap-2">
-                        <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground/60">
-                          {layer.layer}
-                        </span>
-                        {layer.badge && (
-                          <span className={`rounded-full ${layer.bgColor} px-2 py-0.5 text-[10px] font-bold ${layer.textColor}`}>
-                            {layer.badge}
-                          </span>
-                        )}
-                      </div>
-                      <ArrowRight className="h-4 w-4 text-muted-foreground/40 transition-transform group-hover:translate-x-1 group-hover:text-foreground" />
+                  <CardContent className="p-5">
+                    {/* Header */}
+                    <div className="mb-3 flex items-center justify-between">
+                      <span
+                        className={`font-mono text-xs font-bold ${ch.text} opacity-60`}
+                      >
+                        CHAPTER {ch.num}
+                      </span>
+                      <ArrowRight className="h-4 w-4 text-muted-foreground/30 transition-transform group-hover:translate-x-1 group-hover:text-foreground" />
                     </div>
-                    <div className="flex items-center gap-3 mb-3">
+
+                    {/* Icon + Title */}
+                    <div className="mb-3 flex items-center gap-3">
                       <div
-                        className={`flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${layer.color} shadow-lg`}
+                        className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${ch.gradient} shadow-lg`}
                       >
                         <Icon className="h-5 w-5 text-white" />
                       </div>
                       <div>
-                        <h2 className="text-lg font-bold">{layer.title}</h2>
-                        <p className="text-xs text-muted-foreground">{layer.subtitle}</p>
+                        <h3 className="text-base font-bold leading-tight">
+                          {ch.title}
+                        </h3>
+                        <p className="text-[11px] text-muted-foreground">
+                          {ch.subtitle}
+                        </p>
                       </div>
                     </div>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                      {layer.description}
-                    </p>
-                    <div className="flex flex-wrap gap-1.5">
-                      {layer.topics.map((topic) => (
+
+                    {/* Topics */}
+                    <div className="mb-3 flex flex-wrap gap-1.5">
+                      {ch.topics.map((t) => (
                         <span
-                          key={topic}
-                          className={`inline-block rounded-md ${layer.bgColor} px-2 py-0.5 text-[10px] font-medium ${layer.textColor}`}
+                          key={t}
+                          className={`inline-block rounded-md ${ch.bg} px-2 py-0.5 text-[10px] font-medium ${ch.text}`}
                         >
-                          {topic}
+                          {t}
                         </span>
                       ))}
                     </div>
+
+                    {/* SMS実例バッジ */}
+                    {ch.smsLabel && (
+                      <div className="mt-auto flex items-center gap-1.5 rounded-md border border-white/5 bg-white/[0.03] px-2.5 py-1.5">
+                        <TrendingUp className="h-3 w-3 text-muted-foreground/60" />
+                        <span className="text-[10px] text-muted-foreground">
+                          SMS実例：{ch.smsLabel}
+                        </span>
+                      </div>
+                    )}
                   </CardContent>
                 </Card>
               </Link>
@@ -299,61 +324,41 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Extra Pages */}
+      {/* ── リファレンス ── */}
       <div>
-        <h3 className="text-sm font-semibold text-muted-foreground mb-3">
-          分析 & リファレンス
-        </h3>
+        <h2 className="mb-3 text-sm font-semibold text-muted-foreground">
+          参考・リファレンス
+        </h2>
         <div className="grid gap-4 md:grid-cols-3">
-          {EXTRA_PAGES.map((page) => {
-            const Icon = page.icon;
+          {REFERENCES.map((ref) => {
+            const Icon = ref.icon;
             return (
-              <Link key={page.title} href={page.href}>
+              <Link key={ref.href} href={ref.href}>
                 <Card
-                  className={`group overflow-hidden border ${page.borderColor} transition-all hover:border-white/20 hover:shadow-lg hover:shadow-black/20 h-full`}
+                  className={`group h-full overflow-hidden border ${ref.border} transition-all hover:border-white/20 hover:shadow-lg hover:shadow-black/20`}
                 >
                   <CardContent className="p-5">
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="flex items-center gap-2">
+                    <div className="mb-3 flex items-center justify-between">
+                      <div className="flex items-center gap-2.5">
                         <div
-                          className={`flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br ${page.color} shadow-md`}
+                          className={`flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br ${ref.gradient} shadow-md`}
                         >
                           <Icon className="h-4 w-4 text-white" />
                         </div>
                         <div>
-                          <h3 className="text-sm font-bold">{page.title}</h3>
-                          <p className="text-[10px] text-muted-foreground">{page.subtitle}</p>
+                          <h3 className="text-sm font-bold">{ref.title}</h3>
+                          <p className="text-[10px] text-muted-foreground">
+                            {ref.subtitle}
+                          </p>
                         </div>
                       </div>
-                      <ArrowRight className="h-4 w-4 text-muted-foreground/40 transition-transform group-hover:translate-x-1 group-hover:text-foreground" />
+                      <ArrowRight className="h-4 w-4 text-muted-foreground/30 transition-transform group-hover:translate-x-1 group-hover:text-foreground" />
                     </div>
                     <p className="text-[11px] text-muted-foreground leading-relaxed">
-                      {page.detail}
+                      {ref.detail}
                     </p>
                   </CardContent>
                 </Card>
-              </Link>
-            );
-          })}
-        </div>
-      </div>
-
-      {/* Quick Links */}
-      <div>
-        <h3 className="text-sm font-semibold text-muted-foreground mb-3">
-          Quick Links
-        </h3>
-        <div className="grid gap-2 sm:grid-cols-3 lg:grid-cols-5">
-          {QUICK_LINKS.map((link) => {
-            const Icon = link.icon;
-            return (
-              <Link
-                key={link.href + link.label}
-                href={link.href}
-                className="flex items-center gap-2 rounded-lg border border-border bg-card p-3 text-sm font-medium transition-colors hover:bg-accent/50"
-              >
-                <Icon className="h-4 w-4 shrink-0 text-muted-foreground" />
-                <span className="truncate">{link.label}</span>
               </Link>
             );
           })}

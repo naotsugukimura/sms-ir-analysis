@@ -15,6 +15,8 @@ import {
   Menu,
   ChevronRight,
   BookOpen,
+  Brain,
+  Building2,
 } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
@@ -35,6 +37,8 @@ const ICON_MAP = {
   TrendingUp,
   FileText,
   BookOpen,
+  Brain,
+  Building2,
 } as const;
 
 function NavGroup({
